@@ -8,3 +8,6 @@
 #ifndef SPACEGAME_SpaceGameGameMode_generated_h
 	#include "SpaceGameGameMode.h"
 #endif
+#ifndef SPACEGAME_Star_generated_h
+	#include "Star.h"
+#endif

@@ -13,12 +13,19 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	{
 	}
 	IMPLEMENT_CLASS(ASpaceGameGameMode, 997237742);
+	void AStar::StaticRegisterNativesAStar()
+	{
+	}
+	IMPLEMENT_CLASS(AStar, 2991637635);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode();
+	SPACEGAME_API class UClass* Z_Construct_UClass_AStar_NoRegister();
+	SPACEGAME_API class UClass* Z_Construct_UClass_AStar();
 	SPACEGAME_API class UPackage* Z_Construct_UPackage_SpaceGame();
 	UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister()
 	{
@@ -54,6 +61,37 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASpaceGameGameMode(Z_Construct_UClass_ASpaceGameGameMode, TEXT("ASpaceGameGameMode"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASpaceGameGameMode);
+	UClass* Z_Construct_UClass_AStar_NoRegister()
+	{
+		return AStar::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AStar()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_SpaceGame();
+			OuterClass = AStar::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Star.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Star.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AStar(Z_Construct_UClass_AStar, TEXT("AStar"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AStar);
 	UPackage* Z_Construct_UPackage_SpaceGame()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -62,8 +100,8 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x340792B3;
-			Guid.B = 0xA46A04C0;
+			Guid.A = 0xA7ED5077;
+			Guid.B = 0xB6158220;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

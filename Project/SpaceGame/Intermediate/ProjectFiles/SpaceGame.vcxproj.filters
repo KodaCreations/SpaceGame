@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\SpaceGame.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{028D896B-E29C-4551-A3B1-5E0F667D2865}</UniqueIdentifier>
+			<UniqueIdentifier>{6757D547-307E-425C-B93E-CD07ACA3176F}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\SpaceGame.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{C0334C0E-5436-4EEA-A1C0-884BEA690330}</UniqueIdentifier>
+			<UniqueIdentifier>{34DFE85D-EE7C-4BCC-965B-3B6B877A1D67}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -25,7 +25,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\SpaceGame">
-			<UniqueIdentifier>{B0E572DC-2476-49F2-8FDC-92AF4511EF3E}</UniqueIdentifier>
+			<UniqueIdentifier>{E897C8FF-260E-4247-9669-83383E423B6B}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\SpaceGame\SpaceGame.Build.cs">
 			<Filter>Source\SpaceGame</Filter>
@@ -40,6 +40,12 @@
 			<Filter>Source\SpaceGame</Filter>
 		</ClCompile >
 		<ClInclude Include="..\..\Source\SpaceGame\SpaceGameGameMode.h">
+			<Filter>Source\SpaceGame</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\SpaceGame\Star.cpp">
+			<Filter>Source\SpaceGame</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\SpaceGame\Star.h">
 			<Filter>Source\SpaceGame</Filter>
 		</ClInclude >
 	</ItemGroup>
