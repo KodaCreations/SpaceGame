@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-
+#include "Fleet.h"
 #include "GameFramework/Actor.h"
 #include "Star.generated.h"
 
@@ -20,6 +20,13 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-	
-	
+private:
+	// Stationed fleet
+	AFleet *fleet;
+
+	// Production time
+	const float prodTime = 3;
+
+	// Fleet creation timer
+	float timer;
 };

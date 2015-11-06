@@ -9,6 +9,10 @@
 #include "SpaceGame.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
+	void AFleet::StaticRegisterNativesAFleet()
+	{
+	}
+	IMPLEMENT_CLASS(AFleet, 4108666403);
 	void ASpaceGameGameMode::StaticRegisterNativesASpaceGameGameMode()
 	{
 	}
@@ -19,14 +23,47 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	IMPLEMENT_CLASS(AStar, 2991637635);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
-	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
+	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	SPACEGAME_API class UClass* Z_Construct_UClass_AFleet_NoRegister();
+	SPACEGAME_API class UClass* Z_Construct_UClass_AFleet();
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AStar_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AStar();
 	SPACEGAME_API class UPackage* Z_Construct_UPackage_SpaceGame();
+	UClass* Z_Construct_UClass_AFleet_NoRegister()
+	{
+		return AFleet::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AFleet()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_SpaceGame();
+			OuterClass = AFleet::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AFleet(Z_Construct_UClass_AFleet, TEXT("AFleet"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AFleet);
 	UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister()
 	{
 		return ASpaceGameGameMode::StaticClass();
@@ -100,8 +137,8 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xA7ED5077;
-			Guid.B = 0xB6158220;
+			Guid.A = 0x0628242D;
+			Guid.B = 0xFF7C85FD;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

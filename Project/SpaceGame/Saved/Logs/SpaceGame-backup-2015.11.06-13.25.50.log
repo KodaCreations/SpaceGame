@@ -1,0 +1,492 @@
+﻿[2015.11.06-10.05.14:219][  0]Log file open, 11/06/15 11:05:14
+[2015.11.06-10.05.14:219][  0]LogInit:Display: Running engine for game: SpaceGame
+[2015.11.06-10.05.14:219][  0]LogInit:Display: RandInit(145227488) SRandInit(145227489).
+[2015.11.06-10.05.14:219][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
+[2015.11.06-10.05.14:219][  0]LogStats: Stats thread started at 6.049742
+[2015.11.06-10.05.14:219][  0]LogInit:Warning: Incompatible or missing module: UE4Editor-SpaceGame.dll
+[2015.11.06-10.05.20:070][  0]Running C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame Development Win64 -project="C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket -editorrecompile -progress -noubtmakefiles
+[2015.11.06-10.06.12:960][  0]@progress push 5%
+[2015.11.06-10.06.14:868][  0]Parsing headers for SpaceGameEditor
+[2015.11.06-10.06.14:868][  0]  Running UnrealHeaderTool "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" "C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\SpaceGameEditor\Development\UnrealHeaderTool.manifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -rocket -installed
+[2015.11.06-10.06.26:412][  0]Reflection code generated for SpaceGameEditor in 11,5579725 seconds
+[2015.11.06-10.06.26:614][  0]@progress pop
+[2015.11.06-10.06.29:126][  0]Performing 8 actions (4 in parallel)
+[2015.11.06-10.06.29:126][  0][2/8] Resource PCLaunch.rc
+[2015.11.06-10.06.29:126][  0][3/8] Resource ModuleVersionResource.rc.inl
+[2015.11.06-10.06.29:227][  0]PCH.SpaceGame.h.cpp
+[2015.11.06-10.07.36:489][  0]Star.cpp
+[2015.11.06-10.07.36:489][  0]SpaceGame.cpp
+[2015.11.06-10.07.36:489][  0]SpaceGame.generated.cpp
+[2015.11.06-10.07.36:489][  0]SpaceGameGameMode.cpp
+[2015.11.06-10.07.36:992][  0][8/8] Link UE4Editor-SpaceGame.dll
+[2015.11.06-10.07.41:817][  0]   Creating library C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame.lib and object C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame.exp
+[2015.11.06-10.07.42:520][  0]-------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-10.07.42:520][  0]Total build time: 142,06 seconds
+[2015.11.06-10.07.43:091][  0]LogInit: Version: 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.11.06-10.07.43:091][  0]LogInit: API Version: 2672455
+[2015.11.06-10.07.43:091][  0]LogInit: Compiled (64-bit): Sep 28 2015 10:25:44
+[2015.11.06-10.07.43:091][  0]LogInit: Compiled with Visual C++: 18.00.21005.01
+[2015.11.06-10.07.43:091][  0]LogInit: Build Configuration: Development
+[2015.11.06-10.07.43:091][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.9
+[2015.11.06-10.07.43:091][  0]LogInit: Command line:  
+[2015.11.06-10.07.43:091][  0]LogInit: Base directory: C:/Program Files/Epic Games/4.9/Engine/Binaries/Win64/
+[2015.11.06-10.07.43:091][  0]LogInit: Rocket: 1
+[2015.11.06-10.07.43:756][  0]LogInit: Using libcurl 7.41.0
+[2015.11.06-10.07.43:756][  0]LogInit:  - built for x86_64-pc-win32
+[2015.11.06-10.07.43:756][  0]LogInit:  - supports SSL with WinSSL
+[2015.11.06-10.07.43:756][  0]LogInit:  - other features:
+[2015.11.06-10.07.43:756][  0]LogInit:      CURL_VERSION_SSL
+[2015.11.06-10.07.43:756][  0]LogInit:      CURL_VERSION_IPV6
+[2015.11.06-10.07.43:756][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2015.11.06-10.07.43:756][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2015.11.06-10.07.43:756][  0]LogInit:      CURL_VERSION_IDN
+[2015.11.06-10.07.43:756][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2015.11.06-10.07.43:756][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2015.11.06-10.07.43:756][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2015.11.06-10.07.43:756][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2015.11.06-10.07.43:756][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2015.11.06-10.07.44:634][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2015.11.06-10.07.44:658][  0]LogInit: Object subsystem initialized
+[2015.11.06-10.07.44:664][  0]LogInit: Selected Device Profile: [Windows]
+[2015.11.06-10.07.44:664][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2015.11.06-10.07.44:737][  0]LogInit: Computer: SpellabbA332-11
+[2015.11.06-10.07.44:737][  0]LogInit: User: Spellabbet
+[2015.11.06-10.07.44:737][  0]LogInit: CPU Page size=4096, Cores=4
+[2015.11.06-10.07.44:737][  0]LogInit: High frequency timer resolution =3.507524 MHz
+[2015.11.06-10.07.44:737][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
+[2015.11.06-10.07.44:737][  0]LogMemory: Platform Memory Stats for Windows
+[2015.11.06-10.07.44:737][  0]LogMemory: Process Physical Memory: 53.91 MB used, 53.91 MB peak
+[2015.11.06-10.07.44:737][  0]LogMemory: Process Virtual Memory: 57.17 MB used, 57.17 MB peak
+[2015.11.06-10.07.44:738][  0]LogMemory: Physical Memory: 2928.41 MB used, 16318.82 MB total
+[2015.11.06-10.07.44:738][  0]LogMemory: Virtual Memory: 372.72 MB used, 134217728.00 MB total
+[2015.11.06-10.07.48:544][  0]LogTextLocalizationManager: No translations for ('sv-SE') exist, falling back to 'en' for localization and internationalization data.
+[2015.11.06-10.07.51:247][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 960 (Feature Level 11_0)
+[2015.11.06-10.07.51:247][  0]LogD3D11RHI: Adapter has 1965MB of dedicated video memory, 0MB of dedicated system memory, and 2048MB of shared system memory, 1 output[s]
+[2015.11.06-10.07.51:253][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2015.11.06-10.07.51:253][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 256MB of shared system memory, 0 output[s]
+[2015.11.06-10.07.51:253][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2015.11.06-10.07.51:255][  0]LogD3D11RHI: !Direct3DDevice
+[2015.11.06-10.07.51:255][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2015.11.06-10.07.51:264][  0]LogD3D11RHI: Async texture creation enabled
+[2015.11.06-10.07.51:301][  0]LogShaderCompilers: Guid format shader working directory is 15 characters bigger than the processId version (../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Intermediate/Shaders/WorkingDirectory/3744/).
+[2015.11.06-10.07.51:301][  0]LogShaderCompilers: Cleaned the shader compiler working directory '../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Intermediate/Shaders/tmp/C017F17349B2FC47803F708316EDE735/'.
+[2015.11.06-10.07.51:302][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2015.11.06-10.07.56:126][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2015.11.06-10.07.56:133][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2015.11.06-10.07.56:141][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2015.11.06-10.07.56:148][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2015.11.06-10.07.56:155][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2015.11.06-10.07.56:173][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2015.11.06-10.07.56:175][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2015.11.06-10.07.56:179][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2015.11.06-10.07.56:182][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2015.11.06-10.07.56:186][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2015.11.06-10.07.56:199][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2015.11.06-10.07.56:213][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2015.11.06-10.07.56:215][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2015.11.06-10.07.56:476][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2015.11.06-10.07.56:482][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2015.11.06-10.07.56:488][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2015.11.06-10.07.56:497][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2015.11.06-10.07.56:497][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.11.06-10.07.58:912][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2015.11.06-10.08.02:370][  0]LogDerivedDataCache: Loaded boot cache 3.46s 41MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.11.06-10.08.02:370][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc
+[2015.11.06-10.08.02:371][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Unreal project/SpaceGame/Project/SpaceGame/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2015.11.06-10.08.02:371][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2015.11.06-10.08.02:371][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Unreal project/SpaceGame/Project/SpaceGame/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2015.11.06-10.08.02:371][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2015.11.06-10.08.02:902][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2015.11.06-10.08.02:914][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Spellabbet/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2015.11.06-10.08.24:619][  0]LogInit: Selected Device Profile: [Windows]
+[2015.11.06-10.08.24:648][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2015.11.06-10.08.25:100][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2015.11.06-10.08.25:100][  0]LogMeshUtilities: No automatic mesh merging module available
+[2015.11.06-10.08.28:454][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2015.11.06-10.08.49:649][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2015.11.06-10.08.50:227][  0]LogAssetRegistry: FAssetRegistry took 0.0378 seconds to start up
+[2015.11.06-10.08.50:238][  0]LogDirectoryWatcher:Warning: Failed to begin reading directory changes for ../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Content/. Error: 0
+[2015.11.06-10.08.53:703][  0]SourceControl: Info Source control is disabled
+[2015.11.06-10.08.53:709][  0]SourceControl: Info Source control is disabled
+[2015.11.06-10.08.53:716][  0]SourceControl: Info Source control is disabled
+[2015.11.06-10.08.53:723][  0]SourceControl: Info Source control is disabled
+[2015.11.06-10.08.55:900][  0]LogLinker:Warning: Asset '../../../Engine/Plugins/Runtime/LeapMotionController/Content/LM_PassthroughMaterial.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.11.06-10.08.56:786][  0]LogObj: 28367 objects as part of root set at end of initial load.
+[2015.11.06-10.08.56:786][  0]LogUObjectAllocator: 6042192 out of 0 bytes used by permanent object pool.
+[2015.11.06-10.08.57:125][  0]LogEngine: Initializing Engine...
+[2015.11.06-10.08.57:127][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.7.0.0
+[2015.11.06-10.08.57:205][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2015.11.06-10.08.58:657][  0]LogAIModule: Creating AISystem for world NewWorld
+[2015.11.06-10.08.58:699][  0]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.06-10.08.58:757][  0]LogInit: FAudioDevice initialized.
+[2015.11.06-10.08.58:773][  0]LogDerivedDataCache: Saved boot cache 0.02s 41MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.11.06-10.08.59:066][  0]LogInit: Texture streaming: Enabled
+[2015.11.06-10.08.59:079][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2015.11.06-10.08.59:246][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.11.06-10.08.59:247][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId 634ab0cb456977c100e99f821f1d4277|7ebf86fc13e44331864479a64887c1c8|060e5e79-a789-49c4-8abd-5d8b330400a7
+[2015.11.06-10.08.59:247][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2015.11.06-10.08.59:305][  0]LogInit: Transaction tracking system initialized
+[2015.11.06-10.08.59:455][  0]BlueprintLog: New page: Editor Load
+[2015.11.06-10.09.03:932][  0]LocalizationService: Info Localization service is disabled
+[2015.11.06-10.09.06:656][  0]LogConsoleResponse:Display: 
+[2015.11.06-10.09.10:814][  0]LogDirectoryWatcher:Warning: Failed to begin reading directory changes for C:/Unreal project/SpaceGame/Project/SpaceGame/Content/. Error: 0
+[2015.11.06-10.09.10:814][  0]LogFileCache: Scanning file cache for directory 'C:/Unreal project/SpaceGame/Project/SpaceGame/Content/' took 0.01s
+[2015.11.06-10.09.10:814][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2015.11.06-10.09.13:558][  0]SourceControl: Info Source control is disabled
+[2015.11.06-10.09.13:559][  0]Cmd: MAP LOAD FILE="../../../Engine/Content/Maps/Templates/Template_Default.umap" TEMPLATE=1 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.11.06-10.09.13:640][  0]LightingResults: New page: Lighting Build
+[2015.11.06-10.09.13:647][  0]MapCheck: New page: Map Check
+[2015.11.06-10.09.13:647][  0]LightingResults: New page: Lighting Build
+[2015.11.06-10.09.13:709][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F28DAC2160
+[2015.11.06-11.09.12:688][  0]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.06-11.09.12:965][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.11.06-11.09.12:969][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.11.06-11.09.13:016][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 46.932ms to complete.
+[2015.11.06-11.09.13:016][  0]LogFileHelpers: Loading map 'Template_Default' took 1.844
+[2015.11.06-11.09.15:404][  0]LogCollectionManager: Loaded 0 collections in 0.004553 seconds
+[2015.11.06-11.09.16:142][  0]LogFileCache: Scanning file cache for directory 'C:/Unreal project/SpaceGame/Project/SpaceGame/Saved/Collections/' took 0.01s
+[2015.11.06-11.09.16:142][  0]LogFileCache: Scanning file cache for directory 'C:/Unreal project/SpaceGame/Project/SpaceGame/Content/Developers/Spellabbet/Collections/' took 0.01s
+[2015.11.06-11.09.16:142][  0]LogFileCache: Scanning file cache for directory 'C:/Unreal project/SpaceGame/Project/SpaceGame/Content/Collections/' took 0.01s
+[2015.11.06-11.09.16:142][  0]LogContentBrowser: Native class hierarchy populated in 0.0265 seconds. Added 1869 classes and 335 folders.
+[2015.11.06-11.09.16:609][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000002 seconds
+[2015.11.06-11.09.16:820][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0007 seconds. Added 0 classes and 0 folders.
+[2015.11.06-11.09.23:814][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0033 seconds. Added 0 classes and 0 folders.
+[2015.11.06-11.09.24:269][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0024 seconds. Added 1 classes and 2 folders.
+[2015.11.06-11.09.25:159][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2015.11.06-11.09.25:361][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2015.11.06-11.09.25:403][  0]LogLoad: Full Startup: 270.85 seconds (BP compile: 0.54 seconds)
+[2015.11.06-11.09.27:149][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2015.11.06-11.09.27:962][  0]LogRenderer: Reallocating scene render targets to support 1208x576 (Frame:2).
+[2015.11.06-11.09.51:931][791]LogAssetRegistry: Asset discovery search completed in 64.1064 seconds
+[2015.11.06-11.09.51:931][791]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2015.11.06-11.09.51:958][791]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000041 seconds (updated 0 objects)
+[2015.11.06-11.10.39:609][769]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2015.11.06-11.44.46:363][306]LogEditor: Attempting to add actor of class 'Star' to level at -830.00,-260.00,130.00
+[2015.11.06-11.44.47:136][398]LogEditor: Attempting to add actor of class 'Star' to level at -670.00,-380.00,320.00
+[2015.11.06-11.45.02:037][185]Cmd: DELETE
+[2015.11.06-11.45.02:037][185]Cmd: ACTOR DELETE
+[2015.11.06-11.45.02:037][185]LogEditorActor: Deleted Actor: Star
+[2015.11.06-11.45.02:051][185]LogEditorActor: Deleted 1 Actors (0.014 secs)
+[2015.11.06-11.45.26:850][128]Cmd: OBJ SAVEPACKAGE PACKAGE="/Temp/Untitled_1" FILE="../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Saved/Autosaves/Temp/Untitled_1_Auto1.umap" SILENT=true AUTOSAVING=true KEEPDIRTY=false
+[2015.11.06-11.45.26:869][128]LogSavePackage: Save=18.192320ms
+[2015.11.06-11.45.26:869][128]LogSavePackage: Moving '../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Saved/Untitled_1_Auto10806B29040CAF95171A7679A6C5D811F.tmp' to '../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Saved/Autosaves/Temp/Untitled_1_Auto1.umap'
+[2015.11.06-11.45.26:869][128]LogSavePackage: Total save time: 18.995736ms
+[2015.11.06-11.45.26:869][128]LogSavePackage:Warning: Finished SavePackage ../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Saved/Autosaves/Temp/Untitled_1_Auto1.umap
+[2015.11.06-11.45.26:871][128]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.033
+[2015.11.06-11.45.26:871][128]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.033
+[2015.11.06-11.48.23:088][272]LogEditor: Attempting to add actor of class 'Star' to level at -870.00,-440.00,220.00
+[2015.11.06-11.48.23:734][349]LogEditor: Attempting to add actor of class 'Star' to level at -610.00,-330.00,360.00
+[2015.11.06-11.48.39:554][164]LogActorFactory: Actor Factory created Sphere
+[2015.11.06-11.49.48:676][453]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Unreal project/SpaceGame/Project/SpaceGame/Source/SpaceGame/Star.h'
+[2015.11.06-11.49.48:727][453]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Unreal project/SpaceGame/Project/SpaceGame/Source/SpaceGame/Star.cpp'
+[2015.11.06-11.55.27:505][469]Cmd: OBJ SAVEPACKAGE PACKAGE="/Temp/Untitled_1" FILE="../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Saved/Autosaves/Temp/Untitled_1_Auto2.umap" SILENT=true AUTOSAVING=true KEEPDIRTY=false
+[2015.11.06-11.55.27:523][469]LogSavePackage: Save=18.121901ms
+[2015.11.06-11.55.27:523][469]LogSavePackage: Moving '../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Saved/Untitled_1_Auto21F4CC2094852DE2391B28CAF492B7BD0.tmp' to '../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Saved/Autosaves/Temp/Untitled_1_Auto2.umap'
+[2015.11.06-11.55.27:524][469]LogSavePackage: Total save time: 18.911917ms
+[2015.11.06-11.55.27:524][469]LogSavePackage:Warning: Finished SavePackage ../../../../../../Unreal project/SpaceGame/Project/SpaceGame/Saved/Autosaves/Temp/Untitled_1_Auto2.umap
+[2015.11.06-11.55.27:525][469]LogFileHelpers: Editor autosave (incl. sublevels) for '/Temp/Untitled_1' took 0.030
+[2015.11.06-11.55.27:525][469]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 0.030
+[2015.11.06-11.59.09:337][849]Recompiling SpaceGame...
+[2015.11.06-11.59.09:337][849]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 642 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-11.59.09:338][849]Warning: Starting HotReload took  0.0s.
+[2015.11.06-11.59.22:026][882]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 1:59:22 PM
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info Performing full C++ include scan (hot reloading a new target)
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info Creating makefile for hot reloading SpaceGame (.uproject file is newer)
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info Parsing headers for SpaceGameEditor
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info   Running UnrealHeaderTool "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" "C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\SpaceGameEditor\Development\UnrealHeaderTool.manifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -rocket -installed
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info Reflection code generated for SpaceGameEditor in 6,4545628 seconds
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info Performing 3 actions (4 in parallel)
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info SpaceGame.generated.cpp
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info Star.cpp
+[2015.11.06-11.59.22:027][882]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(34)  : error C2065: 'Lfleet' : undeclared identifier
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info ERROR: UBT ERROR: Failed to produce item: C:\Unreal project\SpaceGame\Project\SpaceGame\Binaries\Win64\UE4Editor-SpaceGame-642.dll
+[2015.11.06-11.59.22:027][882]CompilerResultsLog: Info Total build time: 12,66 seconds
+[2015.11.06-11.59.22:027][882]LogMainFrame: MainFrame: Module compiling took 12.692 seconds
+[2015.11.06-11.59.22:027][882]Warning: HotReload failed, recompile failed
+[2015.11.06-11.59.50:852][311]Recompiling SpaceGame...
+[2015.11.06-11.59.50:852][311]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 8698 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-11.59.50:853][311]Warning: Starting HotReload took  0.0s.
+[2015.11.06-11.59.59:949][390]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 1:59:59 PM
+[2015.11.06-11.59.59:949][390]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-11.59.59:949][390]CompilerResultsLog: Info Parsing headers for SpaceGameEditor
+[2015.11.06-11.59.59:949][390]CompilerResultsLog: Info   Running UnrealHeaderTool "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" "C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\SpaceGameEditor\Development\UnrealHeaderTool.manifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -rocket -installed
+[2015.11.06-11.59.59:949][390]CompilerResultsLog: Info Reflection code generated for SpaceGameEditor in 6,8236439 seconds
+[2015.11.06-11.59.59:949][390]CompilerResultsLog: Info Performing 3 actions (4 in parallel)
+[2015.11.06-11.59.59:949][390]CompilerResultsLog: Info SpaceGame.generated.cpp
+[2015.11.06-11.59.59:949][390]CompilerResultsLog: Info Star.cpp
+[2015.11.06-11.59.59:949][390]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(34)  : error C2065: 'Lfleet' : undeclared identifier
+[2015.11.06-11.59.59:949][390]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-11.59.59:950][390]CompilerResultsLog: Info ERROR: UBT ERROR: Failed to produce item: C:\Unreal project\SpaceGame\Project\SpaceGame\Binaries\Win64\UE4Editor-SpaceGame-8698.dll
+[2015.11.06-11.59.59:950][390]CompilerResultsLog: Info Total build time: 9,07 seconds
+[2015.11.06-11.59.59:950][390]LogMainFrame: MainFrame: Module compiling took 9.100 seconds
+[2015.11.06-11.59.59:950][390]Warning: HotReload failed, recompile failed
+[2015.11.06-12.00.39:478][618]Recompiling SpaceGame...
+[2015.11.06-12.00.39:479][618]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 8444 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.00.39:479][618]Warning: Starting HotReload took  0.0s.
+[2015.11.06-12.00.41:659][864]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:00:41 PM
+[2015.11.06-12.00.41:659][864]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.00.41:659][864]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2015.11.06-12.00.41:659][864]CompilerResultsLog: Info Star.cpp
+[2015.11.06-12.00.41:659][864]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(34)  : error C2338: Formatting string must be a TCHAR array.
+[2015.11.06-12.00.41:659][864]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.00.41:659][864]CompilerResultsLog: Info ERROR: UBT ERROR: Failed to produce item: C:\Unreal project\SpaceGame\Project\SpaceGame\Binaries\Win64\UE4Editor-SpaceGame-8444.dll
+[2015.11.06-12.00.41:659][864]CompilerResultsLog: Info Total build time: 2,15 seconds
+[2015.11.06-12.00.41:659][864]LogMainFrame: MainFrame: Module compiling took 2.182 seconds
+[2015.11.06-12.00.41:659][864]Warning: HotReload failed, recompile failed
+[2015.11.06-12.01.18:775][ 38]Recompiling SpaceGame...
+[2015.11.06-12.01.18:775][ 38]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 1906 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.01.18:776][ 38]Warning: Starting HotReload took  0.0s.
+[2015.11.06-12.01.21:603][358]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:01:21 PM
+[2015.11.06-12.01.21:603][358]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.01.21:603][358]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2015.11.06-12.01.21:603][358]CompilerResultsLog: Info Star.cpp
+[2015.11.06-12.01.21:603][358]CompilerResultsLog: Info [2/2] Link UE4Editor-SpaceGame-1906.dll
+[2015.11.06-12.01.21:603][358]CompilerResultsLog: Info    Creating library C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-1906.lib and object C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-1906.exp
+[2015.11.06-12.01.21:603][358]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.01.21:603][358]CompilerResultsLog: Info Total build time: 2,80 seconds
+[2015.11.06-12.01.21:604][358]LogMainFrame: MainFrame: Module compiling took 2.831 seconds
+[2015.11.06-12.01.21:674][358]LogClass: Could not find existing class Star in package /Script/SpaceGame for HotReload, assuming new class
+[2015.11.06-12.01.21:675][358]LogHotReload: Re-instancing Star after hot-reload.
+[2015.11.06-12.01.21:710][358]LogContentBrowser: Native class hierarchy updated for 'SpaceGame' in 0.0008 seconds. Added 2 classes and 2 folders.
+[2015.11.06-12.01.21:712][358]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2015.11.06-12.01.21:749][358]LogContentBrowser: Native class hierarchy populated in 0.0065 seconds. Added 1870 classes and 337 folders.
+[2015.11.06-12.01.21:754][358]LogSCSEditor:Warning: Calling UpdateTree() from Tick() more frequently than expected due to invalid tree node state. This might be a performance issue.
+[2015.11.06-12.01.22:878][491]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.06-12.01.22:878][491]PIE: New page: PIE session: Untitled_1 (Nov 6, 2015, 2:01:22 PM)
+[2015.11.06-12.01.22:878][491]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.06-12.01.22:880][491]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001578s)
+[2015.11.06-12.01.22:880][491]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.06-12.01.22:881][491]LogPlayLevel: PIE: World Init took: (0.000964s)
+[2015.11.06-12.01.22:881][491]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002765s)
+[2015.11.06-12.01.22:892][491]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.06-12.01.22:897][491]LogInit: FAudioDevice initialized.
+[2015.11.06-12.01.22:986][491]LogWorld: Game class is 'GameMode'
+[2015.11.06-12.01.23:005][491]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.06-13.01.23
+[2015.11.06-12.01.23:005][491]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.06-12.01.23:006][491]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.06-12.01.23:007][491]LogWorld: Bringing up level for play took: 0.005640
+[2015.11.06-12.01.23:013][491]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 -0.051
+[2015.11.06-12.01.23:014][491]LogTemp:Warning: hejsan
+[2015.11.06-12.01.25:868][829]LogTemp:Warning: hejsan
+[2015.11.06-12.01.28:868][189]LogTemp:Warning: hejsan
+[2015.11.06-12.01.31:868][549]LogTemp:Warning: hejsan
+[2015.11.06-12.01.34:868][909]LogTemp:Warning: hejsan
+[2015.11.06-12.01.36:683][104]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F2FC55D800
+[2015.11.06-12.01.44:122][288]Recompiling SpaceGame...
+[2015.11.06-12.01.44:122][288]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 1227 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.01.44:123][288]Warning: Starting HotReload took  0.0s.
+[2015.11.06-12.01.46:896][602]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:01:46 PM
+[2015.11.06-12.01.46:896][602]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.01.46:896][602]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2015.11.06-12.01.46:896][602]CompilerResultsLog: Info Star.cpp
+[2015.11.06-12.01.46:896][602]CompilerResultsLog: Info [2/2] Link UE4Editor-SpaceGame-1227.dll
+[2015.11.06-12.01.46:896][602]CompilerResultsLog: Info    Creating library C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-1227.lib and object C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-1227.exp
+[2015.11.06-12.01.46:896][602]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.01.46:896][602]CompilerResultsLog: Info Total build time: 2,75 seconds
+[2015.11.06-12.01.46:896][602]LogMainFrame: MainFrame: Module compiling took 2.776 seconds
+[2015.11.06-12.01.46:930][602]LogContentBrowser: Native class hierarchy updated for 'SpaceGame' in 0.0009 seconds. Added 2 classes and 2 folders.
+[2015.11.06-12.01.46:930][602]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2015.11.06-12.01.46:970][602]LogContentBrowser: Native class hierarchy populated in 0.0067 seconds. Added 1870 classes and 337 folders.
+[2015.11.06-12.01.48:463][780]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.06-12.01.48:463][780]PIE: New page: PIE session: Untitled_1 (Nov 6, 2015, 2:01:48 PM)
+[2015.11.06-12.01.48:463][780]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.06-12.01.48:465][780]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001123s)
+[2015.11.06-12.01.48:466][780]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.06-12.01.48:466][780]LogPlayLevel: PIE: World Init took: (0.001368s)
+[2015.11.06-12.01.48:466][780]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002682s)
+[2015.11.06-12.01.48:477][780]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.06-12.01.48:481][780]LogInit: FAudioDevice initialized.
+[2015.11.06-12.01.48:513][780]LogWorld: Game class is 'GameMode'
+[2015.11.06-12.01.48:515][780]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.06-13.01.48
+[2015.11.06-12.01.48:515][780]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.06-12.01.48:515][780]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.06-12.01.48:515][780]LogWorld: Bringing up level for play took: 0.001399
+[2015.11.06-12.01.48:516][780]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 -0.548
+[2015.11.06-12.01.48:517][780]LogTemp:Warning: hejsan
+[2015.11.06-12.01.51:457][133]LogTemp:Warning: hejsan
+[2015.11.06-12.01.54:457][493]LogTemp:Warning: hejsan
+[2015.11.06-12.01.55:232][581]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F2ECAA4360
+[2015.11.06-12.02.01:007][270]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.06-12.02.01:007][270]PIE: New page: PIE session: Untitled_1 (Nov 6, 2015, 2:02:01 PM)
+[2015.11.06-12.02.01:007][270]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.06-12.02.01:008][270]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001132s)
+[2015.11.06-12.02.01:009][270]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.06-12.02.01:009][270]LogPlayLevel: PIE: World Init took: (0.000921s)
+[2015.11.06-12.02.01:010][270]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002246s)
+[2015.11.06-12.02.01:020][270]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.06-12.02.01:025][270]LogInit: FAudioDevice initialized.
+[2015.11.06-12.02.01:058][270]LogWorld: Game class is 'GameMode'
+[2015.11.06-12.02.01:060][270]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.06-13.02.01
+[2015.11.06-12.02.01:060][270]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.06-12.02.01:061][270]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.06-12.02.01:061][270]LogWorld: Bringing up level for play took: 0.001528
+[2015.11.06-12.02.01:062][270]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 -0.003
+[2015.11.06-12.02.01:062][270]LogTemp:Warning: hejsan
+[2015.11.06-12.02.02:133][393]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F2FC9D1620
+[2015.11.06-12.02.04:612][690]LogEditorViewport: Clicking on Actor (LMB): PlayerStart (Player Start)
+[2015.11.06-12.04.02:317][782]LogVSAccessor:Warning: Cannot add source files as we failed to find 'C:/Unreal project/SpaceGame/Project/SpaceGame/Source/SpaceGame/SpaceGame.Build.cs' in the solution
+[2015.11.06-12.04.02:317][782]Running C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe  -projectfiles -project="C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -game -rocket -progress
+[2015.11.06-12.04.02:619][782]Discovering modules, targets and source code for game...
+[2015.11.06-12.04.08:065][782]LogVSAccessor:Warning: Couldn't access Visual Studio
+[2015.11.06-12.04.08:071][782]Recompiling SpaceGame...
+[2015.11.06-12.04.08:071][782]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 1344 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:04:20 PM
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info Creating makefile for hot reloading SpaceGame (List of files containing UHT types has changed)
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info Parsing headers for SpaceGameEditor
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info   Running UnrealHeaderTool "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" "C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\SpaceGameEditor\Development\UnrealHeaderTool.manifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -rocket -installed
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info Reflection code generated for SpaceGameEditor in 6,0015663 seconds
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info Performing 3 actions (4 in parallel)
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info Fleet.cpp
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info SpaceGame.generated.cpp
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info [3/3] Link UE4Editor-SpaceGame-1344.dll
+[2015.11.06-12.04.20:674][782]CompilerResultsLog: Info    Creating library C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-1344.lib and object C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-1344.exp
+[2015.11.06-12.04.20:675][782]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.04.20:675][782]CompilerResultsLog: Info Total build time: 12,54 seconds
+[2015.11.06-12.04.20:675][782]LogMainFrame: MainFrame: Module compiling took 12.610 seconds
+[2015.11.06-12.04.20:760][782]LogClass: Could not find existing class Fleet in package /Script/SpaceGame for HotReload, assuming new class
+[2015.11.06-12.04.20:765][782]LogContentBrowser: Native class hierarchy updated for 'SpaceGame' in 0.0021 seconds. Added 3 classes and 2 folders.
+[2015.11.06-12.04.20:767][782]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2015.11.06-12.04.20:817][782]LogContentBrowser: Native class hierarchy populated in 0.0067 seconds. Added 1871 classes and 337 folders.
+[2015.11.06-12.04.20:818][782]Warning: HotReload operation took 12.8s.
+[2015.11.06-12.04.20:835][782]LogHotReload: New module detected: UE4Editor-SpaceGame-1344.dll
+[2015.11.06-12.04.20:848][783]LogHotReload: Starting Hot-Reload from IDE
+[2015.11.06-12.04.20:891][783]LogContentBrowser: Native class hierarchy updated for 'SpaceGame' in 0.0009 seconds. Added 3 classes and 2 folders.
+[2015.11.06-12.04.20:892][783]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2015.11.06-12.04.20:902][783]LogContentBrowser: Native class hierarchy populated in 0.0069 seconds. Added 1871 classes and 337 folders.
+[2015.11.06-12.04.30:831][793]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Unreal project/SpaceGame/Project/SpaceGame/Source/SpaceGame/Fleet.h'
+[2015.11.06-12.04.30:918][793]LogVSAccessor:Warning: Couldn't goto line number '0' in 'C:/Unreal project/SpaceGame/Project/SpaceGame/Source/SpaceGame/Fleet.cpp'
+[2015.11.06-12.11.50:615][113]Recompiling SpaceGame...
+[2015.11.06-12.11.50:615][113]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 5360 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.11.50:616][113]Warning: Starting HotReload took  0.0s.
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:12:00 PM
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info Parsing headers for SpaceGameEditor
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info   Running UnrealHeaderTool "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" "C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\SpaceGameEditor\Development\UnrealHeaderTool.manifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -rocket -installed
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info Reflection code generated for SpaceGameEditor in 7,0625521 seconds
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info Performing 4 actions (4 in parallel)
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info Star.cpp
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info Fleet.cpp
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info SpaceGame.generated.cpp
+[2015.11.06-12.12.00:169][858]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(21)  : error C2440: '=' : cannot convert from 'const float' to 'AFleet *'
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info ERROR: UBT ERROR: Failed to produce item: C:\Unreal project\SpaceGame\Project\SpaceGame\Binaries\Win64\UE4Editor-SpaceGame-5360.dll
+[2015.11.06-12.12.00:169][858]CompilerResultsLog: Info Total build time: 9,49 seconds
+[2015.11.06-12.12.00:169][858]LogMainFrame: MainFrame: Module compiling took 9.556 seconds
+[2015.11.06-12.12.00:169][858]Warning: HotReload failed, recompile failed
+[2015.11.06-12.12.37:845][198]Recompiling SpaceGame...
+[2015.11.06-12.12.37:845][198]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 378 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.12.37:846][198]Warning: Starting HotReload took  0.0s.
+[2015.11.06-12.12.40:122][451]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:12:40 PM
+[2015.11.06-12.12.40:122][451]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.12.40:122][451]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2015.11.06-12.12.40:122][451]CompilerResultsLog: Info Star.cpp
+[2015.11.06-12.12.40:122][451]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(31)  : warning C4996: 'AFleet::operator new': operator new has been deprecated for UObjects - please use NewObject or NewNamedObject instead Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+[2015.11.06-12.12.40:122][451]CompilerResultsLog: Info          c:\unreal project\spacegame\project\spacegame\source\spacegame\Fleet.h(11)  : see declaration of 'AFleet::operator new'
+[2015.11.06-12.12.40:122][451]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(33)  : error C2228: left of '.AddShip' must have class/struct/union
+[2015.11.06-12.12.40:122][451]CompilerResultsLog: Info         type is 'AFleet *'
+[2015.11.06-12.12.40:122][451]CompilerResultsLog: Info         did you intend to use '->' instead?
+[2015.11.06-12.12.40:123][451]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.12.40:123][451]CompilerResultsLog: Info ERROR: UBT ERROR: Failed to produce item: C:\Unreal project\SpaceGame\Project\SpaceGame\Binaries\Win64\UE4Editor-SpaceGame-378.dll
+[2015.11.06-12.12.40:123][451]CompilerResultsLog: Info Total build time: 2,25 seconds
+[2015.11.06-12.12.40:123][451]LogMainFrame: MainFrame: Module compiling took 2.280 seconds
+[2015.11.06-12.12.40:123][451]Warning: HotReload failed, recompile failed
+[2015.11.06-12.13.31:941][272]Recompiling SpaceGame...
+[2015.11.06-12.13.31:941][272]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 6751 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.13.31:942][272]Warning: Starting HotReload took  0.0s.
+[2015.11.06-12.13.34:233][534]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:13:34 PM
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info Star.cpp
+[2015.11.06-12.13.34:234][534]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(31)  : error C2780: 'T *NewObject(UObject *,FName,EObjectFlags,UObject *,bool,FObjectInstancingGraph *)' : expects 6 arguments - 1 provided
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info          c:\program files\epic games\4.9\engine\source\runtime\coreuobject\public\uobject\UObjectGlobals.h(1134)  : see declaration of 'NewObject'
+[2015.11.06-12.13.34:234][534]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(31)  : error C2783: 'T *NewObject(UObject *,UClass *,FName,EObjectFlags,UObject *,bool,FObjectInstancingGraph *)' : could not deduce template argument for 'T'
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info          c:\program files\epic games\4.9\engine\source\runtime\coreuobject\public\uobject\UObjectGlobals.h(1122)  : see declaration of 'NewObject'
+[2015.11.06-12.13.34:234][534]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(33)  : error C2228: left of '.AddShip' must have class/struct/union
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info         type is 'AFleet *'
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info         did you intend to use '->' instead?
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info ERROR: UBT ERROR: Failed to produce item: C:\Unreal project\SpaceGame\Project\SpaceGame\Binaries\Win64\UE4Editor-SpaceGame-6751.dll
+[2015.11.06-12.13.34:234][534]CompilerResultsLog: Info Total build time: 2,27 seconds
+[2015.11.06-12.13.34:234][534]LogMainFrame: MainFrame: Module compiling took 2.295 seconds
+[2015.11.06-12.13.34:234][534]Warning: HotReload failed, recompile failed
+[2015.11.06-12.19.17:972][703]Recompiling SpaceGame...
+[2015.11.06-12.19.17:972][703]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 6322 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.19.17:973][703]Warning: Starting HotReload took  0.0s.
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:19:26 PM
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info Parsing headers for SpaceGameEditor
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info   Running UnrealHeaderTool "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" "C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\SpaceGameEditor\Development\UnrealHeaderTool.manifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -rocket -installed
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info Reflection code generated for SpaceGameEditor in 6,4777233 seconds
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info Performing 3 actions (4 in parallel)
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info Star.cpp
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info SpaceGame.generated.cpp
+[2015.11.06-12.19.26:866][892]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(36)  : error C2780: 'T *ConstructObject(UClass *,UObject *,FName,EObjectFlags,UObject *,bool,FObjectInstancingGraph *)' : expects 7 arguments - 0 provided
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info          c:\program files\epic games\4.9\engine\source\runtime\coreuobject\public\uobject\UObjectGlobals.h(1102)  : see declaration of 'ConstructObject'
+[2015.11.06-12.19.26:866][892]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(38)  : error C2228: left of '.AddShip' must have class/struct/union
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info         type is 'AFleet *'
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info         did you intend to use '->' instead?
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info ERROR: UBT ERROR: Failed to produce item: C:\Unreal project\SpaceGame\Project\SpaceGame\Binaries\Win64\UE4Editor-SpaceGame-6322.dll
+[2015.11.06-12.19.26:866][892]CompilerResultsLog: Info Total build time: 8,80 seconds
+[2015.11.06-12.19.26:866][892]LogMainFrame: MainFrame: Module compiling took 8.897 seconds
+[2015.11.06-12.19.26:866][892]Warning: HotReload failed, recompile failed
+[2015.11.06-12.23.49:481][965]Recompiling SpaceGame...
+[2015.11.06-12.23.49:481][965]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 3011 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.23.49:482][965]Warning: Starting HotReload took  0.0s.
+[2015.11.06-12.23.51:769][221]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:23:51 PM
+[2015.11.06-12.23.51:770][221]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.23.51:770][221]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2015.11.06-12.23.51:770][221]CompilerResultsLog: Info Star.cpp
+[2015.11.06-12.23.51:770][221]CompilerResultsLog:Error: Error C:\Unreal project\SpaceGame\Project\SpaceGame\Source\SpaceGame\Star.cpp(38)  : error C2228: left of '.AddShip' must have class/struct/union
+[2015.11.06-12.23.51:770][221]CompilerResultsLog: Info         type is 'AFleet *'
+[2015.11.06-12.23.51:770][221]CompilerResultsLog: Info         did you intend to use '->' instead?
+[2015.11.06-12.23.51:770][221]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.23.51:770][221]CompilerResultsLog: Info ERROR: UBT ERROR: Failed to produce item: C:\Unreal project\SpaceGame\Project\SpaceGame\Binaries\Win64\UE4Editor-SpaceGame-3011.dll
+[2015.11.06-12.23.51:770][221]CompilerResultsLog: Info Total build time: 2,26 seconds
+[2015.11.06-12.23.51:770][221]LogMainFrame: MainFrame: Module compiling took 2.291 seconds
+[2015.11.06-12.23.51:770][221]Warning: HotReload failed, recompile failed
+[2015.11.06-12.24.09:010][194]Recompiling SpaceGame...
+[2015.11.06-12.24.09:010][194]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 5314 Win64 Development -editorrecompile -canskiplink "C:/Unreal project/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.06-12.24.09:012][194]Warning: Starting HotReload took  0.0s.
+[2015.11.06-12.24.11:822][519]CompilerResultsLog: New page: Compilation - Nov 6, 2015, 2:24:11 PM
+[2015.11.06-12.24.11:822][519]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.06-12.24.11:822][519]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2015.11.06-12.24.11:822][519]CompilerResultsLog: Info Star.cpp
+[2015.11.06-12.24.11:822][519]CompilerResultsLog: Info [2/2] Link UE4Editor-SpaceGame-5314.dll
+[2015.11.06-12.24.11:822][519]CompilerResultsLog: Info    Creating library C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-5314.lib and object C:\Unreal project\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-5314.exp
+[2015.11.06-12.24.11:822][519]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.06-12.24.11:822][519]CompilerResultsLog: Info Total build time: 2,79 seconds
+[2015.11.06-12.24.11:822][519]LogMainFrame: MainFrame: Module compiling took 2.814 seconds
+[2015.11.06-12.24.11:847][519]LogClass: Could not find existing class Fleet in package /Script/SpaceGame for HotReload, assuming new class
+[2015.11.06-12.24.11:849][519]LogHotReload: Re-instancing Fleet after hot-reload.
+[2015.11.06-12.24.11:868][519]LogContentBrowser: Native class hierarchy updated for 'SpaceGame' in 0.0010 seconds. Added 3 classes and 2 folders.
+[2015.11.06-12.24.11:869][519]Warning: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2015.11.06-12.24.11:909][519]LogContentBrowser: Native class hierarchy populated in 0.0069 seconds. Added 1871 classes and 337 folders.
+[2015.11.06-12.24.15:049][894]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.06-12.24.15:049][894]PIE: New page: PIE session: Untitled_1 (Nov 6, 2015, 2:24:15 PM)
+[2015.11.06-12.24.15:049][894]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.06-12.24.15:051][894]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001680s)
+[2015.11.06-12.24.15:051][894]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.06-12.24.15:052][894]LogPlayLevel: PIE: World Init took: (0.000956s)
+[2015.11.06-12.24.15:052][894]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002876s)
+[2015.11.06-12.24.17:810][894]LogCrashTracker: 
+
+
+[2015.11.06-12.24.17:810][894]LogCrashTracker: 
+
+
+[2015.11.06-12.24.17:810][894]LogWindows: === Critical error: ===
+Fatal error!
+
+
+
+[2015.11.06-12.24.17:906][894]LogExit: Executing StaticShutdownAfterError
+[2015.11.06-12.24.18:261][894]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.06-12.24.18:261][894]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.06-12.24.18:261][894]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.06-12.24.18:261][894]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.06-12.24.18:261][894]LogWindows: FPlatformMisc::RequestExit(1)
+[2015.11.06-12.24.18:261][894]Log file closed, 11/06/15 13:24:18

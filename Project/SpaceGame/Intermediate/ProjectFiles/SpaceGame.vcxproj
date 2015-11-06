@@ -257,6 +257,8 @@
 		<None Include="..\..\Config\DefaultEditor.ini" />
 		<None Include="..\..\Config\DefaultEngine.ini" />
 		<None Include="..\..\Config\DefaultGame.ini" />
+		<ClCompile Include="..\..\Source\SpaceGame\Fleet.cpp" />
+		<ClInclude Include="..\..\Source\SpaceGame\Fleet.h" />
 		<None Include="..\..\Source\SpaceGame\SpaceGame.Build.cs" />
 		<ClCompile Include="..\..\Source\SpaceGame\SpaceGame.cpp" />
 		<ClInclude Include="..\..\Source\SpaceGame\SpaceGame.h" />

@@ -5,6 +5,9 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef SPACEGAME_Fleet_generated_h
+	#include "Fleet.h"
+#endif
 #ifndef SPACEGAME_SpaceGameGameMode_generated_h
 	#include "SpaceGameGameMode.h"
 #endif
