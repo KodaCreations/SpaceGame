@@ -13,25 +13,32 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	{
 	}
 	IMPLEMENT_CLASS(AFleet, 4108666403);
+	void AStar::StaticRegisterNativesAStar()
+	{
+	}
+	IMPLEMENT_CLASS(AStar, 2253914232);
+	void ALink::StaticRegisterNativesALink()
+	{
+	}
+	IMPLEMENT_CLASS(ALink, 3415673960);
 	void ASpaceGameGameMode::StaticRegisterNativesASpaceGameGameMode()
 	{
 	}
 	IMPLEMENT_CLASS(ASpaceGameGameMode, 997237742);
-	void AStar::StaticRegisterNativesAStar()
-	{
-	}
-	IMPLEMENT_CLASS(AStar, 2991637635);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
+	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
 	SPACEGAME_API class UClass* Z_Construct_UClass_AFleet_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AFleet();
-	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister();
-	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AStar_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AStar();
+	SPACEGAME_API class UClass* Z_Construct_UClass_ALink_NoRegister();
+	SPACEGAME_API class UClass* Z_Construct_UClass_ALink();
+	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister();
+	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode();
 	SPACEGAME_API class UPackage* Z_Construct_UPackage_SpaceGame();
 	UClass* Z_Construct_UClass_AFleet_NoRegister()
 	{
@@ -64,6 +71,86 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFleet(Z_Construct_UClass_AFleet, TEXT("AFleet"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFleet);
+	UClass* Z_Construct_UClass_AStar_NoRegister()
+	{
+		return AStar::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AStar()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_SpaceGame();
+			OuterClass = AStar::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(mesh, AStar), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Star.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Star.h"));
+				MetaData->SetValue(NewProp_mesh, TEXT("Category"), TEXT("Star"));
+				MetaData->SetValue(NewProp_mesh, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_mesh, TEXT("ModuleRelativePath"), TEXT("Star.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AStar(Z_Construct_UClass_AStar, TEXT("AStar"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AStar);
+	UClass* Z_Construct_UClass_ALink_NoRegister()
+	{
+		return ALink::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ALink()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_SpaceGame();
+			OuterClass = ALink::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_Star2 = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Star2"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Star2, ALink), 0x0000000000000001, Z_Construct_UClass_AStar_NoRegister());
+				UProperty* NewProp_Star1 = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Star1"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Star1, ALink), 0x0000000000000001, Z_Construct_UClass_AStar_NoRegister());
+				UProperty* NewProp_mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(mesh, ALink), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Link.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Link.h"));
+				MetaData->SetValue(NewProp_Star2, TEXT("Category"), TEXT("Link"));
+				MetaData->SetValue(NewProp_Star2, TEXT("ModuleRelativePath"), TEXT("Link.h"));
+				MetaData->SetValue(NewProp_Star1, TEXT("Category"), TEXT("Link"));
+				MetaData->SetValue(NewProp_Star1, TEXT("ModuleRelativePath"), TEXT("Link.h"));
+				MetaData->SetValue(NewProp_mesh, TEXT("Category"), TEXT("Link"));
+				MetaData->SetValue(NewProp_mesh, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_mesh, TEXT("ModuleRelativePath"), TEXT("Link.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ALink(Z_Construct_UClass_ALink, TEXT("ALink"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ALink);
 	UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister()
 	{
 		return ASpaceGameGameMode::StaticClass();
@@ -98,37 +185,6 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ASpaceGameGameMode(Z_Construct_UClass_ASpaceGameGameMode, TEXT("ASpaceGameGameMode"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ASpaceGameGameMode);
-	UClass* Z_Construct_UClass_AStar_NoRegister()
-	{
-		return AStar::StaticClass();
-	}
-	UClass* Z_Construct_UClass_AStar()
-	{
-		static UClass* OuterClass = NULL;
-		if (!OuterClass)
-		{
-			Z_Construct_UClass_AActor();
-			Z_Construct_UPackage_SpaceGame();
-			OuterClass = AStar::StaticClass();
-			if (!(OuterClass->ClassFlags & CLASS_Constructed))
-			{
-				UObjectForceRegistration(OuterClass);
-				OuterClass->ClassFlags |= 0x20900080;
-
-
-				OuterClass->StaticLink();
-#if WITH_METADATA
-				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
-				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Star.h"));
-				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Star.h"));
-#endif
-			}
-		}
-		check(OuterClass->GetClass());
-		return OuterClass;
-	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_AStar(Z_Construct_UClass_AStar, TEXT("AStar"));
-	DEFINE_VTABLE_PTR_HELPER_CTOR(AStar);
 	UPackage* Z_Construct_UPackage_SpaceGame()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -137,8 +193,8 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x0628242D;
-			Guid.B = 0xFF7C85FD;
+			Guid.A = 0x33790BF9;
+			Guid.B = 0x4B0B36CF;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

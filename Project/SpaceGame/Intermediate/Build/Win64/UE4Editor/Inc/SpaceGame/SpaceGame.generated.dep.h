@@ -8,9 +8,12 @@
 #ifndef SPACEGAME_Fleet_generated_h
 	#include "Fleet.h"
 #endif
-#ifndef SPACEGAME_SpaceGameGameMode_generated_h
-	#include "SpaceGameGameMode.h"
-#endif
 #ifndef SPACEGAME_Star_generated_h
 	#include "Star.h"
+#endif
+#ifndef SPACEGAME_Link_generated_h
+	#include "Link.h"
+#endif
+#ifndef SPACEGAME_SpaceGameGameMode_generated_h
+	#include "SpaceGameGameMode.h"
 #endif

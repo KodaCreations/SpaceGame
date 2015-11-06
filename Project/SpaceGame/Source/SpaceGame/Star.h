@@ -29,4 +29,6 @@ private:
 
 	// Fleet creation timer
 	float timer;
+	UPROPERTY(EditAnywhere)
+		UStaticMeshComponent* mesh;
 };
