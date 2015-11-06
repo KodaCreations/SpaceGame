@@ -1,0 +1,20 @@
+SpaceGame
+	Level design
+		Stars
+			Upgrades
+			Production (ships and resources)
+		Links between stars
+		Create levels
+	Factions
+		Different factions
+		Balancing
+	UI
+		Game Menu
+		Ingame UI
+	AI
+		Fleet movement
+		Taking stars
+		Attacking player
+	Combat
+		Fleet vs Fleet
+		Fleet vs Star
