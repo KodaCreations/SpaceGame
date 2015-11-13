@@ -9,10 +9,20 @@
 #include "SpaceGame.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
-	void AFleet::StaticRegisterNativesAFleet()
+	void AShip::StaticRegisterNativesAShip()
 	{
 	}
-	IMPLEMENT_CLASS(AFleet, 4108666403);
+	IMPLEMENT_CLASS(AShip, 3040245790);
+	void AFleet::StaticRegisterNativesAFleet()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnBeginOverlap",(Native)&AFleet::execOnBeginOverlap);
+		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnEndOverlap",(Native)&AFleet::execOnEndOverlap);
+	}
+	IMPLEMENT_CLASS(AFleet, 3345443351);
+	void ACombat::StaticRegisterNativesACombat()
+	{
+	}
+	IMPLEMENT_CLASS(ACombat, 3229609665);
 	void AStar::StaticRegisterNativesAStar()
 	{
 	}
@@ -28,11 +38,21 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
+	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
+	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	SPACEGAME_API class UClass* Z_Construct_UClass_AShip_NoRegister();
+	SPACEGAME_API class UClass* Z_Construct_UClass_AShip();
+	SPACEGAME_API class UFunction* Z_Construct_UFunction_AFleet_OnBeginOverlap();
+	SPACEGAME_API class UFunction* Z_Construct_UFunction_AFleet_OnEndOverlap();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AFleet_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AFleet();
+	SPACEGAME_API class UClass* Z_Construct_UClass_ACombat_NoRegister();
+	SPACEGAME_API class UClass* Z_Construct_UClass_ACombat();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AStar_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AStar();
 	SPACEGAME_API class UClass* Z_Construct_UClass_ALink_NoRegister();
@@ -40,6 +60,108 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode();
 	SPACEGAME_API class UPackage* Z_Construct_UPackage_SpaceGame();
+	UClass* Z_Construct_UClass_AShip_NoRegister()
+	{
+		return AShip::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AShip()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_SpaceGame();
+			OuterClass = AShip::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_morale = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("morale"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(morale, AShip), 0x0000000000000001);
+				UProperty* NewProp_defence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("defence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(defence, AShip), 0x0000000000000001);
+				UProperty* NewProp_health = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("health"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(health, AShip), 0x0000000000000001);
+				UProperty* NewProp_damage = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("damage"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(damage, AShip), 0x0000000000000001);
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Ship.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Ship.h"));
+				MetaData->SetValue(NewProp_morale, TEXT("Category"), TEXT("Ship"));
+				MetaData->SetValue(NewProp_morale, TEXT("ModuleRelativePath"), TEXT("Ship.h"));
+				MetaData->SetValue(NewProp_defence, TEXT("Category"), TEXT("Ship"));
+				MetaData->SetValue(NewProp_defence, TEXT("ModuleRelativePath"), TEXT("Ship.h"));
+				MetaData->SetValue(NewProp_health, TEXT("Category"), TEXT("Ship"));
+				MetaData->SetValue(NewProp_health, TEXT("ModuleRelativePath"), TEXT("Ship.h"));
+				MetaData->SetValue(NewProp_damage, TEXT("Category"), TEXT("Ship"));
+				MetaData->SetValue(NewProp_damage, TEXT("ModuleRelativePath"), TEXT("Ship.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AShip(Z_Construct_UClass_AShip, TEXT("AShip"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AShip);
+	UFunction* Z_Construct_UFunction_AFleet_OnBeginOverlap()
+	{
+		struct Fleet_eventOnBeginOverlap_Parms
+		{
+			AActor* OtherActor;
+			UPrimitiveComponent* OtherComp;
+			int32 OtherBodyIndex;
+			bool bFromSweep;
+			FHitResult SweepResult;
+		};
+		UObject* Outer=Z_Construct_UClass_AFleet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnBeginOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00420401, 65535, sizeof(Fleet_eventOnBeginOverlap_Parms));
+			UProperty* NewProp_SweepResult = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("SweepResult"), RF_Public|RF_Transient|RF_Native) UStructProperty(CPP_PROPERTY_BASE(SweepResult, Fleet_eventOnBeginOverlap_Parms), 0x0000008008000182, Z_Construct_UScriptStruct_FHitResult());
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(bFromSweep, Fleet_eventOnBeginOverlap_Parms, bool);
+			UProperty* NewProp_bFromSweep = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("bFromSweep"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(bFromSweep, Fleet_eventOnBeginOverlap_Parms), 0x0000000000000080, CPP_BOOL_PROPERTY_BITMASK(bFromSweep, Fleet_eventOnBeginOverlap_Parms), sizeof(bool), true);
+			UProperty* NewProp_OtherBodyIndex = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherBodyIndex"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(OtherBodyIndex, Fleet_eventOnBeginOverlap_Parms), 0x0000000000000080);
+			UProperty* NewProp_OtherComp = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherComp, Fleet_eventOnBeginOverlap_Parms), 0x0000000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, Fleet_eventOnBeginOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+			MetaData->SetValue(NewProp_OtherComp, TEXT("EditInline"), TEXT("true"));
+#endif
+		}
+		return ReturnFunction;
+	}
+	UFunction* Z_Construct_UFunction_AFleet_OnEndOverlap()
+	{
+		struct Fleet_eventOnEndOverlap_Parms
+		{
+			AActor* OtherActor;
+			UPrimitiveComponent* OtherComp;
+			int32 OtherBodyIndex;
+		};
+		UObject* Outer=Z_Construct_UClass_AFleet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OnEndOverlap"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x00020401, 65535, sizeof(Fleet_eventOnEndOverlap_Parms));
+			UProperty* NewProp_OtherBodyIndex = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherBodyIndex"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(OtherBodyIndex, Fleet_eventOnEndOverlap_Parms), 0x0000000000000080);
+			UProperty* NewProp_OtherComp = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherComp"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherComp, Fleet_eventOnEndOverlap_Parms), 0x0000000000080080, Z_Construct_UClass_UPrimitiveComponent_NoRegister());
+			UProperty* NewProp_OtherActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("OtherActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(OtherActor, Fleet_eventOnEndOverlap_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+			MetaData->SetValue(NewProp_OtherComp, TEXT("EditInline"), TEXT("true"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AFleet_NoRegister()
 	{
 		return AFleet::StaticClass();
@@ -57,12 +179,44 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 				UObjectForceRegistration(OuterClass);
 				OuterClass->ClassFlags |= 0x20900080;
 
+				OuterClass->LinkChild(Z_Construct_UFunction_AFleet_OnBeginOverlap());
+				OuterClass->LinkChild(Z_Construct_UFunction_AFleet_OnEndOverlap());
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_totalDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalDefence, AFleet), 0x0000000000020001);
+				UProperty* NewProp_totalHealth = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalHealth"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalHealth, AFleet), 0x0000000000020001);
+				UProperty* NewProp_totalDamage = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalDamage"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalDamage, AFleet), 0x0000000000020001);
+				UProperty* NewProp_totalMorale = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalMorale"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalMorale, AFleet), 0x0000000000020001);
+				UProperty* NewProp_ships = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ships"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(ships, AFleet), 0x0000000000000001);
+				UProperty* NewProp_ship = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ship"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ship, AFleet), 0x0000000000000001, Z_Construct_UClass_AShip_NoRegister());
+				UProperty* NewProp_Trigger = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Trigger"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Trigger, AFleet), 0x00000000000a0009, Z_Construct_UClass_UBoxComponent_NoRegister());
+				UProperty* NewProp_mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(mesh, AFleet), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFleet_OnBeginOverlap()); // 1474114864
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFleet_OnEndOverlap()); // 1387912959
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_totalDefence, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_totalDefence, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_totalHealth, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_totalHealth, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_totalDamage, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_totalDamage, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_totalMorale, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_totalMorale, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_ships, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_ships, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_ship, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_ship, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_Trigger, TEXT("Category"), TEXT("Triggers"));
+				MetaData->SetValue(NewProp_Trigger, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Trigger, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_mesh, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_mesh, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_mesh, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 #endif
 			}
 		}
@@ -71,6 +225,45 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AFleet(Z_Construct_UClass_AFleet, TEXT("AFleet"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AFleet);
+	UClass* Z_Construct_UClass_ACombat_NoRegister()
+	{
+		return ACombat::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ACombat()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_SpaceGame();
+			OuterClass = ACombat::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_aiFleet = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("aiFleet"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(aiFleet, ACombat), 0x0000000000000001, Z_Construct_UClass_AFleet_NoRegister());
+				UProperty* NewProp_playerFleet = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("playerFleet"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(playerFleet, ACombat), 0x0000000000000001, Z_Construct_UClass_AFleet_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Combat.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Combat.h"));
+				MetaData->SetValue(NewProp_aiFleet, TEXT("Category"), TEXT("Combat"));
+				MetaData->SetValue(NewProp_aiFleet, TEXT("ModuleRelativePath"), TEXT("Combat.h"));
+				MetaData->SetValue(NewProp_playerFleet, TEXT("Category"), TEXT("Combat"));
+				MetaData->SetValue(NewProp_playerFleet, TEXT("ModuleRelativePath"), TEXT("Combat.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ACombat(Z_Construct_UClass_ACombat, TEXT("ACombat"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ACombat);
 	UClass* Z_Construct_UClass_AStar_NoRegister()
 	{
 		return AStar::StaticClass();
@@ -193,8 +386,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x33790BF9;
-			Guid.B = 0x4B0B36CF;
+			Guid.A = 0xF20B0753;
+			Guid.B = 0x42FD2830;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

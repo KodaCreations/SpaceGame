@@ -8,13 +8,60 @@
 #include "ObjectBase.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef SPACEGAME_Fleet_generated_h
 #error "Fleet.generated.h already included, missing '#pragma once' in Fleet.h"
 #endif
 #define SPACEGAME_Fleet_generated_h
 
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_RPC_WRAPPERS
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_RPC_WRAPPERS_NO_PURE_DECLS
+#define SpaceGame_Source_SpaceGame_Fleet_h_11_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnEndOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_FINISH; \
+		this->OnEndOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex); \
+	} \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		this->OnBeginOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+	}
+
+
+#define SpaceGame_Source_SpaceGame_Fleet_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnEndOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_FINISH; \
+		this->OnEndOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex); \
+	} \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		this->OnBeginOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+	}
+
+
 #define SpaceGame_Source_SpaceGame_Fleet_h_11_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAFleet(); \

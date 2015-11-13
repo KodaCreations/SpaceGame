@@ -5,8 +5,14 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef SPACEGAME_Ship_generated_h
+	#include "Ship.h"
+#endif
 #ifndef SPACEGAME_Fleet_generated_h
 	#include "Fleet.h"
+#endif
+#ifndef SPACEGAME_Combat_generated_h
+	#include "Combat.h"
 #endif
 #ifndef SPACEGAME_Star_generated_h
 	#include "Star.h"

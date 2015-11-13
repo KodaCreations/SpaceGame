@@ -15,6 +15,8 @@ AStar::AStar()
 	mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	mesh->AttachTo(RootComponent);
 
+	//Trigger->OnComponentBeginOverlap.AddDynamic(this, &AMyActor::OnBeginOverlap);
+	//Trigger->OnComponentEndOverlap.AddDynamic(this, &AMyActor::OnEndOverlap);
 	fleet = nullptr;
 }
 

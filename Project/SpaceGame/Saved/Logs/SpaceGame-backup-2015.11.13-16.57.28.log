@@ -1,0 +1,452 @@
+﻿[2015.11.13-15.44.14:576][  0]Log file open, 11/13/15 16:44:14
+[2015.11.13-15.44.14:576][  0]LogInit:Display: Running engine for game: SpaceGame
+[2015.11.13-15.44.14:576][  0]LogInit:Display: RandInit(-974474701) SRandInit(-974474700).
+[2015.11.13-15.44.14:576][  0]LogTaskGraph: Started task graph with 4 named threads and 7 total threads.
+[2015.11.13-15.44.14:576][  0]LogStats: Stats thread started at 0.087455
+[2015.11.13-15.44.14:576][  0]LogInit: Version: 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.11.13-15.44.14:576][  0]LogInit: API Version: 2672455
+[2015.11.13-15.44.14:576][  0]LogInit: Compiled (64-bit): Sep 28 2015 10:25:44
+[2015.11.13-15.44.14:576][  0]LogInit: Compiled with Visual C++: 18.00.21005.01
+[2015.11.13-15.44.14:576][  0]LogInit: Build Configuration: Development
+[2015.11.13-15.44.14:576][  0]LogInit: Branch Name: ++depot+UE4-Releases+4.9
+[2015.11.13-15.44.14:576][  0]LogInit: Command line:  
+[2015.11.13-15.44.14:576][  0]LogInit: Base directory: C:/Program Files/Epic Games/4.9/Engine/Binaries/Win64/
+[2015.11.13-15.44.14:576][  0]LogInit: Rocket: 1
+[2015.11.13-15.44.14:576][  0]LogInit: Using libcurl 7.41.0
+[2015.11.13-15.44.14:576][  0]LogInit:  - built for x86_64-pc-win32
+[2015.11.13-15.44.14:576][  0]LogInit:  - supports SSL with WinSSL
+[2015.11.13-15.44.14:576][  0]LogInit:  - other features:
+[2015.11.13-15.44.14:576][  0]LogInit:      CURL_VERSION_SSL
+[2015.11.13-15.44.14:576][  0]LogInit:      CURL_VERSION_IPV6
+[2015.11.13-15.44.14:576][  0]LogInit:      CURL_VERSION_ASYNCHDNS
+[2015.11.13-15.44.14:576][  0]LogInit:      CURL_VERSION_LARGEFILE
+[2015.11.13-15.44.14:576][  0]LogInit:      CURL_VERSION_IDN
+[2015.11.13-15.44.14:576][  0]LogInit:  CurlRequestOptions (configurable via config and command line):
+[2015.11.13-15.44.14:576][  0]LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+[2015.11.13-15.44.14:576][  0]LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+[2015.11.13-15.44.14:576][  0]LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+[2015.11.13-15.44.14:576][  0]LogInit:  - CertBundlePath = nullptr  - Libcurl will use whatever was configured at build time.
+[2015.11.13-15.44.14:591][  0]LogInit: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[2015.11.13-15.44.14:591][  0]LogInit: Object subsystem initialized
+[2015.11.13-15.44.14:591][  0]LogInit: Selected Device Profile: [Windows]
+[2015.11.13-15.44.14:591][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Windows]
+[2015.11.13-15.44.14:606][  0]LogInit: Computer: SpellabbA333-07
+[2015.11.13-15.44.14:606][  0]LogInit: User: Spellabbet
+[2015.11.13-15.44.14:606][  0]LogInit: CPU Page size=4096, Cores=4
+[2015.11.13-15.44.14:606][  0]LogInit: High frequency timer resolution =3.507521 MHz
+[2015.11.13-15.44.14:606][  0]LogMemory: Memory total: Physical=15.9GB (16GB approx)
+[2015.11.13-15.44.14:606][  0]LogMemory: Platform Memory Stats for Windows
+[2015.11.13-15.44.14:606][  0]LogMemory: Process Physical Memory: 52.06 MB used, 52.06 MB peak
+[2015.11.13-15.44.14:606][  0]LogMemory: Process Virtual Memory: 55.04 MB used, 55.04 MB peak
+[2015.11.13-15.44.14:606][  0]LogMemory: Physical Memory: 3475.14 MB used, 16318.82 MB total
+[2015.11.13-15.44.14:606][  0]LogMemory: Virtual Memory: 347.38 MB used, 134217728.00 MB total
+[2015.11.13-15.44.14:631][  0]LogTextLocalizationManager: No translations for ('sv-SE') exist, falling back to 'en' for localization and internationalization data.
+[2015.11.13-15.44.15:228][  0]LogD3D11RHI: Found D3D11 adapter 0: NVIDIA GeForce GTX 960 (Feature Level 11_0)
+[2015.11.13-15.44.15:228][  0]LogD3D11RHI: Adapter has 1965MB of dedicated video memory, 0MB of dedicated system memory, and 2048MB of shared system memory, 1 output[s]
+[2015.11.13-15.44.15:229][  0]LogD3D11RHI: Found D3D11 adapter 1: Microsoft Basic Render Driver (Feature Level 11_0)
+[2015.11.13-15.44.15:229][  0]LogD3D11RHI: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 256MB of shared system memory, 0 output[s]
+[2015.11.13-15.44.15:229][  0]LogD3D11RHI: Chosen D3D11 Adapter Id = 0
+[2015.11.13-15.44.15:232][  0]LogD3D11RHI: !Direct3DDevice
+[2015.11.13-15.44.15:232][  0]LogRHI: Texture pool is 1361 MB (70% of 1945 MB)
+[2015.11.13-15.44.15:241][  0]LogD3D11RHI: Async texture creation enabled
+[2015.11.13-15.44.15:255][  0]LogShaderCompilers: Guid format shader working directory is 15 characters bigger than the processId version (../../../../../../Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/Intermediate/Shaders/WorkingDirectory/5456/).
+[2015.11.13-15.44.15:255][  0]LogShaderCompilers: Cleaned the shader compiler working directory '../../../../../../Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/Intermediate/Shaders/tmp/FC52A38B43A4358852FC73BFB24DB93B/'.
+[2015.11.13-15.44.15:255][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2015.11.13-15.44.16:133][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2015.11.13-15.44.16:137][  0]LogTemp:Display: Loaded TP WindowsClientTargetPlatform
+[2015.11.13-15.44.16:141][  0]LogTemp:Display: Loaded TP WindowsNoEditorTargetPlatform
+[2015.11.13-15.44.16:145][  0]LogTemp:Display: Loaded TP WindowsServerTargetPlatform
+[2015.11.13-15.44.16:149][  0]LogTemp:Display: Loaded TP WindowsTargetPlatform
+[2015.11.13-15.44.16:151][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2015.11.13-15.44.16:154][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2015.11.13-15.44.16:156][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2015.11.13-15.44.16:159][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2015.11.13-15.44.16:161][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2015.11.13-15.44.16:164][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2015.11.13-15.44.16:166][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2015.11.13-15.44.16:167][  0]LogTemp:Display: Loaded TP HTML5TargetPlatform
+[2015.11.13-15.44.16:183][  0]LogTemp:Display: Loaded TP IOSTargetPlatform
+[2015.11.13-15.44.16:185][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2015.11.13-15.44.16:188][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2015.11.13-15.44.16:190][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2015.11.13-15.44.16:190][  0]LogTargetPlatformManager:Display: Building Assets For Windows
+[2015.11.13-15.44.16:261][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2015.11.13-15.44.16:294][  0]LogDerivedDataCache: Loaded boot cache 0.03s 41MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.11.13-15.44.16:294][  0]LogDerivedDataCache:Display: Loaded Boot cache: C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc
+[2015.11.13-15.44.16:294][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../../../Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2015.11.13-15.44.16:294][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2015.11.13-15.44.16:294][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  CompressedPak pak cache file ../../../../../../Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/DerivedDataCache/Compressed.ddp not found, will not use a pak cache.
+[2015.11.13-15.44.16:294][  0]LogDerivedDataCache: Unable to find inner node CompressedPak for hierarchical cache Hierarchy.
+[2015.11.13-15.44.16:400][  0]LogDerivedDataCache:Display: Pak cache opened for reading ../../../Engine/DerivedDataCache/Compressed.ddp.
+[2015.11.13-15.44.16:413][  0]LogDerivedDataCache: Using Local data cache path C:/Users/Spellabbet/AppData/Local/UnrealEngine/Common/DerivedDataCache: Writable
+[2015.11.13-15.44.16:546][  0]LogInit: Selected Device Profile: [Windows]
+[2015.11.13-15.44.16:549][  0]LogContentStreaming: Texture pool size is 0.000000MB
+[2015.11.13-15.44.16:644][  0]LogMeshUtilities: No automatic mesh reduction module available
+[2015.11.13-15.44.16:644][  0]LogMeshUtilities: No automatic mesh merging module available
+[2015.11.13-15.44.16:824][  0]LogInit: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+[2015.11.13-15.44.17:356][  0]UdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2015.11.13-15.44.17:463][  0]LogAssetRegistry: FAssetRegistry took 0.0104 seconds to start up
+[2015.11.13-15.44.17:600][  0]SourceControl: Info Source control is disabled
+[2015.11.13-15.44.17:605][  0]SourceControl: Info Source control is disabled
+[2015.11.13-15.44.17:616][  0]SourceControl: Info Source control is disabled
+[2015.11.13-15.44.17:627][  0]SourceControl: Info Source control is disabled
+[2015.11.13-15.44.17:765][  0]LogLinker:Warning: Asset '../../../Engine/Plugins/Runtime/LeapMotionController/Content/LM_PassthroughMaterial.uasset' has been saved with empty engine version. The asset will be loaded but may be incompatible.
+[2015.11.13-15.44.17:841][  0]LogObj: 28410 objects as part of root set at end of initial load.
+[2015.11.13-15.44.17:841][  0]LogUObjectAllocator: 6059560 out of 0 bytes used by permanent object pool.
+[2015.11.13-15.44.17:886][  0]LogEngine: Initializing Engine...
+[2015.11.13-15.44.17:888][  0]LogHMD: Can't find Oculus library dev build: is proper Runtime installed? Version: 0.7.0.0
+[2015.11.13-15.44.17:888][  0]LogHMD: SteamVR failed to initialize.  Err: 110
+[2015.11.13-15.44.17:981][  0]LogAIModule: Creating AISystem for world NewWorld
+[2015.11.13-15.44.17:985][  0]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.13-15.44.17:995][  0]LogInit: FAudioDevice initialized.
+[2015.11.13-15.44.18:013][  0]LogDerivedDataCache: Saved boot cache 0.02s 41MB C:/Users/Spellabbet/AppData/Local/UnrealEngine/4.9/DerivedDataCache/Boot.ddc.
+[2015.11.13-15.44.18:016][  0]LogInit: Texture streaming: Enabled
+[2015.11.13-15.44.18:021][  0]LogAnalytics: Creating configured Analytics provider AnalyticsET
+[2015.11.13-15.44.18:021][  0]LogAnalytics: [UEEditor.Rocket.Release] APIServer = http://et2.epicgames.com/ET2/. AppVersion = 4.9.2-2707645+++depot+UE4-Releases+4.9
+[2015.11.13-15.44.18:021][  0]LogAnalytics: [UEEditor.Rocket.Release] SetUserId a56f99ce4ac584e8e6d851994b9dafce|4486cc34acf54390b5f34fc38c8b6486|060e5e79-a789-49c4-8abd-5d8b330400a7
+[2015.11.13-15.44.18:021][  0]LogAnalytics: [UEEditor.Rocket.Release] AnalyticsET::StartSession
+[2015.11.13-15.44.18:036][  0]LogInit: Transaction tracking system initialized
+[2015.11.13-15.44.18:057][  0]BlueprintLog: New page: Editor Load
+[2015.11.13-15.44.18:113][  0]LocalizationService: Info Localization service is disabled
+[2015.11.13-15.44.18:173][  0]LogConsoleResponse:Display: 
+[2015.11.13-15.44.18:262][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/Content/' took 0.01s
+[2015.11.13-15.44.18:262][  0]LogCook:Display: Done creating registry. It took  0.00s.
+[2015.11.13-15.44.18:315][  0]SourceControl: Info Source control is disabled
+[2015.11.13-15.44.22:345][  0]LogWindowsTextInputMethodSystem:Display: IME system now deactivated.
+[2015.11.13-15.44.22:349][  0]LogWindowsTextInputMethodSystem:Display: IME system now deactivated.
+[2015.11.13-15.44.23:865][  0]LogWindowsTextInputMethodSystem:Display: IME system now deactivated.
+[2015.11.13-15.44.23:873][  0]LogWindowsTextInputMethodSystem:Display: IME system now deactivated.
+[2015.11.13-15.44.23:873][  0]Cmd: MAP LOAD FILE="../../../Engine/Content/Maps/Templates/Template_Default.umap" TEMPLATE=1 SHOWPROGRESS=1 FEATURELEVEL=3
+[2015.11.13-15.44.23:874][  0]LightingResults: New page: Lighting Build
+[2015.11.13-15.44.23:878][  0]MapCheck: New page: Map Check
+[2015.11.13-15.44.23:878][  0]LightingResults: New page: Lighting Build
+[2015.11.13-15.44.23:888][  0]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F67EFA2AC0
+[2015.11.13-15.44.24:094][  0]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.13-15.44.24:099][  0]LogEditorServer: Finished looking for orphan Actors (0.000 secs)
+[2015.11.13-15.44.24:104][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2015.11.13-15.44.24:139][  0]MapCheck: Info Map check complete: 0 Error(s), 0 Warning(s), took 34.743ms to complete.
+[2015.11.13-15.44.24:139][  0]LogFileHelpers: Loading map 'Template_Default' took 0.266
+[2015.11.13-15.44.24:142][  0]LogWindowsTextInputMethodSystem:Display: IME system now deactivated.
+[2015.11.13-15.44.24:181][  0]LogCollectionManager: Loaded 0 collections in 0.001732 seconds
+[2015.11.13-15.44.24:222][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/Saved/Collections/' took 0.01s
+[2015.11.13-15.44.24:222][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/Content/Developers/Spellabbet/Collections/' took 0.01s
+[2015.11.13-15.44.24:222][  0]LogFileCache: Scanning file cache for directory 'C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/Content/Collections/' took 0.01s
+[2015.11.13-15.44.24:222][  0]LogContentBrowser: Native class hierarchy populated in 0.0068 seconds. Added 1873 classes and 335 folders.
+[2015.11.13-15.44.24:226][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000002 seconds
+[2015.11.13-15.44.24:232][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0008 seconds. Added 0 classes and 0 folders.
+[2015.11.13-15.44.24:261][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0008 seconds. Added 0 classes and 0 folders.
+[2015.11.13-15.44.24:268][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0009 seconds. Added 1 classes and 2 folders.
+[2015.11.13-15.44.24:287][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2015.11.13-15.44.24:290][  0]LogUObjectGlobals:Warning: Failed to find object 'Class None.'
+[2015.11.13-15.44.24:312][  0]LogStats:Warning: MetaData mismatch. Did you assign a stat to two groups? New //STATGROUP_Threads//SplashScreenThread///Thread_1428_0///####STATCAT_Advanced#### old //STATGROUP_Threads//SplashScreenThread///Thread_17a0_0///####STATCAT_Advanced####
+[2015.11.13-15.44.24:312][  0]LogLoad: Full Startup: 10.67 seconds (BP compile: 0.03 seconds)
+[2015.11.13-15.44.24:363][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2015.11.13-15.44.24:468][  0]LogRenderer: Reallocating scene render targets to support 1208x576 (Frame:2).
+[2015.11.13-15.44.24:559][  2]LogAssetRegistry: Asset discovery search completed in 7.1063 seconds
+[2015.11.13-15.44.24:559][  2]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000001 seconds (found 0 objects)
+[2015.11.13-15.44.24:559][  2]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000025 seconds (updated 0 objects)
+[2015.11.13-15.44.35:805][332]LogEditor: Attempting to add actor of class 'Ship' to level at -910.00,-280.00,90.00
+[2015.11.13-15.44.36:002][355]LogEditor: Attempting to add actor of class 'Ship' to level at -900.00,60.00,230.00
+[2015.11.13-15.44.43:543][257]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.44.56:925][835]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2015.11.13-15.44.57:588][911]Recompiling SpaceGame...
+[2015.11.13-15.44.57:588][911]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 7253 Win64 Development -editorrecompile -canskiplink "C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.13-15.44.57:589][911]Warning: Starting HotReload took  0.0s.
+[2015.11.13-15.44.58:382][987]CompilerResultsLog: New page: Compilation - Nov 13, 2015, 5:44:58 PM
+[2015.11.13-15.44.58:382][987]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.13-15.44.58:382][987]CompilerResultsLog: Info Target is up to date.
+[2015.11.13-15.44.58:382][987]LogMainFrame: MainFrame: Module compiling took 0.798 seconds
+[2015.11.13-15.44.59:230][ 87]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.13-15.44.59:230][ 87]PIE: New page: PIE session: Untitled_1 (Nov 13, 2015, 5:44:59 PM)
+[2015.11.13-15.44.59:230][ 87]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.13-15.44.59:232][ 87]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002050s)
+[2015.11.13-15.44.59:233][ 87]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.13-15.44.59:234][ 87]LogPlayLevel: PIE: World Init took: (0.001016s)
+[2015.11.13-15.44.59:234][ 87]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003522s)
+[2015.11.13-15.44.59:254][ 87]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.13-15.44.59:259][ 87]LogInit: FAudioDevice initialized.
+[2015.11.13-15.44.59:305][ 87]LogWorld: Game class is 'GameMode'
+[2015.11.13-15.44.59:307][ 87]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.13-16.44.59
+[2015.11.13-15.44.59:307][ 87]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.44.59:307][ 87]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.44.59:307][ 87]LogWorld: Bringing up level for play took: 0.001730
+[2015.11.13-15.44.59:309][ 87]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 -0.66
+[2015.11.13-15.45.06:864][992]LogSelection:Warning: PIE object was selected: "BP_Sky_Sphere_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.SkySphere"
+[2015.11.13-15.45.08:742][215]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.45.09:468][298]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.45.10:052][364]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.45.10:727][441]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.45.14:430][732]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.45.14:430][732]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.45.22:697][460]LogSelection:Warning: PIE object was selected: "Combat /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.Combat_0"
+[2015.11.13-15.45.32:211][589]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.45.32:211][589]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.45.39:745][233]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.45.39:745][233]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.45.43:007][574]LogSelection:Warning: PIE object was selected: "Combat /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.Combat_0"
+[2015.11.13-15.45.47:448][106]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.45.49:757][379]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.45.52:951][757]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.45.53:642][836]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.45.58:141][317]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F6609B8CC0
+[2015.11.13-15.46.09:039][616]Recompiling SpaceGame...
+[2015.11.13-15.46.09:040][616]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 6558 Win64 Development -editorrecompile -canskiplink "C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.13-15.46.09:041][616]Warning: Starting HotReload took  0.0s.
+[2015.11.13-15.46.09:851][694]CompilerResultsLog: New page: Compilation - Nov 13, 2015, 5:46:09 PM
+[2015.11.13-15.46.09:851][694]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.13-15.46.09:851][694]CompilerResultsLog: Info Target is up to date.
+[2015.11.13-15.46.09:851][694]LogMainFrame: MainFrame: Module compiling took 0.814 seconds
+[2015.11.13-15.46.15:936][420]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.13-15.46.15:936][420]PIE: New page: PIE session: Untitled_1 (Nov 13, 2015, 5:46:15 PM)
+[2015.11.13-15.46.15:937][420]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.13-15.46.15:938][420]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001740s)
+[2015.11.13-15.46.15:939][420]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.13-15.46.15:939][420]LogPlayLevel: PIE: World Init took: (0.000716s)
+[2015.11.13-15.46.15:939][420]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002660s)
+[2015.11.13-15.46.15:953][420]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.13-15.46.15:957][420]LogInit: FAudioDevice initialized.
+[2015.11.13-15.46.15:987][420]LogWorld: Game class is 'GameMode'
+[2015.11.13-15.46.15:990][420]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.13-16.46.15
+[2015.11.13-15.46.15:990][420]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.46.15:990][420]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.46.15:990][420]LogWorld: Bringing up level for play took: 0.001729
+[2015.11.13-15.46.15:992][420]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 0.023
+[2015.11.13-15.46.23:778][354]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.46.26:044][601]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.46.26:760][683]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.46.27:894][815]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.46.28:914][901]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.46.28:914][901]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.46.34:361][484]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.46.35:146][574]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.46.37:306][829]LogSelection:Warning: PIE object was selected: "GameMode /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameMode_1"
+[2015.11.13-15.46.39:087][ 22]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.46.39:087][ 22]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.46.44:167][607]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2015.11.13-15.46.44:167][607]LogSelection:Warning: PIE object was selected: "BP_Sky_Sphere_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.SkySphere"
+[2015.11.13-15.46.47:580][876]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.46.47:580][876]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.47.00:048][277]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F66BA7BA60
+[2015.11.13-15.47.01:237][419]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.47.06:017][985]Recompiling SpaceGame...
+[2015.11.13-15.47.06:018][985]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 8307 Win64 Development -editorrecompile -canskiplink "C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.13-15.47.06:019][985]Warning: Starting HotReload took  0.0s.
+[2015.11.13-15.47.06:828][ 63]CompilerResultsLog: New page: Compilation - Nov 13, 2015, 5:47:06 PM
+[2015.11.13-15.47.06:828][ 63]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.13-15.47.06:828][ 63]CompilerResultsLog: Info Target is up to date.
+[2015.11.13-15.47.06:828][ 63]LogMainFrame: MainFrame: Module compiling took 0.813 seconds
+[2015.11.13-15.47.12:827][779]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.13-15.47.12:827][779]PIE: New page: PIE session: Untitled_1 (Nov 13, 2015, 5:47:12 PM)
+[2015.11.13-15.47.12:827][779]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.13-15.47.12:829][779]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001948s)
+[2015.11.13-15.47.12:830][779]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.13-15.47.12:831][779]LogPlayLevel: PIE: World Init took: (0.001104s)
+[2015.11.13-15.47.12:831][779]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003261s)
+[2015.11.13-15.47.12:848][779]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.13-15.47.12:853][779]LogInit: FAudioDevice initialized.
+[2015.11.13-15.47.12:885][779]LogWorld: Game class is 'GameMode'
+[2015.11.13-15.47.12:887][779]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.13-16.47.12
+[2015.11.13-15.47.12:887][779]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.47.12:888][779]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.47.12:888][779]LogWorld: Bringing up level for play took: 0.001842
+[2015.11.13-15.47.12:889][779]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 0.92
+[2015.11.13-15.47.19:583][582]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.47.21:329][778]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.47.21:829][834]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.47.32:724][ 16]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.47.32:724][ 16]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.47.57:110][707]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F606F48360
+[2015.11.13-15.47.58:300][849]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.47.59:414][977]Recompiling SpaceGame...
+[2015.11.13-15.47.59:415][977]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 6117 Win64 Development -editorrecompile -canskiplink "C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.13-15.47.59:416][977]Warning: Starting HotReload took  0.0s.
+[2015.11.13-15.48.00:213][ 54]CompilerResultsLog: New page: Compilation - Nov 13, 2015, 5:48:00 PM
+[2015.11.13-15.48.00:213][ 54]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.13-15.48.00:213][ 54]CompilerResultsLog: Info Target is up to date.
+[2015.11.13-15.48.00:213][ 54]LogMainFrame: MainFrame: Module compiling took 0.801 seconds
+[2015.11.13-15.48.03:051][393]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.13-15.48.03:051][393]PIE: New page: PIE session: Untitled_1 (Nov 13, 2015, 5:48:03 PM)
+[2015.11.13-15.48.03:051][393]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.13-15.48.03:053][393]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001621s)
+[2015.11.13-15.48.03:053][393]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.13-15.48.03:054][393]LogPlayLevel: PIE: World Init took: (0.000655s)
+[2015.11.13-15.48.03:054][393]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002510s)
+[2015.11.13-15.48.03:068][393]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.13-15.48.03:072][393]LogInit: FAudioDevice initialized.
+[2015.11.13-15.48.03:107][393]LogWorld: Game class is 'GameMode'
+[2015.11.13-15.48.03:110][393]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.13-16.48.03
+[2015.11.13-15.48.03:110][393]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.48.03:110][393]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.48.03:110][393]LogWorld: Bringing up level for play took: 0.001932
+[2015.11.13-15.48.03:112][393]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 -0.856
+[2015.11.13-15.48.08:899][ 87]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.48.11:351][357]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.48.12:119][445]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.48.13:327][586]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.48.14:477][720]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.48.35:966][180]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F6117A4360
+[2015.11.13-15.49.04:480][528]Recompiling SpaceGame...
+[2015.11.13-15.49.04:480][528]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 961 Win64 Development -editorrecompile -canskiplink "C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.13-15.49.04:481][528]Warning: Starting HotReload took  0.0s.
+[2015.11.13-15.49.05:291][607]CompilerResultsLog: New page: Compilation - Nov 13, 2015, 5:49:05 PM
+[2015.11.13-15.49.05:291][607]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.13-15.49.05:291][607]CompilerResultsLog: Info Target is up to date.
+[2015.11.13-15.49.05:291][607]LogMainFrame: MainFrame: Module compiling took 0.814 seconds
+[2015.11.13-15.49.06:263][722]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.13-15.49.06:263][722]PIE: New page: PIE session: Untitled_1 (Nov 13, 2015, 5:49:06 PM)
+[2015.11.13-15.49.06:263][722]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.13-15.49.06:265][722]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001788s)
+[2015.11.13-15.49.06:266][722]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.13-15.49.06:266][722]LogPlayLevel: PIE: World Init took: (0.000634s)
+[2015.11.13-15.49.06:266][722]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002633s)
+[2015.11.13-15.49.06:282][722]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.13-15.49.06:287][722]LogInit: FAudioDevice initialized.
+[2015.11.13-15.49.06:319][722]LogWorld: Game class is 'GameMode'
+[2015.11.13-15.49.06:321][722]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.13-16.49.06
+[2015.11.13-15.49.06:321][722]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.49.06:321][722]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.49.06:322][722]LogWorld: Bringing up level for play took: 0.001783
+[2015.11.13-15.49.06:323][722]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 0.354
+[2015.11.13-15.49.11:609][356]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.49.13:053][507]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.49.13:053][507]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.49.17:084][924]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.49.17:084][924]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.49.25:773][857]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.49.25:773][857]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.49.53:396][104]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F627B6AAC0
+[2015.11.13-15.49.54:552][242]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.49.59:169][790]Recompiling SpaceGame...
+[2015.11.13-15.49.59:169][790]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 8587 Win64 Development -editorrecompile -canskiplink "C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.13-15.49.59:170][790]Warning: Starting HotReload took  0.0s.
+[2015.11.13-15.49.59:967][867]CompilerResultsLog: New page: Compilation - Nov 13, 2015, 5:49:59 PM
+[2015.11.13-15.49.59:967][867]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.13-15.49.59:967][867]CompilerResultsLog: Info Target is up to date.
+[2015.11.13-15.49.59:967][867]LogMainFrame: MainFrame: Module compiling took 0.801 seconds
+[2015.11.13-15.50.01:397][ 37]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.13-15.50.01:397][ 37]PIE: New page: PIE session: Untitled_1 (Nov 13, 2015, 5:50:01 PM)
+[2015.11.13-15.50.01:397][ 37]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.13-15.50.01:399][ 37]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002106s)
+[2015.11.13-15.50.01:400][ 37]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.13-15.50.01:400][ 37]LogPlayLevel: PIE: World Init took: (0.000840s)
+[2015.11.13-15.50.01:400][ 37]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.003200s)
+[2015.11.13-15.50.01:415][ 37]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.13-15.50.01:420][ 37]LogInit: FAudioDevice initialized.
+[2015.11.13-15.50.01:453][ 37]LogWorld: Game class is 'GameMode'
+[2015.11.13-15.50.01:455][ 37]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.13-16.50.01
+[2015.11.13-15.50.01:455][ 37]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.50.01:455][ 37]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.50.01:456][ 37]LogWorld: Bringing up level for play took: 0.001849
+[2015.11.13-15.50.01:457][ 37]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 -0.511
+[2015.11.13-15.50.07:001][702]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.50.08:352][840]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.50.08:352][840]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.50.09:799][986]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.50.09:799][986]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.50.10:995][ 98]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.50.10:995][ 98]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.50.12:106][192]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.50.12:106][192]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.50.16:240][594]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.50.16:240][594]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.50.18:485][838]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.50.18:485][838]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.50.24:377][520]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.50.24:377][520]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.52.55:059][433]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F61EFD2160
+[2015.11.13-15.52.56:290][580]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.53.03:209][402]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.13-15.53.03:210][402]PIE: New page: PIE session: Untitled_1 (Nov 13, 2015, 5:53:03 PM)
+[2015.11.13-15.53.03:210][402]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.13-15.53.03:212][402]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001865s)
+[2015.11.13-15.53.03:212][402]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.13-15.53.03:212][402]LogPlayLevel: PIE: World Init took: (0.000679s)
+[2015.11.13-15.53.03:212][402]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002794s)
+[2015.11.13-15.53.03:227][402]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.13-15.53.03:232][402]LogInit: FAudioDevice initialized.
+[2015.11.13-15.53.03:267][402]LogWorld: Game class is 'GameMode'
+[2015.11.13-15.53.03:269][402]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.13-16.53.03
+[2015.11.13-15.53.03:269][402]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.53.03:269][402]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_6 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.53.03:270][402]LogWorld: Bringing up level for play took: 0.002012
+[2015.11.13-15.53.03:271][402]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 -0.698
+[2015.11.13-15.53.04:647][567]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.53.05:199][629]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.53.05:567][669]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.53.10:848][297]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.53.11:577][368]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.53.11:577][368]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.53.15:122][717]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.53.15:122][717]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.53.16:468][849]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.53.16:468][849]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.53.20:372][285]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.53.20:373][285]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.53.35:118][991]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.53.35:118][991]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.53.35:900][ 60]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.53.35:900][ 60]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP2_5"
+[2015.11.13-15.53.48:876][449]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.53.48:876][449]LogSelection:Warning: PIE object was selected: "FleetBP_C /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.FleetBP_2"
+[2015.11.13-15.53.51:460][729]LogParticles: Destroying 0 GPU particle simulations for FXSystem 0x000000F677D05F80
+[2015.11.13-15.56.29:657][576]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2015.11.13-15.56.31:424][764]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.56.32:141][845]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.56.34:206][ 86]LogEditor: Attempting to add actor of class 'Ship' to level at -980.00,-740.00,320.00
+[2015.11.13-15.56.34:344][101]LogEditor: Attempting to add actor of class 'Ship' to level at -820.00,-700.00,420.00
+[2015.11.13-15.57.10:638][877]Recompiling SpaceGame...
+[2015.11.13-15.57.10:638][877]Launching UnrealBuildTool... [C:/Program Files/Epic Games/4.9/Engine/Binaries/DotNET/UnrealBuildTool.exe SpaceGame -ModuleWithSuffix SpaceGame 516 Win64 Development -editorrecompile -canskiplink "C:/Users/Spellabbet/Documents/GitHub/SpaceGame/Project/SpaceGame/SpaceGame.uproject" -rocket  -rocket]
+[2015.11.13-15.57.10:639][877]Warning: Starting HotReload took  0.0s.
+[2015.11.13-15.57.13:859][244]CompilerResultsLog: New page: Compilation - Nov 13, 2015, 5:57:13 PM
+[2015.11.13-15.57.13:859][244]CompilerResultsLog: Info Compiling game modules for hot reload
+[2015.11.13-15.57.13:859][244]CompilerResultsLog: Info Performing 2 actions (4 in parallel)
+[2015.11.13-15.57.13:859][244]CompilerResultsLog: Info Fleet.cpp
+[2015.11.13-15.57.13:859][244]CompilerResultsLog: Info [2/2] Link UE4Editor-SpaceGame-516.dll
+[2015.11.13-15.57.13:859][244]CompilerResultsLog: Info    Creating library C:\Users\Spellabbet\Documents\GitHub\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-516.lib and object C:\Users\Spellabbet\Documents\GitHub\SpaceGame\Project\SpaceGame\Intermediate/Build/Win64\UE4Editor\Development\UE4Editor-SpaceGame-516.exp
+[2015.11.13-15.57.13:859][244]CompilerResultsLog: Info -------- End Detailed Actions Stats -----------------------------------------------------------
+[2015.11.13-15.57.13:860][244]CompilerResultsLog: Info Total build time: 3,19 seconds
+[2015.11.13-15.57.13:860][244]LogMainFrame: MainFrame: Module compiling took 3.224 seconds
+[2015.11.13-15.57.13:951][244]LogContentBrowser: Native class hierarchy updated for 'SpaceGame' in 0.0013 seconds. Added 6 classes and 2 folders.
+[2015.11.13-15.57.13:953][244]Warning: HotReload successful (2 functions remapped  0 scriptstructs remapped)
+[2015.11.13-15.57.14:008][244]LogContentBrowser: Native class hierarchy populated in 0.0067 seconds. Added 1874 classes and 337 folders.
+[2015.11.13-15.57.15:193][386]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.57.15:724][444]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP)
+[2015.11.13-15.57.16:126][487]LogEditorViewport: Clicking on Actor (LMB): FleetBP_C (FleetBP2)
+[2015.11.13-15.57.17:064][593]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2015.11.13-15.57.17:064][593]PIE: New page: PIE session: Untitled_1 (Nov 13, 2015, 5:57:17 PM)
+[2015.11.13-15.57.17:064][593]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2015.11.13-15.57.17:066][593]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001555s)
+[2015.11.13-15.57.17:066][593]LogAIModule: Creating AISystem for world Untitled_1
+[2015.11.13-15.57.17:067][593]LogPlayLevel: PIE: World Init took: (0.000685s)
+[2015.11.13-15.57.17:067][593]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.002477s)
+[2015.11.13-15.57.17:081][593]LogInit: XAudio2 using 'Speakers (4- High Definition Audio Device)' : 2 channels at 44.1 kHz using 16 bits per sample (channel mask 0x3)
+[2015.11.13-15.57.17:086][593]LogInit: FAudioDevice initialized.
+[2015.11.13-15.57.17:115][593]LogWorld: Game class is 'GameMode'
+[2015.11.13-15.57.17:118][593]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 0) at 2015.11.13-16.57.17
+[2015.11.13-15.57.17:118][593]LogActor:Warning: GameSession /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameSession_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.57.17:118][593]LogActor:Warning: GameNetworkManager /Temp/UEDPIE_0_Untitled_1.Untitled_1:PersistentLevel.GameNetworkManager_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2015.11.13-15.57.17:118][593]LogWorld: Bringing up level for play took: 0.001717
+[2015.11.13-15.57.17:119][593]PIE: Info Play in editor start time for /Temp/UEDPIE_0_Untitled_1 -0.849
+[2015.11.13-15.57.20:398][970]LogCrashTracker: 
+
+
+[2015.11.13-15.57.20:398][970]LogCrashTracker: 
+
+
+[2015.11.13-15.57.20:398][970]LogWindows: === Critical error: ===
+Fatal error!
+
+
+
+[2015.11.13-15.57.20:492][970]LogExit: Executing StaticShutdownAfterError
+[2015.11.13-15.57.20:493][970]LogOutputDevice:Warning: 
+
+Script Stack:
+Fleet.OnBeginOverlap
+
+[2015.11.13-15.57.20:495][970]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.13-15.57.20:495][970]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.13-15.57.20:495][970]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.13-15.57.20:495][970]LogPhysics:Warning: PHYSX: ..\..\PhysX\src\NpScene.cpp (2946) 8 : PxScene::unlockWrite() called without matching call to PxScene::lockWrite(), behaviour will be undefined.
+[2015.11.13-15.57.20:495][970]LogWindows: FPlatformMisc::RequestExit(1)
+[2015.11.13-15.57.20:495][970]Log file closed, 11/13/15 16:57:20
