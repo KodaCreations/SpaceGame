@@ -8,14 +8,61 @@
 #include "ObjectBase.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
+class UPrimitiveComponent;
+struct FHitResult;
 #ifdef SPACEGAME_Star_generated_h
 #error "Star.generated.h already included, missing '#pragma once' in Star.h"
 #endif
 #define SPACEGAME_Star_generated_h
 
-#define SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS
-#define SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS_NO_PURE_DECLS
-#define SpaceGame_Source_SpaceGame_Star_h_11_INCLASS_NO_PURE_DECLS \
+#define SpaceGame_Source_SpaceGame_Star_h_20_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnEndOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_FINISH; \
+		this->OnEndOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex); \
+	} \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		this->OnBeginOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+	}
+
+
+#define SpaceGame_Source_SpaceGame_Star_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnEndOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_FINISH; \
+		this->OnEndOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex); \
+	} \
+ \
+	DECLARE_FUNCTION(execOnBeginOverlap) \
+	{ \
+		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
+		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComp); \
+		P_GET_PROPERTY(UIntProperty,Z_Param_OtherBodyIndex); \
+		P_GET_UBOOL(Z_Param_bFromSweep); \
+		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
+		P_FINISH; \
+		this->OnBeginOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+	}
+
+
+#define SpaceGame_Source_SpaceGame_Star_h_20_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAStar(); \
 	friend SPACEGAME_API class UClass* Z_Construct_UClass_AStar(); \
@@ -26,7 +73,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<AStar*>(this); }
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_11_INCLASS \
+#define SpaceGame_Source_SpaceGame_Star_h_20_INCLASS \
 	private: \
 	static void StaticRegisterNativesAStar(); \
 	friend SPACEGAME_API class UClass* Z_Construct_UClass_AStar(); \
@@ -37,7 +84,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	virtual UObject* _getUObject() const override { return const_cast<AStar*>(this); }
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_11_STANDARD_CONSTRUCTORS \
+#define SpaceGame_Source_SpaceGame_Star_h_20_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AStar(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AStar) \
@@ -49,7 +96,7 @@ private: \
 public:
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_11_ENHANCED_CONSTRUCTORS \
+#define SpaceGame_Source_SpaceGame_Star_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API AStar(const AStar& InCopy); \
@@ -59,23 +106,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AStar); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AStar)
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_8_PROLOG
-#define SpaceGame_Source_SpaceGame_Star_h_11_GENERATED_BODY_LEGACY \
+#define SpaceGame_Source_SpaceGame_Star_h_16_PROLOG
+#define SpaceGame_Source_SpaceGame_Star_h_20_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS \
-	SpaceGame_Source_SpaceGame_Star_h_11_INCLASS \
-	SpaceGame_Source_SpaceGame_Star_h_11_STANDARD_CONSTRUCTORS \
+	SpaceGame_Source_SpaceGame_Star_h_20_RPC_WRAPPERS \
+	SpaceGame_Source_SpaceGame_Star_h_20_INCLASS \
+	SpaceGame_Source_SpaceGame_Star_h_20_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_11_GENERATED_BODY \
+#define SpaceGame_Source_SpaceGame_Star_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	SpaceGame_Source_SpaceGame_Star_h_11_INCLASS_NO_PURE_DECLS \
-	SpaceGame_Source_SpaceGame_Star_h_11_ENHANCED_CONSTRUCTORS \
+	SpaceGame_Source_SpaceGame_Star_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	SpaceGame_Source_SpaceGame_Star_h_20_INCLASS_NO_PURE_DECLS \
+	SpaceGame_Source_SpaceGame_Star_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -84,4 +131,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #define CURRENT_FILE_ID SpaceGame_Source_SpaceGame_Star_h
 
 
+#define FOREACH_ENUM_OWNEDBY(op) \
+	op(OwnedBy::Neutral) \
+	op(OwnedBy::Player1) \
+	op(OwnedBy::Player2) 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

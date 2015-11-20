@@ -32,6 +32,8 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* mesh;
+	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
+		Star::OwnedBy ownedBy;*/
 	UPROPERTY(VisibleAnywhere, Category = "Triggers")
 		UBoxComponent* Trigger;
 	UPROPERTY(EditAnywhere)

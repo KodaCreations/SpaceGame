@@ -26,7 +26,7 @@ void ALink::OnConstruction(const FTransform& Transform)
 		FRotator rotation = FRotator(newRotation.Rotation().Pitch + 90, newRotation.Rotation().Yaw, 0);
 		mesh->SetRelativeRotation(rotation);
 		float dist = FVector::Dist(Star1->GetActorLocation(), Star2->GetActorLocation());
-		FVector scale = FVector(0.4, 0.4, dist / 100);
+		FVector scale = FVector(0.2, 0.2, dist / 100);
 		mesh->SetRelativeScale3D(scale);
 	}
 }

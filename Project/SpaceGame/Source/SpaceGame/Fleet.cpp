@@ -34,6 +34,10 @@ void AFleet::BeginPlay()
 		UpdateFleetStats();
 		totalMorale = ship->Morale();
 	}
+	else
+	{
+		Destroy();
+	}
 }
 
 // Called every frame
@@ -86,8 +90,6 @@ void AFleet::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, 
 		Cast<AFleet>(OtherActor)->InCombat = true;
 		ACombat* combat = GetWorld()->SpawnActor<ACombat>();
 		combat->Inizialize(this, Cast<AFleet>(OtherActor));
-		//GetWorld()->SpawnActor(new ACombat(this, Cast<AFleet>(OtherActor)), , );
-		//GetWorld()->SpawnActor<ACombat>(this, Cast<AFleet>(OtherActor));
 	}
 
 }
