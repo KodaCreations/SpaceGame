@@ -1,5 +1,4 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 #include "Fleet.h"
 #include "GameFramework/Actor.h"
@@ -29,6 +28,8 @@ public:
 		void OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 	UFUNCTION()
 		void OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	AFleet* GetFleet();
+
 private:
 	// Stationed fleet
 	AFleet *fleet;
@@ -38,8 +39,6 @@ private:
 
 	// Fleet creation timer
 	float timer;
-	UPROPERTY(EditAnywhere)
-		float starDefence;
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* mesh;
 };

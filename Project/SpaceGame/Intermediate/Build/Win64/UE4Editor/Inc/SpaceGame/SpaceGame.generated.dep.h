@@ -5,9 +5,6 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
-#ifndef SPACEGAME_CameraPawn_generated_h
-	#include "CameraPawn.h"
-#endif
 #ifndef SPACEGAME_Ship_generated_h
 	#include "Ship.h"
 #endif
@@ -22,6 +19,12 @@
 #endif
 #ifndef SPACEGAME_Link_generated_h
 	#include "Link.h"
+#endif
+#ifndef SPACEGAME_MouseController_generated_h
+	#include "MouseController.h"
+#endif
+#ifndef SPACEGAME_MousePawn_generated_h
+	#include "MousePawn.h"
 #endif
 #ifndef SPACEGAME_SpaceGameGameMode_generated_h
 	#include "SpaceGameGameMode.h"

@@ -16,7 +16,7 @@ struct FHitResult;
 #endif
 #define SPACEGAME_Star_generated_h
 
-#define SpaceGame_Source_SpaceGame_Star_h_12_RPC_WRAPPERS \
+#define SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execOnEndOverlap) \
 	{ \
@@ -39,7 +39,7 @@ struct FHitResult;
 	}
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+#define SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execOnEndOverlap) \
 	{ \
@@ -62,7 +62,7 @@ struct FHitResult;
 	}
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_12_INCLASS_NO_PURE_DECLS \
+#define SpaceGame_Source_SpaceGame_Star_h_11_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAStar(); \
 	friend SPACEGAME_API class UClass* Z_Construct_UClass_AStar(); \
@@ -73,7 +73,7 @@ struct FHitResult;
 	virtual UObject* _getUObject() const override { return const_cast<AStar*>(this); }
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_12_INCLASS \
+#define SpaceGame_Source_SpaceGame_Star_h_11_INCLASS \
 	private: \
 	static void StaticRegisterNativesAStar(); \
 	friend SPACEGAME_API class UClass* Z_Construct_UClass_AStar(); \
@@ -84,7 +84,7 @@ struct FHitResult;
 	virtual UObject* _getUObject() const override { return const_cast<AStar*>(this); }
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_12_STANDARD_CONSTRUCTORS \
+#define SpaceGame_Source_SpaceGame_Star_h_11_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AStar(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AStar) \
@@ -96,7 +96,7 @@ private: \
 public:
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_12_ENHANCED_CONSTRUCTORS \
+#define SpaceGame_Source_SpaceGame_Star_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API AStar(const AStar& InCopy); \
@@ -106,23 +106,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AStar); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AStar)
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_8_PROLOG
-#define SpaceGame_Source_SpaceGame_Star_h_12_GENERATED_BODY_LEGACY \
+#define SpaceGame_Source_SpaceGame_Star_h_7_PROLOG
+#define SpaceGame_Source_SpaceGame_Star_h_11_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceGame_Source_SpaceGame_Star_h_12_RPC_WRAPPERS \
-	SpaceGame_Source_SpaceGame_Star_h_12_INCLASS \
-	SpaceGame_Source_SpaceGame_Star_h_12_STANDARD_CONSTRUCTORS \
+	SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS \
+	SpaceGame_Source_SpaceGame_Star_h_11_INCLASS \
+	SpaceGame_Source_SpaceGame_Star_h_11_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define SpaceGame_Source_SpaceGame_Star_h_12_GENERATED_BODY \
+#define SpaceGame_Source_SpaceGame_Star_h_11_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceGame_Source_SpaceGame_Star_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	SpaceGame_Source_SpaceGame_Star_h_12_INCLASS_NO_PURE_DECLS \
-	SpaceGame_Source_SpaceGame_Star_h_12_ENHANCED_CONSTRUCTORS \
+	SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	SpaceGame_Source_SpaceGame_Star_h_11_INCLASS_NO_PURE_DECLS \
+	SpaceGame_Source_SpaceGame_Star_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

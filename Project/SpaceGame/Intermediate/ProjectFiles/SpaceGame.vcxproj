@@ -44,7 +44,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{26C2C4FB-62F0-406D-B52E-ED164FA9258D}</ProjectGuid>
+		<ProjectGuid>{A3D09E9F-E5B3-4301-8634-4AE53F08FB2A}</ProjectGuid>
 		<Keyword>MakeFileProj</Keyword>
 		<RootNamespace>SpaceGame</RootNamespace>
 	</PropertyGroup>
@@ -257,6 +257,7 @@
 		<None Include="..\..\Config\DefaultEditor.ini" />
 		<None Include="..\..\Config\DefaultEngine.ini" />
 		<None Include="..\..\Config\DefaultGame.ini" />
+		<None Include="..\..\Config\DefaultInput.ini" />
 		<ClCompile Include="..\..\Source\SpaceGame\CameraPawn.cpp" />
 		<ClInclude Include="..\..\Source\SpaceGame\CameraPawn.h" />
 		<ClCompile Include="..\..\Source\SpaceGame\Combat.cpp" />
@@ -265,6 +266,14 @@
 		<ClInclude Include="..\..\Source\SpaceGame\Fleet.h" />
 		<ClCompile Include="..\..\Source\SpaceGame\Link.cpp" />
 		<ClInclude Include="..\..\Source\SpaceGame\Link.h" />
+		<ClCompile Include="..\..\Source\SpaceGame\MinHeap.cpp" />
+		<ClInclude Include="..\..\Source\SpaceGame\MinHeap.h" />
+		<ClCompile Include="..\..\Source\SpaceGame\MouseController.cpp" />
+		<ClInclude Include="..\..\Source\SpaceGame\MouseController.h" />
+		<ClCompile Include="..\..\Source\SpaceGame\MousePawn.cpp" />
+		<ClInclude Include="..\..\Source\SpaceGame\MousePawn.h" />
+		<ClCompile Include="..\..\Source\SpaceGame\Pathfinder.cpp" />
+		<ClInclude Include="..\..\Source\SpaceGame\Pathfinder.h" />
 		<ClCompile Include="..\..\Source\SpaceGame\Ship.cpp" />
 		<ClInclude Include="..\..\Source\SpaceGame\Ship.h" />
 		<None Include="..\..\Source\SpaceGame\SpaceGame.Build.cs" />

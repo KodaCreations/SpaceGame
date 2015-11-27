@@ -21,7 +21,7 @@ AStar::AStar()
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &AStar::OnEndOverlap);
 
 	ownedBy = OwnedBy::Neutral;
-	fleet = nullptr;
+	//fleet = nullptr;
 }
 
 
@@ -45,6 +45,7 @@ void AStar::Tick( float DeltaTime )
 		{
 			FVector location = GetActorLocation();
 			FRotator rotation = GetActorRotation();
+			//Won't Spawn Correctly
 			fleet = Cast<AFleet>(GetWorld()->SpawnActor(fleetBP, &location, &rotation));
 			//fleet->GiveShip();
 			fleet->ownedBy = ownedBy;
@@ -55,22 +56,24 @@ void AStar::Tick( float DeltaTime )
 		timer = prodTime;
 
 		// Uncomment for logging stationed fleet size.
-		//if (fleet != nullptr)
-		//	UE_LOG(LogTemp, Log, TEXT("Number of ships in fleet: %d"), fleet->GetSize());
+		if (fleet != nullptr)
+			UE_LOG(LogTemp, Log, TEXT("Number of ships in fleet: %d"), fleet->GetSize());
 	}
 }
 void AStar::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
-	fleet = Cast<AFleet>(OtherActor);
-	if (fleet->ownedBy != OwnedBy::Neutral)
+	if (OtherActor->IsA(AFleet::StaticClass()))
 	{
-		fleet->StarDefence(starDefence);
+		fleet = Cast<AFleet>(OtherActor);
 		ownedBy = fleet->ownedBy;
 	}
 }
 void AStar::OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	fleet->StarDefence(0);
 	fleet = nullptr;
 }
 
+AFleet* AStar::GetFleet()
+{
+	return fleet;
+}

@@ -1,5 +1,4 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 #include "Ship.h"
 #include "GameFramework/Actor.h"
@@ -11,6 +10,14 @@ enum class OwnedBy : uint8
 	Neutral 	UMETA(DisplayName = "Neutral"),
 	Player1 	UMETA(DisplayName = "Player1"),
 	Player2 	UMETA(DisplayName = "Player2")
+};
+
+UENUM(BlueprintType)
+enum class FleetState : uint8
+{
+	Stationary,
+	Moving, 
+	Returning
 };
 
 UCLASS()
@@ -25,8 +32,6 @@ public:
 	float TotalHealth() const{ return totalHealth; }
 	float TotalDefence() const{ return totalDefence; }
 	float TotalMorale() const{ return totalMorale; }
-	float StarDefence() const{ return starDefence; }
-	void StarDefence(float defence) { starDefence = defence; }
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
 		OwnedBy ownedBy;
@@ -41,6 +46,7 @@ public:
 	void GiveShipType(AShip* shipType);
 	void BuildMorale(float DeltaTime);
 	void TakeFleetDamage(float damage);
+	void SetDestinations(TArray<FVector> destinations); // Array of star pointers would be better
 	bool InCombat;
 	int GetSize();
 
@@ -67,7 +73,8 @@ private:
 		float totalHealth;
 	UPROPERTY(VisibleAnywhere)
 		float totalDefence;
-	UPROPERTY(VisibleAnywhere)
-		float starDefence;
 	float moraleCap;
+
+	UPROPERTY(VisibleAnywhere)
+		TArray<FVector> destinations;  // Array of star pointers would be better
 };

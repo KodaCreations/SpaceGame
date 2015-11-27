@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\SpaceGame.h.obj"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\Combat.cpp.obj"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\Fleet.cpp.obj"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\Link.cpp.obj"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\Ship.cpp.obj"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\SpaceGame.cpp.obj"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\SpaceGameGameMode.cpp.obj"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\Star.cpp.obj"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\SpaceGame.generated.cpp.obj"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\PCLaunch.rc.res"
+"C:\Users\Spellabbet\Documents\Unreal Projects\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\ModuleVersionResource.rc.inl.res"
+=======
 "C:\Users\Spellabbet\Documents\GitHub\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\SpaceGame.h.obj"
 "C:\Users\Spellabbet\Documents\GitHub\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\Combat.cpp.obj"
 "C:\Users\Spellabbet\Documents\GitHub\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\Fleet.cpp.obj"
@@ -9,6 +22,7 @@
 "C:\Users\Spellabbet\Documents\GitHub\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\SpaceGame.generated.cpp.obj"
 "C:\Users\Spellabbet\Documents\GitHub\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\PCLaunch.rc.res"
 "C:\Users\Spellabbet\Documents\GitHub\SpaceGame\Project\SpaceGame\Intermediate\Build\Win64\UE4Editor\Development\SpaceGame\ModuleVersionResource.rc.inl.res"
+>>>>>>> origin/master
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"
