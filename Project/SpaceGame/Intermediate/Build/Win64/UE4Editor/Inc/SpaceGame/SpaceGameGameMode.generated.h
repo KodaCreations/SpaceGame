@@ -39,7 +39,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define SpaceGame_Source_SpaceGame_SpaceGameGameMode_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ASpaceGameGameMode(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API ASpaceGameGameMode(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASpaceGameGameMode) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ASpaceGameGameMode); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASpaceGameGameMode); \
@@ -50,15 +50,13 @@ public:
 
 
 #define SpaceGame_Source_SpaceGame_SpaceGameGameMode_h_14_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API ASpaceGameGameMode(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API ASpaceGameGameMode(const ASpaceGameGameMode& InCopy); \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ASpaceGameGameMode); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASpaceGameGameMode); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASpaceGameGameMode)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASpaceGameGameMode)
 
 
 #define SpaceGame_Source_SpaceGame_SpaceGameGameMode_h_11_PROLOG

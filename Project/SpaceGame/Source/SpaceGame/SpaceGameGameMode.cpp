@@ -2,7 +2,11 @@
 
 #include "SpaceGame.h"
 #include "SpaceGameGameMode.h"
+#include "MouseController.h"
 
-
+ASpaceGameGameMode::ASpaceGameGameMode()
+{
+	//this->PlayerControllerClass = AMouseController::StaticClass();
+}
 
 

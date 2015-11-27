@@ -23,6 +23,11 @@ AFleet::AFleet()
 	Trigger->AttachTo(mesh);
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &AFleet::OnBeginOverlap);
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &AFleet::OnEndOverlap);
+
+	ownedBy = OwnedBy::Neutral;
+
+	destinations = TArray<FVector>();
+	
 }
 
 // Called when the game starts or when spawned
@@ -34,6 +39,7 @@ void AFleet::BeginPlay()
 		UpdateFleetStats();
 		totalMorale = ship->Morale();
 	}
+	destinations = TArray<FVector>();
 }
 
 // Called every frame
@@ -41,7 +47,17 @@ void AFleet::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
 	//sBuildMorale(DeltaTime);
+	if (destinations.Num() > 0)
+	{
+		FVector temp;
+		float speed = 500.f;
 
+		temp = destinations[0] - GetActorLocation();
+		temp.Normalize();
+
+		SetActorLocation(GetActorLocation() + temp * speed * DeltaTime);
+
+	}
 }
 void AFleet::UpdateFleetStats()
 {
@@ -98,4 +114,9 @@ void AFleet::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, 
 void AFleet::OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 
+}
+
+void AFleet::SetDestinations(TArray<FVector> destinations)
+{
+	AFleet::destinations = destinations;
 }

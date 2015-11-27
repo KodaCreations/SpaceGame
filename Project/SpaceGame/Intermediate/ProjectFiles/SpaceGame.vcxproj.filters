@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\SpaceGame.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{1722B094-F1D8-4C00-8BE6-90DD317AC978}</UniqueIdentifier>
+			<UniqueIdentifier>{22CD190D-CF9E-43FF-8C80-5729088E0113}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\SpaceGame.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{904668E4-0C5C-43C4-8E5C-6954ED215012}</UniqueIdentifier>
+			<UniqueIdentifier>{514AD67E-C825-47CE-8FF9-6CD9EC89FF03}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -24,8 +24,11 @@
 		<None Include="..\..\Config\DefaultGame.ini">
 			<Filter>Config</Filter>
 		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
 		<Filter Include="Source\SpaceGame">
-			<UniqueIdentifier>{DBE66599-0DDC-4E9E-B71E-A9CB9E59A2DF}</UniqueIdentifier>
+			<UniqueIdentifier>{3F5641DA-53B1-4FF3-92E1-D715774253CA}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\SpaceGame\CameraPawn.cpp">
 			<Filter>Source\SpaceGame</Filter>
@@ -49,6 +52,30 @@
 			<Filter>Source\SpaceGame</Filter>
 		</ClCompile >
 		<ClInclude Include="..\..\Source\SpaceGame\Link.h">
+			<Filter>Source\SpaceGame</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\SpaceGame\MinHeap.cpp">
+			<Filter>Source\SpaceGame</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\SpaceGame\MinHeap.h">
+			<Filter>Source\SpaceGame</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\SpaceGame\MouseController.cpp">
+			<Filter>Source\SpaceGame</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\SpaceGame\MouseController.h">
+			<Filter>Source\SpaceGame</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\SpaceGame\MousePawn.cpp">
+			<Filter>Source\SpaceGame</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\SpaceGame\MousePawn.h">
+			<Filter>Source\SpaceGame</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\SpaceGame\Pathfinder.cpp">
+			<Filter>Source\SpaceGame</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\SpaceGame\Pathfinder.h">
 			<Filter>Source\SpaceGame</Filter>
 		</ClInclude >
 		<ClCompile Include="..\..\Source\SpaceGame\Ship.cpp">

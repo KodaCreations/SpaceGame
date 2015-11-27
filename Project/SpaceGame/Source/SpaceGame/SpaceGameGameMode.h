@@ -13,7 +13,8 @@ class SPACEGAME_API ASpaceGameGameMode : public AGameMode
 {
 	GENERATED_BODY()
 	
-	
+public:
+	ASpaceGameGameMode();
 	
 	
 };
