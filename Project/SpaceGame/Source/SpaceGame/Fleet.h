@@ -25,6 +25,8 @@ public:
 	float TotalHealth() const{ return totalHealth; }
 	float TotalDefence() const{ return totalDefence; }
 	float TotalMorale() const{ return totalMorale; }
+	float StarDefence() const{ return starDefence; }
+	void StarDefence(float defence) { starDefence = defence; }
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
 		OwnedBy ownedBy;
@@ -65,5 +67,7 @@ private:
 		float totalHealth;
 	UPROPERTY(VisibleAnywhere)
 		float totalDefence;
+	UPROPERTY(VisibleAnywhere)
+		float starDefence;
 	float moraleCap;
 };

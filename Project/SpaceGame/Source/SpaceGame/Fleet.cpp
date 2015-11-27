@@ -23,8 +23,6 @@ AFleet::AFleet()
 	Trigger->AttachTo(mesh);
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &AFleet::OnBeginOverlap);
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &AFleet::OnEndOverlap);
-
-	ownedBy = OwnedBy::Neutral;
 }
 
 // Called when the game starts or when spawned
