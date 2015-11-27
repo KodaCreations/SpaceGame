@@ -23,6 +23,8 @@ AFleet::AFleet()
 	Trigger->AttachTo(mesh);
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &AFleet::OnBeginOverlap);
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &AFleet::OnEndOverlap);
+
+	ownedBy = OwnedBy::Neutral;
 }
 
 // Called when the game starts or when spawned
@@ -33,10 +35,6 @@ void AFleet::BeginPlay()
 	{
 		UpdateFleetStats();
 		totalMorale = ship->Morale();
-	}
-	else
-	{
-		Destroy();
 	}
 }
 
@@ -55,11 +53,14 @@ void AFleet::UpdateFleetStats()
 }
 void AFleet::TakeFleetDamage(float damage)
 {
-	totalHealth -= damage;
-	if ((ships * ship->Health() - totalHealth) > ship->Health())
+	if (ship != nullptr)
 	{
-		--ships;
-		UpdateFleetStats(); 
+		totalHealth -= damage;
+		if ((ships * ship->Health() - totalHealth) > ship->Health())
+		{
+			--ships;
+			UpdateFleetStats();
+		}
 	}
 }
 void AFleet::BuildMorale(float DeltaTime)
@@ -82,16 +83,19 @@ int AFleet::GetSize()
 {
 	return ships;
 }
+void AFleet::GiveShipType(AShip* shipType)
+{
+	ship = shipType;
+}
 void AFleet::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
-	if (!InCombat)
+	if (!InCombat && OtherActor->IsA(AFleet::StaticClass()))
 	{
 		InCombat = true;
 		Cast<AFleet>(OtherActor)->InCombat = true;
 		ACombat* combat = GetWorld()->SpawnActor<ACombat>();
 		combat->Inizialize(this, Cast<AFleet>(OtherActor));
 	}
-
 }
 void AFleet::OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {

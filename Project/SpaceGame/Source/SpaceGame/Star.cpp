@@ -19,6 +19,7 @@ AStar::AStar()
 	Trigger->AttachTo(mesh);
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &AStar::OnBeginOverlap);
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &AStar::OnEndOverlap);
+
 	ownedBy = OwnedBy::Neutral;
 	fleet = nullptr;
 }
@@ -38,10 +39,17 @@ void AStar::Tick( float DeltaTime )
 	Super::Tick( DeltaTime );
 
 	timer -= DeltaTime;
-	if (timer < 0)
+	if (timer < 0 && ownedBy != OwnedBy::Neutral)
 	{
 		if (fleet == nullptr)
-			fleet = GetWorld()->SpawnActor<AFleet>(AFleet::StaticClass());
+		{
+			FVector location = GetActorLocation();
+			FRotator rotation = GetActorRotation();
+			//Won't Spawn Correctly
+			fleet = Cast<AFleet>(GetWorld()->SpawnActor(fleetBP, &location, &rotation));
+			//fleet->GiveShip();
+			fleet->ownedBy = ownedBy;
+		}
 		else
 			fleet->AddShip();
 
@@ -54,8 +62,11 @@ void AStar::Tick( float DeltaTime )
 }
 void AStar::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
+	fleet = Cast<AFleet>(OtherActor);
+	ownedBy = fleet->ownedBy;
 }
 void AStar::OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
+	fleet = nullptr;
 }
 

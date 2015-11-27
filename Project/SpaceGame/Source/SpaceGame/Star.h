@@ -5,14 +5,6 @@
 #include "GameFramework/Actor.h"
 #include "Star.generated.h"
 
-UENUM(BlueprintType)		//"BlueprintType" is essential to include
-enum class OwnedBy : uint8
-{
-	Neutral 	UMETA(DisplayName = "Neutral"),
-	Player1 	UMETA(DisplayName = "Player1"),
-	Player2 	UMETA(DisplayName = "Player2")
-};
-
 UCLASS()
 class SPACEGAME_API AStar : public AActor
 {
@@ -26,8 +18,9 @@ public:
 	virtual void BeginPlay() override;
 	
 	// Called every frame
-	virtual void Tick( float DeltaSeconds ) override;
-	
+	virtual void Tick(float DeltaSeconds) override;
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<AFleet> fleetBP;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
 		OwnedBy ownedBy;
 	UPROPERTY(VisibleAnywhere, Category = "Triggers")

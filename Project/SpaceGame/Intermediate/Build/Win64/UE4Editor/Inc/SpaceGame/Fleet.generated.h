@@ -16,7 +16,7 @@ struct FHitResult;
 #endif
 #define SPACEGAME_Fleet_generated_h
 
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_RPC_WRAPPERS \
+#define SpaceGame_Source_SpaceGame_Fleet_h_19_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execOnEndOverlap) \
 	{ \
@@ -39,7 +39,7 @@ struct FHitResult;
 	}
 
 
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+#define SpaceGame_Source_SpaceGame_Fleet_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execOnEndOverlap) \
 	{ \
@@ -62,7 +62,7 @@ struct FHitResult;
 	}
 
 
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_INCLASS_NO_PURE_DECLS \
+#define SpaceGame_Source_SpaceGame_Fleet_h_19_INCLASS_NO_PURE_DECLS \
 	private: \
 	static void StaticRegisterNativesAFleet(); \
 	friend SPACEGAME_API class UClass* Z_Construct_UClass_AFleet(); \
@@ -73,7 +73,7 @@ struct FHitResult;
 	virtual UObject* _getUObject() const override { return const_cast<AFleet*>(this); }
 
 
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_INCLASS \
+#define SpaceGame_Source_SpaceGame_Fleet_h_19_INCLASS \
 	private: \
 	static void StaticRegisterNativesAFleet(); \
 	friend SPACEGAME_API class UClass* Z_Construct_UClass_AFleet(); \
@@ -84,7 +84,7 @@ struct FHitResult;
 	virtual UObject* _getUObject() const override { return const_cast<AFleet*>(this); }
 
 
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_STANDARD_CONSTRUCTORS \
+#define SpaceGame_Source_SpaceGame_Fleet_h_19_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AFleet(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFleet) \
@@ -96,7 +96,7 @@ private: \
 public:
 
 
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_ENHANCED_CONSTRUCTORS \
+#define SpaceGame_Source_SpaceGame_Fleet_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private copy-constructor, should never be used */ \
 	NO_API AFleet(const AFleet& InCopy); \
@@ -106,23 +106,23 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AFleet); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AFleet)
 
 
-#define SpaceGame_Source_SpaceGame_Fleet_h_8_PROLOG
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_GENERATED_BODY_LEGACY \
+#define SpaceGame_Source_SpaceGame_Fleet_h_16_PROLOG
+#define SpaceGame_Source_SpaceGame_Fleet_h_19_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceGame_Source_SpaceGame_Fleet_h_11_RPC_WRAPPERS \
-	SpaceGame_Source_SpaceGame_Fleet_h_11_INCLASS \
-	SpaceGame_Source_SpaceGame_Fleet_h_11_STANDARD_CONSTRUCTORS \
+	SpaceGame_Source_SpaceGame_Fleet_h_19_RPC_WRAPPERS \
+	SpaceGame_Source_SpaceGame_Fleet_h_19_INCLASS \
+	SpaceGame_Source_SpaceGame_Fleet_h_19_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define SpaceGame_Source_SpaceGame_Fleet_h_11_GENERATED_BODY \
+#define SpaceGame_Source_SpaceGame_Fleet_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SpaceGame_Source_SpaceGame_Fleet_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	SpaceGame_Source_SpaceGame_Fleet_h_11_INCLASS_NO_PURE_DECLS \
-	SpaceGame_Source_SpaceGame_Fleet_h_11_ENHANCED_CONSTRUCTORS \
+	SpaceGame_Source_SpaceGame_Fleet_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	SpaceGame_Source_SpaceGame_Fleet_h_19_INCLASS_NO_PURE_DECLS \
+	SpaceGame_Source_SpaceGame_Fleet_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -131,4 +131,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #define CURRENT_FILE_ID SpaceGame_Source_SpaceGame_Fleet_h
 
 
+#define FOREACH_ENUM_OWNEDBY(op) \
+	op(OwnedBy::Neutral) \
+	op(OwnedBy::Player1) \
+	op(OwnedBy::Player2) 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -5,6 +5,9 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef SPACEGAME_CameraPawn_generated_h
+	#include "CameraPawn.h"
+#endif
 #ifndef SPACEGAME_Ship_generated_h
 	#include "Ship.h"
 #endif

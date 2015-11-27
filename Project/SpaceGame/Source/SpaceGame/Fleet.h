@@ -5,6 +5,14 @@
 #include "GameFramework/Actor.h"
 #include "Fleet.generated.h"
 
+UENUM(BlueprintType)		//"BlueprintType" is essential to include
+enum class OwnedBy : uint8
+{
+	Neutral 	UMETA(DisplayName = "Neutral"),
+	Player1 	UMETA(DisplayName = "Player1"),
+	Player2 	UMETA(DisplayName = "Player2")
+};
+
 UCLASS()
 class SPACEGAME_API AFleet : public AActor
 {
@@ -18,6 +26,9 @@ public:
 	float TotalDefence() const{ return totalDefence; }
 	float TotalMorale() const{ return totalMorale; }
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
+		OwnedBy ownedBy;
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
@@ -25,6 +36,7 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 	void UpdateFleetStats();
 	void AddShip();
+	void GiveShipType(AShip* shipType);
 	void BuildMorale(float DeltaTime);
 	void TakeFleetDamage(float damage);
 	bool InCombat;

@@ -9,20 +9,14 @@
 #include "SpaceGame.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
+	void ACameraPawn::StaticRegisterNativesACameraPawn()
+	{
+	}
+	IMPLEMENT_CLASS(ACameraPawn, 2851626297);
 	void AShip::StaticRegisterNativesAShip()
 	{
 	}
 	IMPLEMENT_CLASS(AShip, 3040245790);
-	void AFleet::StaticRegisterNativesAFleet()
-	{
-		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnBeginOverlap",(Native)&AFleet::execOnBeginOverlap);
-		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnEndOverlap",(Native)&AFleet::execOnEndOverlap);
-	}
-	IMPLEMENT_CLASS(AFleet, 3345443351);
-	void ACombat::StaticRegisterNativesACombat()
-	{
-	}
-	IMPLEMENT_CLASS(ACombat, 3229609665);
 static class UEnum* OwnedBy_StaticEnum()
 {
 	static class UEnum* Singleton = NULL;
@@ -35,12 +29,22 @@ static class UEnum* OwnedBy_StaticEnum()
 	return Singleton;
 }
 static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEnum, TEXT("/Script/SpaceGame"));
+	void AFleet::StaticRegisterNativesAFleet()
+	{
+		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnBeginOverlap",(Native)&AFleet::execOnBeginOverlap);
+		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnEndOverlap",(Native)&AFleet::execOnEndOverlap);
+	}
+	IMPLEMENT_CLASS(AFleet, 3180830201);
+	void ACombat::StaticRegisterNativesACombat()
+	{
+	}
+	IMPLEMENT_CLASS(ACombat, 3229609665);
 	void AStar::StaticRegisterNativesAStar()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AStar::StaticClass(),"OnBeginOverlap",(Native)&AStar::execOnBeginOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AStar::StaticClass(),"OnEndOverlap",(Native)&AStar::execOnEndOverlap);
 	}
-	IMPLEMENT_CLASS(AStar, 2443380359);
+	IMPLEMENT_CLASS(AStar, 291066083);
 	void ALink::StaticRegisterNativesALink()
 	{
 	}
@@ -51,6 +55,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	IMPLEMENT_CLASS(ASpaceGameGameMode, 997237742);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
+	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
@@ -59,15 +64,17 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	SPACEGAME_API class UClass* Z_Construct_UClass_ACameraPawn_NoRegister();
+	SPACEGAME_API class UClass* Z_Construct_UClass_ACameraPawn();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AShip_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AShip();
+	SPACEGAME_API class UEnum* Z_Construct_UEnum_SpaceGame_OwnedBy();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AFleet_OnBeginOverlap();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AFleet_OnEndOverlap();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AFleet_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AFleet();
 	SPACEGAME_API class UClass* Z_Construct_UClass_ACombat_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_ACombat();
-	SPACEGAME_API class UEnum* Z_Construct_UEnum_SpaceGame_OwnedBy();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AStar_OnBeginOverlap();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AStar_OnEndOverlap();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AStar_NoRegister();
@@ -77,6 +84,38 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode();
 	SPACEGAME_API class UPackage* Z_Construct_UPackage_SpaceGame();
+	UClass* Z_Construct_UClass_ACameraPawn_NoRegister()
+	{
+		return ACameraPawn::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ACameraPawn()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_SpaceGame();
+			OuterClass = ACameraPawn::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("CameraPawn.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("CameraPawn.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ACameraPawn(Z_Construct_UClass_ACameraPawn, TEXT("ACameraPawn"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ACameraPawn);
 	UClass* Z_Construct_UClass_AShip_NoRegister()
 	{
 		return AShip::StaticClass();
@@ -122,6 +161,31 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AShip(Z_Construct_UClass_AShip, TEXT("AShip"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AShip);
+	UEnum* Z_Construct_UEnum_SpaceGame_OwnedBy()
+	{
+		UPackage* Outer=Z_Construct_UPackage_SpaceGame();
+		static UEnum* ReturnEnum = NULL;
+		if (!ReturnEnum)
+		{
+			ReturnEnum = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OwnedBy"), RF_Public|RF_Transient|RF_Native) UEnum(FObjectInitializer());
+			TArray<TPair<FName, uint8>> EnumNames;
+			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("OwnedBy::Neutral")), 0));
+			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("OwnedBy::Player1")), 1));
+			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("OwnedBy::Player2")), 2));
+			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("OwnedBy::OwnedBy_MAX")), 3));
+			ReturnEnum->SetEnums(EnumNames, UEnum::ECppForm::EnumClass);
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnEnum->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnEnum, TEXT("BlueprintType"), TEXT("true"));
+			MetaData->SetValue(ReturnEnum, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+			MetaData->SetValue(ReturnEnum, TEXT("Neutral.DisplayName"), TEXT("Neutral"));
+			MetaData->SetValue(ReturnEnum, TEXT("Player1.DisplayName"), TEXT("Player1"));
+			MetaData->SetValue(ReturnEnum, TEXT("Player2.DisplayName"), TEXT("Player2"));
+			MetaData->SetValue(ReturnEnum, TEXT("ToolTip"), TEXT("\"BlueprintType\" is essential to include"));
+#endif
+		}
+		return ReturnEnum;
+	}
 	UFunction* Z_Construct_UFunction_AFleet_OnBeginOverlap()
 	{
 		struct Fleet_eventOnBeginOverlap_Parms
@@ -208,6 +272,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_ship = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ship"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ship, AFleet), 0x0000000000000001, Z_Construct_UClass_AShip_NoRegister());
 				UProperty* NewProp_Trigger = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Trigger"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Trigger, AFleet), 0x00000000000a0009, Z_Construct_UClass_UBoxComponent_NoRegister());
 				UProperty* NewProp_mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(mesh, AFleet), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				UProperty* NewProp_ownedBy = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ownedBy"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(ownedBy, AFleet), 0x0000000000000005, Z_Construct_UEnum_SpaceGame_OwnedBy());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFleet_OnBeginOverlap()); // 1474114864
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFleet_OnEndOverlap()); // 1387912959
@@ -231,9 +296,12 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_Trigger, TEXT("Category"), TEXT("Triggers"));
 				MetaData->SetValue(NewProp_Trigger, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_Trigger, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_Trigger, TEXT("ToolTip"), TEXT("UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)\n               Star::OwnedBy ownedBy;"));
 				MetaData->SetValue(NewProp_mesh, TEXT("Category"), TEXT("Fleet"));
 				MetaData->SetValue(NewProp_mesh, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_mesh, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_ownedBy, TEXT("Category"), TEXT("Enum"));
+				MetaData->SetValue(NewProp_ownedBy, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 #endif
 			}
 		}
@@ -281,31 +349,6 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ACombat(Z_Construct_UClass_ACombat, TEXT("ACombat"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ACombat);
-	UEnum* Z_Construct_UEnum_SpaceGame_OwnedBy()
-	{
-		UPackage* Outer=Z_Construct_UPackage_SpaceGame();
-		static UEnum* ReturnEnum = NULL;
-		if (!ReturnEnum)
-		{
-			ReturnEnum = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OwnedBy"), RF_Public|RF_Transient|RF_Native) UEnum(FObjectInitializer());
-			TArray<TPair<FName, uint8>> EnumNames;
-			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("OwnedBy::Neutral")), 0));
-			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("OwnedBy::Player1")), 1));
-			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("OwnedBy::Player2")), 2));
-			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("OwnedBy::OwnedBy_MAX")), 3));
-			ReturnEnum->SetEnums(EnumNames, UEnum::ECppForm::EnumClass);
-#if WITH_METADATA
-			UMetaData* MetaData = ReturnEnum->GetOutermost()->GetMetaData();
-			MetaData->SetValue(ReturnEnum, TEXT("BlueprintType"), TEXT("true"));
-			MetaData->SetValue(ReturnEnum, TEXT("ModuleRelativePath"), TEXT("Star.h"));
-			MetaData->SetValue(ReturnEnum, TEXT("Neutral.DisplayName"), TEXT("Neutral"));
-			MetaData->SetValue(ReturnEnum, TEXT("Player1.DisplayName"), TEXT("Player1"));
-			MetaData->SetValue(ReturnEnum, TEXT("Player2.DisplayName"), TEXT("Player2"));
-			MetaData->SetValue(ReturnEnum, TEXT("ToolTip"), TEXT("\"BlueprintType\" is essential to include"));
-#endif
-		}
-		return ReturnEnum;
-	}
 	UFunction* Z_Construct_UFunction_AStar_OnBeginOverlap()
 	{
 		struct Star_eventOnBeginOverlap_Parms
@@ -387,6 +430,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(mesh, AStar), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_Trigger = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Trigger"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Trigger, AStar), 0x00000000000a0009, Z_Construct_UClass_UBoxComponent_NoRegister());
 				UProperty* NewProp_ownedBy = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ownedBy"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(ownedBy, AStar), 0x0000000000000005, Z_Construct_UEnum_SpaceGame_OwnedBy());
+				UProperty* NewProp_fleetBP = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("fleetBP"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(fleetBP, AStar), 0x0004000000000001, Z_Construct_UClass_AFleet_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AStar_OnBeginOverlap()); // 1173484778
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AStar_OnEndOverlap()); // 925098088
@@ -403,6 +447,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_Trigger, TEXT("ModuleRelativePath"), TEXT("Star.h"));
 				MetaData->SetValue(NewProp_ownedBy, TEXT("Category"), TEXT("Enum"));
 				MetaData->SetValue(NewProp_ownedBy, TEXT("ModuleRelativePath"), TEXT("Star.h"));
+				MetaData->SetValue(NewProp_fleetBP, TEXT("Category"), TEXT("Star"));
+				MetaData->SetValue(NewProp_fleetBP, TEXT("ModuleRelativePath"), TEXT("Star.h"));
 #endif
 			}
 		}
@@ -496,8 +542,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x129A4C5C;
-			Guid.B = 0x6D87B090;
+			Guid.A = 0xD29D730A;
+			Guid.B = 0x7CADA785;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
