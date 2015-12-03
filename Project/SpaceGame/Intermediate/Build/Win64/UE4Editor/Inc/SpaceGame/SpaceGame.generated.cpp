@@ -9,6 +9,10 @@
 #include "SpaceGame.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
+	void ACameraPawn::StaticRegisterNativesACameraPawn()
+	{
+	}
+	IMPLEMENT_CLASS(ACameraPawn, 2851626297);
 	void AShip::StaticRegisterNativesAShip()
 	{
 	}
@@ -74,6 +78,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	IMPLEMENT_CLASS(ASpaceGameGameMode, 997237742);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
+	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
@@ -82,9 +87,10 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	ENGINE_API class UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_APlayerController();
-	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
 
+	SPACEGAME_API class UClass* Z_Construct_UClass_ACameraPawn_NoRegister();
+	SPACEGAME_API class UClass* Z_Construct_UClass_ACameraPawn();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AShip_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AShip();
 	SPACEGAME_API class UEnum* Z_Construct_UEnum_SpaceGame_FleetState();
@@ -111,6 +117,38 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_ASpaceGameGameMode();
 	SPACEGAME_API class UPackage* Z_Construct_UPackage_SpaceGame();
+	UClass* Z_Construct_UClass_ACameraPawn_NoRegister()
+	{
+		return ACameraPawn::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ACameraPawn()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_SpaceGame();
+			OuterClass = ACameraPawn::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("CameraPawn.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("CameraPawn.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ACameraPawn(Z_Construct_UClass_ACameraPawn, TEXT("ACameraPawn"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ACameraPawn);
 	UClass* Z_Construct_UClass_AShip_NoRegister()
 	{
 		return AShip::StaticClass();
@@ -694,8 +732,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xA0363E51;
-			Guid.B = 0xD66A7CA6;
+			Guid.A = 0xB4563990;
+			Guid.B = 0xDDD6A2A1;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
