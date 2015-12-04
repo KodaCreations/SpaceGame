@@ -4,7 +4,7 @@
 	<ItemGroup>
 		<None Include="..\..\SpaceGame.uproject" />
 		<Filter Include="Source">
-			<UniqueIdentifier>{C16020DA-8F3F-4703-86FB-DF9A88B8F8D2}</UniqueIdentifier>
+			<UniqueIdentifier>{528A0BFB-A94D-4F70-BBC0-8F5F55A9DF8E}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Source\SpaceGame.Target.cs">
 			<Filter>Source</Filter>
@@ -13,7 +13,7 @@
 			<Filter>Source</Filter>
 		</None >
 		<Filter Include="Config">
-			<UniqueIdentifier>{3A446816-0142-40DB-AC05-C031C6D21C5E}</UniqueIdentifier>
+			<UniqueIdentifier>{D37F0B23-8234-4E04-8C5B-9097B7E19E45}</UniqueIdentifier>
 		</Filter>
 		<None Include="..\..\Config\DefaultEditor.ini">
 			<Filter>Config</Filter>
@@ -28,7 +28,7 @@
 			<Filter>Config</Filter>
 		</None >
 		<Filter Include="Source\SpaceGame">
-			<UniqueIdentifier>{BA149FEA-A0B1-4CC5-9B33-8DC4F8537AFD}</UniqueIdentifier>
+			<UniqueIdentifier>{634B2DFE-15D8-4061-8E2C-C358E94D2028}</UniqueIdentifier>
 		</Filter>
 		<ClCompile Include="..\..\Source\SpaceGame\CameraPawn.cpp">
 			<Filter>Source\SpaceGame</Filter>
