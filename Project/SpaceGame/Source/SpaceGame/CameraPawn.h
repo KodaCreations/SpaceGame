@@ -10,6 +10,12 @@ class SPACEGAME_API ACameraPawn : public APawn
 {
 	GENERATED_BODY()
 
+	UPROPERTY(EditAnywhere)
+		UCameraComponent* Camera;
+
+	UPROPERTY(EditAnywhere)
+		USpringArmComponent* SpringArm;
+
 public:
 	// Sets default values for this pawn's properties
 	ACameraPawn();
@@ -23,6 +29,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
-	
-	
+	void MoveX(float axisValue);
+	void MoveY(float axisValue);
+
+	float speed;
+	FVector velocity;
+
 };
