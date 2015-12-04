@@ -10,6 +10,21 @@ ACameraPawn::ACameraPawn()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	speed = 300.0f;
+
+	AutoPossessPlayer = EAutoReceiveInput::Player0;
+
+	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+
+	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+	SpringArm->AttachTo(RootComponent);
+	SpringArm->SetRelativeRotation(FRotator(-70.0f, 0.0f, 0.0f));
+
+	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+	Camera->AttachTo(SpringArm);
+
+
+
 }
 
 // Called when the game starts or when spawned
@@ -23,7 +38,7 @@ void ACameraPawn::BeginPlay()
 void ACameraPawn::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
-
+	SetActorLocation(GetActorLocation() + velocity * DeltaTime);
 }
 
 // Called to bind functionality to input
@@ -31,5 +46,18 @@ void ACameraPawn::SetupPlayerInputComponent(class UInputComponent* InputComponen
 {
 	Super::SetupPlayerInputComponent(InputComponent);
 
+	InputComponent->BindAxis("MoveX", this, &ACameraPawn::MoveX);
+	InputComponent->BindAxis("MoveY", this, &ACameraPawn::MoveY);
+}
+
+
+void ACameraPawn::MoveX(float axisValue){
+	FMath::Clamp(axisValue, -1.0f, 1.0f);
+	velocity.X = axisValue * speed;
+}
+
+void ACameraPawn::MoveY(float axisValue){
+	FMath::Clamp(axisValue, -1.0f, 1.0f);
+	velocity.Y = axisValue * speed;
 }
 

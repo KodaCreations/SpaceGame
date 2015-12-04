@@ -12,7 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	void ACameraPawn::StaticRegisterNativesACameraPawn()
 	{
 	}
-	IMPLEMENT_CLASS(ACameraPawn, 2851626297);
+	IMPLEMENT_CLASS(ACameraPawn, 1022763739);
 	void AShip::StaticRegisterNativesAShip()
 	{
 	}
@@ -79,6 +79,8 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
+	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
@@ -135,12 +137,22 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 				OuterClass->ClassFlags |= 0x20900080;
 
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_SpringArm = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpringArm"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(SpringArm, ACameraPawn), 0x0000000000080009, Z_Construct_UClass_USpringArmComponent_NoRegister());
+				UProperty* NewProp_Camera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Camera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Camera, ACameraPawn), 0x0000000000080009, Z_Construct_UClass_UCameraComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("CameraPawn.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("CameraPawn.h"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("Category"), TEXT("CameraPawn"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("ModuleRelativePath"), TEXT("CameraPawn.h"));
+				MetaData->SetValue(NewProp_Camera, TEXT("Category"), TEXT("CameraPawn"));
+				MetaData->SetValue(NewProp_Camera, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Camera, TEXT("ModuleRelativePath"), TEXT("CameraPawn.h"));
 #endif
 			}
 		}
@@ -732,7 +744,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xB4563990;
+			Guid.A = 0x1FA9C3C0;
 			Guid.B = 0xDDD6A2A1;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
