@@ -32,6 +32,7 @@ public:
 
 private:
 	// Stationed fleet
+	UPROPERTY(VisibleAnywhere)
 	AFleet *fleet;
 
 	// Production time
@@ -39,6 +40,8 @@ private:
 
 	// Fleet creation timer
 	float timer;
+	UPROPERTY(EditAnywhere)
+		float starDefence;
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* mesh;
 };

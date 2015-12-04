@@ -24,7 +24,7 @@ AFleet::AFleet()
 	Trigger->OnComponentBeginOverlap.AddDynamic(this, &AFleet::OnBeginOverlap);
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &AFleet::OnEndOverlap);
 
-	ownedBy = OwnedBy::Neutral;
+	//ownedBy = OwnedBy::Neutral;
 
 	destinations = TArray<FVector>();
 	
@@ -47,7 +47,7 @@ void AFleet::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
 	//sBuildMorale(DeltaTime);
-	if (destinations.Num() > 0)
+	if (destinations.Num() > 0 && !InCombat)
 	{
 		FVector temp;
 		float speed = 500.f;
@@ -56,8 +56,30 @@ void AFleet::Tick( float DeltaTime )
 		temp.Normalize();
 
 		SetActorLocation(GetActorLocation() + temp * speed * DeltaTime);
-
+		if (AtDestination(destinations[0]))
+		{
+			destinations.RemoveAt(0);
+		}
 	}
+	if (mergable)
+	{
+		TArray<AActor*> fleets;
+		GetOverlappingActors(fleets, AFleet::StaticClass());
+		if (destinations.Num() <= 0 && Cast<AFleet>(fleets[0])->GetDestinations().Num() <= 0)
+		{
+			MergeFleet(Cast<AFleet>(fleets[0]));
+			mergable = false;
+		}
+	}
+}
+bool AFleet::AtDestination(FVector _destination)
+{
+	FVector length = _destination - GetActorLocation();
+	if (length.Size() < 2)
+	{
+		return true;
+	}
+	return false;
 }
 void AFleet::UpdateFleetStats()
 {
@@ -91,6 +113,10 @@ void AFleet::BuildMorale(float DeltaTime)
 void AFleet::AddShip()
 {
 	++ships;
+	if (ship != nullptr)
+	{
+		UpdateFleetStats();
+	}
 }
 
 int AFleet::GetSize()
@@ -105,18 +131,39 @@ void AFleet::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, 
 {
 	if (!InCombat && OtherActor->IsA(AFleet::StaticClass()))
 	{
-		InCombat = true;
-		Cast<AFleet>(OtherActor)->InCombat = true;
-		ACombat* combat = GetWorld()->SpawnActor<ACombat>();
-		combat->Inizialize(this, Cast<AFleet>(OtherActor));
+		AFleet* otherFleet = Cast<AFleet>(OtherActor);
+		if (ownedBy != otherFleet->ownedBy
+			&& ownedBy != OwnedBy::Neutral
+			&& otherFleet->ownedBy != OwnedBy::Neutral)
+		{
+			InCombat = true;
+			otherFleet->InCombat = true;
+			ACombat* combat = GetWorld()->SpawnActor<ACombat>();
+			combat->Inizialize(this, otherFleet);
+		}
+		else if (ownedBy == otherFleet->ownedBy)
+		{
+			mergable = true;
+		}
 	}
+}
+void AFleet::MergeFleet(AFleet* _mergeFleet)
+{
+	//totalMorale = ((totalMorale * ships) + (_mergeFleet->TotalMorale() * _mergeFleet->GetSize())) / (ships + _mergeFleet->GetSize());
+	ships += _mergeFleet->GetSize();
+	_mergeFleet->Destroy();
+	//UpdateFleetStats();
 }
 void AFleet::OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-
+	mergable = false;
 }
 
 void AFleet::SetDestinations(TArray<FVector> destinations)
 {
 	AFleet::destinations = destinations;
+}
+TArray<FVector> AFleet::GetDestinations()
+{
+	return destinations;
 }

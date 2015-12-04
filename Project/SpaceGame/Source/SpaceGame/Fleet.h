@@ -32,6 +32,8 @@ public:
 	float TotalHealth() const{ return totalHealth; }
 	float TotalDefence() const{ return totalDefence; }
 	float TotalMorale() const{ return totalMorale; }
+	float StarDefence() const{ return starDefence; }
+	void StarDefence(float defence) { starDefence = defence; }
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
 		OwnedBy ownedBy;
@@ -46,8 +48,12 @@ public:
 	void GiveShipType(AShip* shipType);
 	void BuildMorale(float DeltaTime);
 	void TakeFleetDamage(float damage);
+	bool AtDestination(FVector _destination);
 	void SetDestinations(TArray<FVector> destinations); // Array of star pointers would be better
+	TArray<FVector> GetDestinations();
+	void MergeFleet(AFleet* _mergeWith);
 	bool InCombat;
+	bool mergable;
 	int GetSize();
 
 	UPROPERTY(EditAnywhere)
@@ -73,6 +79,8 @@ private:
 		float totalHealth;
 	UPROPERTY(VisibleAnywhere)
 		float totalDefence;
+	UPROPERTY(VisibleAnywhere)
+		float starDefence;
 	float moraleCap;
 
 	UPROPERTY(VisibleAnywhere)

@@ -46,7 +46,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnBeginOverlap",(Native)&AFleet::execOnBeginOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnEndOverlap",(Native)&AFleet::execOnEndOverlap);
 	}
-	IMPLEMENT_CLASS(AFleet, 854755812);
+	IMPLEMENT_CLASS(AFleet, 1613297513);
 	void ACombat::StaticRegisterNativesACombat()
 	{
 	}
@@ -56,7 +56,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 		FNativeFunctionRegistrar::RegisterFunction(AStar::StaticClass(),"OnBeginOverlap",(Native)&AStar::execOnBeginOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AStar::StaticClass(),"OnEndOverlap",(Native)&AStar::execOnEndOverlap);
 	}
-	IMPLEMENT_CLASS(AStar, 291066083);
+	IMPLEMENT_CLASS(AStar, 2913309792);
 	void ALink::StaticRegisterNativesALink()
 	{
 	}
@@ -320,6 +320,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_destinations = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("destinations"), RF_Public|RF_Transient|RF_Native) UArrayProperty(CPP_PROPERTY_BASE(destinations, AFleet), 0x0000000000020001);
 				UProperty* NewProp_destinations_Inner = new(EC_InternalUseOnlyConstructor, NewProp_destinations, TEXT("destinations"), RF_Public|RF_Transient|RF_Native) UStructProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000020000, Z_Construct_UScriptStruct_FVector());
+				UProperty* NewProp_starDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("starDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(starDefence, AFleet), 0x0000000000020001);
 				UProperty* NewProp_totalDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalDefence, AFleet), 0x0000000000020001);
 				UProperty* NewProp_totalHealth = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalHealth"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalHealth, AFleet), 0x0000000000020001);
 				UProperty* NewProp_totalDamage = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalDamage"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalDamage, AFleet), 0x0000000000020001);
@@ -339,6 +340,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(NewProp_destinations, TEXT("Category"), TEXT("Fleet"));
 				MetaData->SetValue(NewProp_destinations, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_starDefence, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_starDefence, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(NewProp_totalDefence, TEXT("Category"), TEXT("Fleet"));
 				MetaData->SetValue(NewProp_totalDefence, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(NewProp_totalHealth, TEXT("Category"), TEXT("Fleet"));
@@ -486,6 +489,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(mesh, AStar), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
+				UProperty* NewProp_starDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("starDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(starDefence, AStar), 0x0000000000000001);
+				UProperty* NewProp_fleet = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("fleet"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(fleet, AStar), 0x0000000000020001, Z_Construct_UClass_AFleet_NoRegister());
 				UProperty* NewProp_Trigger = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Trigger"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Trigger, AStar), 0x00000000000a0009, Z_Construct_UClass_UBoxComponent_NoRegister());
 				UProperty* NewProp_ownedBy = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ownedBy"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(ownedBy, AStar), 0x0000000000000005, Z_Construct_UEnum_SpaceGame_OwnedBy());
 				UProperty* NewProp_fleetBP = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("fleetBP"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(fleetBP, AStar), 0x0004000000000001, Z_Construct_UClass_AFleet_NoRegister());
@@ -500,6 +505,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_mesh, TEXT("Category"), TEXT("Star"));
 				MetaData->SetValue(NewProp_mesh, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_mesh, TEXT("ModuleRelativePath"), TEXT("Star.h"));
+				MetaData->SetValue(NewProp_starDefence, TEXT("Category"), TEXT("Star"));
+				MetaData->SetValue(NewProp_starDefence, TEXT("ModuleRelativePath"), TEXT("Star.h"));
+				MetaData->SetValue(NewProp_fleet, TEXT("Category"), TEXT("Star"));
+				MetaData->SetValue(NewProp_fleet, TEXT("ModuleRelativePath"), TEXT("Star.h"));
+				MetaData->SetValue(NewProp_fleet, TEXT("ToolTip"), TEXT("Stationed fleet"));
 				MetaData->SetValue(NewProp_Trigger, TEXT("Category"), TEXT("Triggers"));
 				MetaData->SetValue(NewProp_Trigger, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_Trigger, TEXT("ModuleRelativePath"), TEXT("Star.h"));
@@ -732,7 +742,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xB4563990;
+			Guid.A = 0x5F12F919;
 			Guid.B = 0xDDD6A2A1;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
