@@ -12,7 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeSpaceGame() {}
 	void ACameraPawn::StaticRegisterNativesACameraPawn()
 	{
 	}
-	IMPLEMENT_CLASS(ACameraPawn, 2851626297);
+	IMPLEMENT_CLASS(ACameraPawn, 1022763739);
 	void AShip::StaticRegisterNativesAShip()
 	{
 	}
@@ -65,13 +65,17 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	{
 	}
 	IMPLEMENT_CLASS(AMouseController, 3280650263);
+	void APathfinder::StaticRegisterNativesAPathfinder()
+	{
+	}
+	IMPLEMENT_CLASS(APathfinder, 3198115668);
 	void AMousePawn::StaticRegisterNativesAMousePawn()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"Deselect",(Native)&AMousePawn::execDeselect);
-		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"SelectStar",(Native)&AMousePawn::execSelectStar);
+		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"SelectActor",(Native)&AMousePawn::execSelectActor);
 		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"SendFleetTo",(Native)&AMousePawn::execSendFleetTo);
 	}
-	IMPLEMENT_CLASS(AMousePawn, 562053622);
+	IMPLEMENT_CLASS(AMousePawn, 3948053883);
 	void ASpaceGameGameMode::StaticRegisterNativesASpaceGameGameMode()
 	{
 	}
@@ -79,6 +83,8 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
+	ENGINE_API class UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
+	ENGINE_API class UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor();
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
@@ -109,8 +115,10 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	SPACEGAME_API class UClass* Z_Construct_UClass_ALink();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AMouseController_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AMouseController();
+	SPACEGAME_API class UClass* Z_Construct_UClass_APathfinder_NoRegister();
+	SPACEGAME_API class UClass* Z_Construct_UClass_APathfinder();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_Deselect();
-	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_SelectStar();
+	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_SelectActor();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_SendFleetTo();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AMousePawn_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AMousePawn();
@@ -135,12 +143,22 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 				OuterClass->ClassFlags |= 0x20900080;
 
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_SpringArm = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpringArm"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(SpringArm, ACameraPawn), 0x0000000000080009, Z_Construct_UClass_USpringArmComponent_NoRegister());
+				UProperty* NewProp_Camera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Camera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Camera, ACameraPawn), 0x0000000000080009, Z_Construct_UClass_UCameraComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("CameraPawn.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("CameraPawn.h"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("Category"), TEXT("CameraPawn"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("ModuleRelativePath"), TEXT("CameraPawn.h"));
+				MetaData->SetValue(NewProp_Camera, TEXT("Category"), TEXT("CameraPawn"));
+				MetaData->SetValue(NewProp_Camera, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Camera, TEXT("ModuleRelativePath"), TEXT("CameraPawn.h"));
 #endif
 			}
 		}
@@ -601,6 +619,37 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AMouseController(Z_Construct_UClass_AMouseController, TEXT("AMouseController"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AMouseController);
+	UClass* Z_Construct_UClass_APathfinder_NoRegister()
+	{
+		return APathfinder::StaticClass();
+	}
+	UClass* Z_Construct_UClass_APathfinder()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_AActor();
+			Z_Construct_UPackage_SpaceGame();
+			OuterClass = APathfinder::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Pathfinder.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Pathfinder.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_APathfinder(Z_Construct_UClass_APathfinder, TEXT("APathfinder"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(APathfinder);
 	UFunction* Z_Construct_UFunction_AMousePawn_Deselect()
 	{
 		UObject* Outer=Z_Construct_UClass_AMousePawn();
@@ -618,18 +667,18 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
-	UFunction* Z_Construct_UFunction_AMousePawn_SelectStar()
+	UFunction* Z_Construct_UFunction_AMousePawn_SelectActor()
 	{
-		struct MousePawn_eventSelectStar_Parms
+		struct MousePawn_eventSelectActor_Parms
 		{
-			AStar* clickedStar;
+			AActor* clickedActor;
 		};
 		UObject* Outer=Z_Construct_UClass_AMousePawn();
 		static UFunction* ReturnFunction = NULL;
 		if (!ReturnFunction)
 		{
-			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("SelectStar"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(MousePawn_eventSelectStar_Parms));
-			UProperty* NewProp_clickedStar = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("clickedStar"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(clickedStar, MousePawn_eventSelectStar_Parms), 0x0000000000000080, Z_Construct_UClass_AStar_NoRegister());
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("SelectActor"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(MousePawn_eventSelectActor_Parms));
+			UProperty* NewProp_clickedActor = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("clickedActor"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(clickedActor, MousePawn_eventSelectActor_Parms), 0x0000000000000080, Z_Construct_UClass_AActor_NoRegister());
 			ReturnFunction->Bind();
 			ReturnFunction->StaticLink();
 #if WITH_METADATA
@@ -680,11 +729,11 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassFlags |= 0x20900080;
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_Deselect());
-				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_SelectStar());
+				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_SelectActor());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_SendFleetTo());
 
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_Deselect()); // 3215991058
-				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_SelectStar()); // 3815765691
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_SelectActor()); // 1800882220
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_SendFleetTo()); // 2892774303
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -742,8 +791,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x5F12F919;
-			Guid.B = 0xDDD6A2A1;
+			Guid.A = 0xC66E2F5F;
+			Guid.B = 0xF7D4E9D1;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

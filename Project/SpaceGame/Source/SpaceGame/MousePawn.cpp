@@ -3,21 +3,25 @@
 #include "SpaceGame.h"
 #include "MousePawn.h"
 
-
 // Sets default values
 AMousePawn::AMousePawn()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	selectedStar = nullptr;
+	selectedActor = nullptr;
 }
 
 // Called when the game starts or when spawned
 void AMousePawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	for (TActorIterator<APathfinder> ActorItr(GetWorld()); ActorItr; ++ActorItr)
+	{
+		pathfinder = *ActorItr;
+		break;
+	}
 }
 
 // Called every frame
@@ -34,22 +38,31 @@ void AMousePawn::SetupPlayerInputComponent(class UInputComponent* InputComponent
 
 }
 
-void AMousePawn::SelectStar(AStar* clickedStar)
+void AMousePawn::SelectActor(AActor* clickedActor)
 {
-	selectedStar = clickedStar;
+	if (Cast<AFleet, AActor>(clickedActor) || Cast<AStar, AActor>(clickedActor))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("MyCharacter's Name is %s"), *clickedActor->GetName());
+		selectedActor = clickedActor;
+	}
+	else
+		Deselect();
 }
 
 void AMousePawn::Deselect()
 {
-	selectedStar = nullptr;
+	selectedActor = nullptr;
 }
 
 void AMousePawn::SendFleetTo(AStar* clickedStar)
 {
-	if (selectedStar && selectedStar->GetFleet())
+	if (AStar* selectedStar = Cast<AStar, AActor>(selectedActor))
 	{
-		TArray<FVector> temp = TArray<FVector>();
-		temp.Add(clickedStar->GetActorLocation());
-		selectedStar->GetFleet()->SetDestinations(temp);
+		if (pathfinder && selectedActor && selectedStar->GetFleet())
+		{
+			TArray<FVector> destinations = pathfinder->FindShortestPath(selectedStar, clickedStar);
+
+			selectedStar->GetFleet()->SetDestinations(destinations);
+		}
 	}
 }

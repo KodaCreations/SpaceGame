@@ -13,6 +13,7 @@ public:
 	~MinHeap();
 	void Enqueue(TPriority priority, TValue value);
 	TValue Dequeue();
+	int Count();
 private:
 	TArray<TKeyValuePair<TPriority, TValue>> heap;
 	void Insert(TPriority priority, TValue value);
@@ -39,11 +40,16 @@ void MinHeap<TPriority, TValue>::Enqueue(TPriority priority, TValue value)
 }
 
 template<class TPriority, class TValue>
+int MinHeap<TPriority, TValue>::Count()
+{
+	return heap.Num();
+}
+
+template<class TPriority, class TValue>
 void MinHeap<TPriority, TValue>::Insert(TPriority priority, TValue value)
 {
 	heap.Add(TKeyValuePair<TPriority, TValue>(priority, value));
 	HeapifyFromEndToBeginning(heap.Num() - 1);
-	UE_LOG(LogTemp, Log, TEXT("LOOK HERE!!!! FIRST IN HEAP IS: %d"), heap[0].Value);
 }
 
 template<class TPriority, class TValue>

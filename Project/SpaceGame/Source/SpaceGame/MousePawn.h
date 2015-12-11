@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 #include "GameFramework/Pawn.h"
 #include "Star.h"
+#include "Pathfinder.h"
 #include "MousePawn.generated.h"
 
 UCLASS()
@@ -24,7 +24,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
 	UFUNCTION(BlueprintCallable, Category = "PlayerFunctions")
-	void SelectStar(AStar* clickedStar);
+	void SelectActor(AActor* clickedActor);
 
 	UFUNCTION(BlueprintCallable, Category = "PlayerFunctions")
 		void Deselect();
@@ -33,6 +33,6 @@ public:
 	void SendFleetTo(AStar* clickedStar);
 
 private:
-	AStar* selectedStar;
-	
+	AActor* selectedActor;
+	APathfinder* pathfinder;
 };

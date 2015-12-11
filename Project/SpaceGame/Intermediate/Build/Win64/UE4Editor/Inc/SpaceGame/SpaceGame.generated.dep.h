@@ -26,6 +26,9 @@
 #ifndef SPACEGAME_MouseController_generated_h
 	#include "MouseController.h"
 #endif
+#ifndef SPACEGAME_Pathfinder_generated_h
+	#include "Pathfinder.h"
+#endif
 #ifndef SPACEGAME_MousePawn_generated_h
 	#include "MousePawn.h"
 #endif

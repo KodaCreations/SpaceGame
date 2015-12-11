@@ -9,6 +9,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AStar;
+class AActor;
 #ifdef SPACEGAME_MousePawn_generated_h
 #error "MousePawn.generated.h already included, missing '#pragma once' in MousePawn.h"
 #endif
@@ -29,11 +30,11 @@ class AStar;
 		this->Deselect(); \
 	} \
  \
-	DECLARE_FUNCTION(execSelectStar) \
+	DECLARE_FUNCTION(execSelectActor) \
 	{ \
-		P_GET_OBJECT(AStar,Z_Param_clickedStar); \
+		P_GET_OBJECT(AActor,Z_Param_clickedActor); \
 		P_FINISH; \
-		this->SelectStar(Z_Param_clickedStar); \
+		this->SelectActor(Z_Param_clickedActor); \
 	}
 
 
@@ -52,11 +53,11 @@ class AStar;
 		this->Deselect(); \
 	} \
  \
-	DECLARE_FUNCTION(execSelectStar) \
+	DECLARE_FUNCTION(execSelectActor) \
 	{ \
-		P_GET_OBJECT(AStar,Z_Param_clickedStar); \
+		P_GET_OBJECT(AActor,Z_Param_clickedActor); \
 		P_FINISH; \
-		this->SelectStar(Z_Param_clickedStar); \
+		this->SelectActor(Z_Param_clickedActor); \
 	}
 
 

@@ -44,7 +44,7 @@
 		</ProjectConfiguration>
 	</ItemGroup>
 	<PropertyGroup Label="Globals">
-		<ProjectGuid>{A3D09E9F-E5B3-4301-8634-4AE53F08FB2A}</ProjectGuid>
+		<ProjectGuid>{7CD34B54-44B4-4B4C-AD61-F3C06BD5FEDC}</ProjectGuid>
 		<Keyword>MakeFileProj</Keyword>
 		<RootNamespace>SpaceGame</RootNamespace>
 	</PropertyGroup>
@@ -254,10 +254,6 @@
 		<None Include="..\..\SpaceGame.uproject" />
 		<None Include="..\..\Source\SpaceGame.Target.cs" />
 		<None Include="..\..\Source\SpaceGameEditor.Target.cs" />
-		<None Include="..\..\Config\DefaultEditor.ini" />
-		<None Include="..\..\Config\DefaultEngine.ini" />
-		<None Include="..\..\Config\DefaultGame.ini" />
-		<None Include="..\..\Config\DefaultInput.ini" />
 		<ClCompile Include="..\..\Source\SpaceGame\CameraPawn.cpp" />
 		<ClInclude Include="..\..\Source\SpaceGame\CameraPawn.h" />
 		<ClCompile Include="..\..\Source\SpaceGame\Combat.cpp" />

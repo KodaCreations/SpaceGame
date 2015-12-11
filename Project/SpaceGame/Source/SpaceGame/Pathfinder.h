@@ -1,15 +1,31 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-#include "MinHeap.h"
+
 #pragma once
 
-/**
- * 
- */
-class SPACEGAME_API Pathfinder
+#include "GameFramework/Actor.h"
+#include "Star.h"
+#include "Pathfinder.generated.h"
+
+UCLASS()
+class SPACEGAME_API APathfinder : public AActor
 {
-public:
-	Pathfinder();
-	~Pathfinder();
+	GENERATED_BODY()
+	
+public:	
+	// Sets default values for this actor's properties
+	APathfinder();
+
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+	
+	// Called every frame
+	virtual void Tick( float DeltaSeconds ) override;
+
+	TArray<FVector> FindShortestPath(AStar* start, AStar* target);
+	
 private:
-	MinHeap<int32, int32>* minHeap;
+	TArray<AStar*> stars;
+	TArray<float> proximityMatrix;
+
+	void GenerateProximityMatrix();
 };
