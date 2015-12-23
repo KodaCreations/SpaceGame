@@ -75,7 +75,7 @@ void AFleet::Tick( float DeltaTime )
 bool AFleet::AtDestination(FVector _destination)
 {
 	FVector length = _destination - GetActorLocation();
-	if (length.Size() < 2)
+	if (length.Size() < 4)
 	{
 		return true;
 	}
