@@ -46,7 +46,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnBeginOverlap",(Native)&AFleet::execOnBeginOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnEndOverlap",(Native)&AFleet::execOnEndOverlap);
 	}
-	IMPLEMENT_CLASS(AFleet, 1613297513);
+	IMPLEMENT_CLASS(AFleet, 2086727426);
 	void ACombat::StaticRegisterNativesACombat()
 	{
 	}
@@ -342,7 +342,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_totalDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalDefence, AFleet), 0x0000000000020001);
 				UProperty* NewProp_totalHealth = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalHealth"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalHealth, AFleet), 0x0000000000020001);
 				UProperty* NewProp_totalDamage = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalDamage"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalDamage, AFleet), 0x0000000000020001);
-				UProperty* NewProp_totalMorale = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalMorale"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalMorale, AFleet), 0x0000000000020001);
+				UProperty* NewProp_currentMorale = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("currentMorale"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(currentMorale, AFleet), 0x0000000000000001);
 				UProperty* NewProp_ships = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ships"), RF_Public|RF_Transient|RF_Native) UIntProperty(CPP_PROPERTY_BASE(ships, AFleet), 0x0000000000000001);
 				UProperty* NewProp_ship = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ship"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ship, AFleet), 0x0000000000000001, Z_Construct_UClass_AShip_NoRegister());
 				UProperty* NewProp_Trigger = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Trigger"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Trigger, AFleet), 0x00000000000a0009, Z_Construct_UClass_UBoxComponent_NoRegister());
@@ -366,8 +366,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_totalHealth, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(NewProp_totalDamage, TEXT("Category"), TEXT("Fleet"));
 				MetaData->SetValue(NewProp_totalDamage, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
-				MetaData->SetValue(NewProp_totalMorale, TEXT("Category"), TEXT("Fleet"));
-				MetaData->SetValue(NewProp_totalMorale, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_currentMorale, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_currentMorale, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(NewProp_ships, TEXT("Category"), TEXT("Fleet"));
 				MetaData->SetValue(NewProp_ships, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(NewProp_ship, TEXT("Category"), TEXT("Fleet"));
@@ -791,7 +791,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xC66E2F5F;
+			Guid.A = 0x8D891842;
 			Guid.B = 0xF7D4E9D1;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

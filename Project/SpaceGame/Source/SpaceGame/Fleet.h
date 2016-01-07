@@ -31,7 +31,7 @@ public:
 	float TotalDamage() const { return totalDamage; }
 	float TotalHealth() const{ return totalHealth; }
 	float TotalDefence() const{ return totalDefence; }
-	float TotalMorale() const{ return totalMorale; }
+	float TotalMorale() const{ return currentMorale; }
 	float StarDefence() const{ return starDefence; }
 	void StarDefence(float defence) { starDefence = defence; }
 
@@ -47,6 +47,7 @@ public:
 	void AddShip();
 	void GiveShipType(AShip* shipType);
 	void BuildMorale(float DeltaTime);
+	void DecreaseMorale(float DeltaTime);
 	void TakeFleetDamage(float damage);
 	bool AtDestination(FVector _destination);
 	void SetDestinations(TArray<FVector> destinations); // Array of star pointers would be better
@@ -71,8 +72,8 @@ public:
 private:
 	UPROPERTY(EditAnywhere)
 		int32 ships;
-	UPROPERTY(VisibleAnywhere)
-		float totalMorale;
+	UPROPERTY(EditAnywhere)
+		float currentMorale;
 	UPROPERTY(VisibleAnywhere)
 		float totalDamage;
 	UPROPERTY(VisibleAnywhere)
@@ -81,7 +82,8 @@ private:
 		float totalDefence;
 	UPROPERTY(VisibleAnywhere)
 		float starDefence;
-	float moraleCap;
+	float maxMorale;
+	float minMorale;
 
 	UPROPERTY(VisibleAnywhere)
 		TArray<FVector> destinations;  // Array of star pointers would be better

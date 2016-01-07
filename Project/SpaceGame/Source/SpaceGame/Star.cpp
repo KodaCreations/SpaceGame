@@ -48,6 +48,9 @@ void AStar::Tick( float DeltaTime )
 			ownedBy = fleet->ownedBy;
 		}
 	}
+	else
+		fleet->BuildMorale(DeltaTime);
+
 	timer -= DeltaTime;
 	if (timer < 0 && ownedBy != OwnedBy::Neutral)
 	{
