@@ -39,7 +39,7 @@ private:
 	const float prodTime = 3;
 
 	// Fleet creation timer
-	float timer;
+	float shipBuildTimer;
 	UPROPERTY(EditAnywhere)
 		float starDefence;
 	UPROPERTY(EditAnywhere)

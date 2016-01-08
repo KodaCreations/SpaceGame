@@ -30,7 +30,7 @@ void AStar::BeginPlay()
 {
 	Super::BeginPlay();
 
-	timer = prodTime;
+	shipBuildTimer = prodTime;
 }
 
 // Called every frame
@@ -48,34 +48,27 @@ void AStar::Tick( float DeltaTime )
 			ownedBy = fleet->ownedBy;
 		}
 	}
-	timer -= DeltaTime;
-	if (timer < 0 && ownedBy != OwnedBy::Neutral)
+	else
+		fleet->IncreaseMorale(DeltaTime);
+
+	shipBuildTimer -= DeltaTime;
+	if (shipBuildTimer < 0 && ownedBy != OwnedBy::Neutral)
 	{
 		if (fleet == nullptr)
 		{
 			FVector location = GetActorLocation();
 			FRotator rotation = GetActorRotation();
 			fleet = Cast<AFleet>(GetWorld()->SpawnActor(fleetBP, &location, &rotation));
-			//fleet->GiveShip();
 			fleet->ownedBy = ownedBy;
 		}
 		else
 			fleet->AddShip();
 
-		timer = prodTime;
-
-		// Uncomment for logging stationed fleet size.
-		//if (fleet != nullptr)
-			//UE_LOG(LogTemp, Log, TEXT("Number of ships in fleet: %d"), fleet->GetSize());
+		shipBuildTimer = prodTime;
 	}
 }
 void AStar::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
-	//if (OtherActor->IsA(AFleet::StaticClass()))
-	//{
-	//	fleet = Cast<AFleet>(OtherActor);
-	//	ownedBy = fleet->ownedBy;
-	//}
 	if (OtherActor->IsA(AFleet::StaticClass()))
 	{
 		AFleet* newFleet = Cast<AFleet>(OtherActor);
