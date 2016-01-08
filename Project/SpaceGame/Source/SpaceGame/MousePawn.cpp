@@ -10,6 +10,7 @@ AMousePawn::AMousePawn()
 	PrimaryActorTick.bCanEverTick = true;
 
 	selectedActor = nullptr;
+	waypoints = TArray<AStar*>();
 }
 
 // Called when the game starts or when spawned
@@ -56,13 +57,68 @@ void AMousePawn::Deselect()
 
 void AMousePawn::SendFleetTo(AStar* clickedStar)
 {
-	if (AStar* selectedStar = Cast<AStar, AActor>(selectedActor))
+	AStar* selectedStar =nullptr;
+	AFleet* selectedFleet = nullptr;
+
+	selectedStar = Cast<AStar, AActor>(selectedActor);
+	selectedFleet = Cast<AFleet, AActor>(selectedActor);
+	
+	if (pathfinder && selectedActor)
 	{
-		if (pathfinder && selectedActor && selectedStar->GetFleet())
+		AStar* lastVisitedStar = Cast<AStar, AActor>(selectedFleet->GetLastVisitedStar());
+		if (selectedStar && selectedStar->GetFleet())
 		{
 			TArray<FVector> destinations = pathfinder->FindShortestPath(selectedStar, clickedStar);
-
 			selectedStar->GetFleet()->SetDestinations(destinations);
+		}
+		else if (selectedFleet && lastVisitedStar)
+		{
+			TArray<FVector> destinations = pathfinder->FindShortestPath(lastVisitedStar, clickedStar);
+			destinations.Insert(lastVisitedStar->GetActorLocation(), 0);
+			selectedFleet->SetDestinations(destinations);
+		}
+	}
+}
+
+void AMousePawn::AddWaypoint(AStar* clickedStar)
+{
+	waypoints.Add(clickedStar);
+}
+
+void AMousePawn::SendFleetByWaypoints()
+{
+	AStar* selectedStar = Cast<AStar, AActor>(selectedActor);
+	AFleet* selectedFleet = Cast<AFleet, AActor>(selectedActor);
+
+	if (pathfinder && selectedActor)
+	{
+		TArray<FVector> destinations;
+		AStar* start = nullptr;
+		AStar* lastVisitedStar = Cast<AStar, AActor>(selectedFleet->GetLastVisitedStar());
+
+		if (selectedStar && selectedStar->GetFleet())
+			start = selectedStar;
+		else if (selectedFleet && lastVisitedStar)
+			start = lastVisitedStar;
+
+		for (int i = 0; i < waypoints.Num(); ++i)
+			UE_LOG(LogTemp, Warning, TEXT("Waypoint %d is: %s"), i, *waypoints[i]->GetName());
+
+		while (waypoints.Num() != 0 && start)
+		{
+			destinations += pathfinder->FindShortestPath(start, waypoints[0]);
+
+			start = waypoints[0];
+			waypoints.RemoveAt(0);
+		}
+		if (selectedStar && selectedStar->GetFleet())
+		{
+			selectedStar->GetFleet()->SetDestinations(destinations);
+		}
+		else if (selectedFleet && lastVisitedStar)
+		{
+			destinations.Insert(lastVisitedStar->GetActorLocation(), 0);
+			selectedFleet->SetDestinations(destinations);
 		}
 	}
 }

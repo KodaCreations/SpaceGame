@@ -17,6 +17,19 @@ class AActor;
 
 #define SpaceGame_Source_SpaceGame_MousePawn_h_11_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSendFleetByWaypoints) \
+	{ \
+		P_FINISH; \
+		this->SendFleetByWaypoints(); \
+	} \
+ \
+	DECLARE_FUNCTION(execAddWaypoint) \
+	{ \
+		P_GET_OBJECT(AStar,Z_Param_clickedStar); \
+		P_FINISH; \
+		this->AddWaypoint(Z_Param_clickedStar); \
+	} \
+ \
 	DECLARE_FUNCTION(execSendFleetTo) \
 	{ \
 		P_GET_OBJECT(AStar,Z_Param_clickedStar); \
@@ -39,6 +52,19 @@ class AActor;
 
 
 #define SpaceGame_Source_SpaceGame_MousePawn_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSendFleetByWaypoints) \
+	{ \
+		P_FINISH; \
+		this->SendFleetByWaypoints(); \
+	} \
+ \
+	DECLARE_FUNCTION(execAddWaypoint) \
+	{ \
+		P_GET_OBJECT(AStar,Z_Param_clickedStar); \
+		P_FINISH; \
+		this->AddWaypoint(Z_Param_clickedStar); \
+	} \
  \
 	DECLARE_FUNCTION(execSendFleetTo) \
 	{ \

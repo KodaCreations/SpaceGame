@@ -2,6 +2,7 @@
 
 #include "SpaceGame.h"
 #include "Fleet.h"
+#include "Star.h"
 #include "Combat.h"
 
 
@@ -11,8 +12,7 @@ AFleet::AFleet()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	ships = 1;
-	maxMorale = 30.0f;
-	minMorale = -30.0f;
+	moraleCap = 30;
 	InCombat = false;
 
 	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
@@ -38,7 +38,7 @@ void AFleet::BeginPlay()
 	if (ship != nullptr)
 	{
 		UpdateFleetStats();
-		currentMorale = ship->Morale();
+		totalMorale = ship->Morale();
 	}
 	destinations = TArray<FVector>();
 }
@@ -47,7 +47,7 @@ void AFleet::BeginPlay()
 void AFleet::Tick( float DeltaTime )
 {
 	Super::Tick( DeltaTime );
-
+	//sBuildMorale(DeltaTime);
 	if (destinations.Num() > 0 && !InCombat)
 	{
 		FVector temp;
@@ -73,8 +73,6 @@ void AFleet::Tick( float DeltaTime )
 		}
 	}
 }
-
-
 bool AFleet::AtDestination(FVector _destination)
 {
 	FVector length = _destination - GetActorLocation();
@@ -84,16 +82,12 @@ bool AFleet::AtDestination(FVector _destination)
 	}
 	return false;
 }
-
-
 void AFleet::UpdateFleetStats()
 {
 	totalHealth = ship->Health() * ships;
-	totalDamage = (ship->Damage() * ships) + (ship->Damage() * ships * currentMorale * 0.01);
+	totalDamage = (ship->Damage() * ships) + (ship->Damage() * ships * totalMorale * 0.01);
 	totalDefence = ship->Defence();
 }
-
-
 void AFleet::TakeFleetDamage(float damage)
 {
 	if (ship != nullptr)
@@ -106,30 +100,16 @@ void AFleet::TakeFleetDamage(float damage)
 		}
 	}
 }
-
-// Increases morale when on a Star
 void AFleet::BuildMorale(float DeltaTime)
 {
-	if (currentMorale <= maxMorale)
+	if (true) //Fleet is on a star
 	{
-		currentMorale += DeltaTime;
-		if (currentMorale > maxMorale)
-			currentMorale = maxMorale;
+		if (totalMorale <= moraleCap)
+		{
+			totalMorale += DeltaTime; // ggr stars moralebuilder
+		}
 	}
 }
-
-// Decreases morale when in combat
-void AFleet::DecreaseMorale(float DeltaTime)
-{
-	if (currentMorale > minMorale)
-	{
-		currentMorale -= DeltaTime * 2;
-		if (currentMorale < minMorale)
-			currentMorale = minMorale;
-	}
-	
-}
-
 
 void AFleet::AddShip()
 {
@@ -140,19 +120,14 @@ void AFleet::AddShip()
 	}
 }
 
-
 int AFleet::GetSize()
 {
 	return ships;
 }
-
-
 void AFleet::GiveShipType(AShip* shipType)
 {
 	ship = shipType;
 }
-
-
 void AFleet::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
 	if (!InCombat && OtherActor->IsA(AFleet::StaticClass()))
@@ -172,31 +147,34 @@ void AFleet::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, 
 			mergable = true;
 		}
 	}
+	else if (OtherActor->IsA(AStar::StaticClass()))
+	{
+		lastVisitedStar = OtherActor;
+	}
 }
-
-
 void AFleet::MergeFleet(AFleet* _mergeFleet)
 {
-	currentMorale = ((currentMorale * ships) + (_mergeFleet->TotalMorale() * _mergeFleet->GetSize())) / (ships + _mergeFleet->GetSize());
+	//totalMorale = ((totalMorale * ships) + (_mergeFleet->TotalMorale() * _mergeFleet->GetSize())) / (ships + _mergeFleet->GetSize());
 	ships += _mergeFleet->GetSize();
 	_mergeFleet->Destroy();
-	UpdateFleetStats();
+	//UpdateFleetStats();
 }
-
-
 void AFleet::OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	mergable = false;
 }
-
 
 void AFleet::SetDestinations(TArray<FVector> destinations)
 {
 	AFleet::destinations = destinations;
 }
 
-
 TArray<FVector> AFleet::GetDestinations()
 {
 	return destinations;
+}
+
+AActor* AFleet::GetLastVisitedStar()
+{
+	return lastVisitedStar;
 }

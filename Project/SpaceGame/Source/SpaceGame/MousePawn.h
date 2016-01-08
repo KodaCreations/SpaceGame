@@ -27,12 +27,19 @@ public:
 	void SelectActor(AActor* clickedActor);
 
 	UFUNCTION(BlueprintCallable, Category = "PlayerFunctions")
-		void Deselect();
+	void Deselect();
 
 	UFUNCTION(BlueprintCallable, Category = "PlayerFunctions")
 	void SendFleetTo(AStar* clickedStar);
 
+	UFUNCTION(BlueprintCallable, Category = "PlayerFunctions")
+	void AddWaypoint(AStar* clickedStar);
+
+	UFUNCTION(BlueprintCallable, Category = "PlayerFunctions")
+	void SendFleetByWaypoints();
+
 private:
 	AActor* selectedActor;
 	APathfinder* pathfinder;
+	TArray<AStar*> waypoints;
 };
