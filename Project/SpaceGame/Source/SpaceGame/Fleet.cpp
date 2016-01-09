@@ -211,3 +211,7 @@ AActor* AFleet::GetLastVisitedStar()
 {
 	return lastVisitedStar;
 }
+void AFleet::SetLastVisitedStar(AActor* star)
+{
+	lastVisitedStar = star;
+}

@@ -60,6 +60,7 @@ public:
 	bool mergable;
 	int GetSize();
 	AActor* GetLastVisitedStar();
+	void SetLastVisitedStar(AActor* star);
 
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* mesh;
@@ -88,7 +89,8 @@ private:
 		float starDefence;
 	float maxMorale;
 	float minMorale;
-	AActor* lastVisitedStar;
+	UPROPERTY(VisibleAnywhere)
+		AActor* lastVisitedStar;
 
 	UPROPERTY(VisibleAnywhere)
 		TArray<FVector> destinations;  // Array of star pointers would be better

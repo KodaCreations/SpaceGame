@@ -9,6 +9,19 @@ AMousePawn::AMousePawn()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	speed = 300.0f;
+
+	AutoPossessPlayer = EAutoReceiveInput::Player0;
+
+	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+
+	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+	SpringArm->AttachTo(RootComponent);
+	SpringArm->SetRelativeRotation(FRotator(-70.0f, 0.0f, 0.0f));
+
+	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+	Camera->AttachTo(SpringArm);
+
 	selectedActor = nullptr;
 	waypoints = TArray<AStar*>();
 }
@@ -21,15 +34,17 @@ void AMousePawn::BeginPlay()
 	for (TActorIterator<APathfinder> ActorItr(GetWorld()); ActorItr; ++ActorItr)
 	{
 		pathfinder = *ActorItr;
-		break;
+		return;
 	}
+	UE_LOG(LogTemp, Warning, TEXT("Created a PathFinder"));
+	pathfinder = (APathfinder*)GetWorld()->SpawnActor(APathfinder::StaticClass(), NULL, NULL);
 }
 
 // Called every frame
 void AMousePawn::Tick( float DeltaTime )
 {
-	Super::Tick( DeltaTime );
-
+	Super::Tick(DeltaTime);
+	SetActorLocation(GetActorLocation() + velocity * DeltaTime);
 }
 
 // Called to bind functionality to input
@@ -37,6 +52,21 @@ void AMousePawn::SetupPlayerInputComponent(class UInputComponent* InputComponent
 {
 	Super::SetupPlayerInputComponent(InputComponent);
 
+	InputComponent->BindAxis("MoveX", this, &AMousePawn::MoveX);
+	InputComponent->BindAxis("MoveY", this, &AMousePawn::MoveY);
+}
+
+
+void AMousePawn::MoveX(float axisValue)
+{
+	FMath::Clamp(axisValue, -1.0f, 1.0f);
+	velocity.X = axisValue * speed;
+}
+
+void AMousePawn::MoveY(float axisValue)
+{
+	FMath::Clamp(axisValue, -1.0f, 1.0f);
+	velocity.Y = axisValue * speed;
 }
 
 void AMousePawn::SelectActor(AActor* clickedActor)
@@ -65,17 +95,19 @@ void AMousePawn::SendFleetTo(AStar* clickedStar)
 	
 	if (pathfinder && selectedActor)
 	{
-		AStar* lastVisitedStar = Cast<AStar, AActor>(selectedFleet->GetLastVisitedStar());
 		if (selectedStar && selectedStar->GetFleet())
 		{
 			TArray<FVector> destinations = pathfinder->FindShortestPath(selectedStar, clickedStar);
 			selectedStar->GetFleet()->SetDestinations(destinations);
+			return;
 		}
-		else if (selectedFleet && lastVisitedStar)
+		if (selectedFleet)
 		{
+			AStar* lastVisitedStar = Cast<AStar, AActor>(selectedFleet->GetLastVisitedStar());
 			TArray<FVector> destinations = pathfinder->FindShortestPath(lastVisitedStar, clickedStar);
 			destinations.Insert(lastVisitedStar->GetActorLocation(), 0);
 			selectedFleet->SetDestinations(destinations);
+			return;
 		}
 	}
 }

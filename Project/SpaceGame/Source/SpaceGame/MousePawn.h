@@ -23,6 +23,18 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
+	void MoveX(float axisValue);
+	void MoveY(float axisValue);
+
+	float speed;
+	FVector velocity;
+
+	UPROPERTY(EditAnywhere)
+		UCameraComponent* Camera;
+
+	UPROPERTY(EditAnywhere)
+		USpringArmComponent* SpringArm;
+
 	UFUNCTION(BlueprintCallable, Category = "PlayerFunctions")
 	void SelectActor(AActor* clickedActor);
 

@@ -3,6 +3,8 @@
 #pragma once
 
 #include "GameFramework/GameMode.h"
+#include "Star.h"
+//#include "EnemyAI.h"
 #include "SpaceGameGameMode.generated.h"
 
 /**
@@ -15,6 +17,27 @@ class SPACEGAME_API ASpaceGameGameMode : public AGameMode
 	
 public:
 	ASpaceGameGameMode();
+	virtual void BeginPlay() override;
+
+	//UPROPERTY(EditAnywhere)
+	//	TSubclassOf<AEnemyAI> enemyAI;
+
+	UPROPERTY(VisibleAnywhere)
+		TArray<AStar*> stars;
+	UPROPERTY(VisibleAnywhere)
+		AStar* playerHomePlanet;
+	UPROPERTY(VisibleAnywhere)
+		AStar* aiHomePlanet;
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<AShip> playerShipBluePrint;
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<AShip> aiShipBluePrint;
 	
-	
+
+
+	AShip* GetShipType(OwnedBy ownedBy);
+private:
+	void CreateEnemyAI();
+	AShip* playerShipType;
+	AShip* aiShipType;
 };

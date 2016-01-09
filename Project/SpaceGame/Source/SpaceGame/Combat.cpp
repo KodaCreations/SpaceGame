@@ -41,12 +41,14 @@ void ACombat::CheckIfDead()
 	{
 		playerFleet->Destroy();
 		aiFleet->UpdateFleetStats();
+		aiFleet->InCombat = false;
 		Destroy();
 	}
 	else if (aiFleet->TotalHealth() < 0)
 	{
 		aiFleet->Destroy();
 		playerFleet->UpdateFleetStats();
+		playerFleet->InCombat = false;
 		Destroy();
 	}
 }

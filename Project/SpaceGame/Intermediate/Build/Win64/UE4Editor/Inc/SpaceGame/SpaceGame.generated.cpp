@@ -46,7 +46,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnBeginOverlap",(Native)&AFleet::execOnBeginOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnEndOverlap",(Native)&AFleet::execOnEndOverlap);
 	}
-	IMPLEMENT_CLASS(AFleet, 2086727426);
+	IMPLEMENT_CLASS(AFleet, 101027525);
 	void ACombat::StaticRegisterNativesACombat()
 	{
 	}
@@ -77,11 +77,11 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"SendFleetByWaypoints",(Native)&AMousePawn::execSendFleetByWaypoints);
 		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"SendFleetTo",(Native)&AMousePawn::execSendFleetTo);
 	}
-	IMPLEMENT_CLASS(AMousePawn, 141904591);
+	IMPLEMENT_CLASS(AMousePawn, 2209697727);
 	void ASpaceGameGameMode::StaticRegisterNativesASpaceGameGameMode()
 	{
 	}
-	IMPLEMENT_CLASS(ASpaceGameGameMode, 997237742);
+	IMPLEMENT_CLASS(ASpaceGameGameMode, 3373926242);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
@@ -342,6 +342,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_destinations = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("destinations"), RF_Public|RF_Transient|RF_Native) UArrayProperty(CPP_PROPERTY_BASE(destinations, AFleet), 0x0000000000020001);
 				UProperty* NewProp_destinations_Inner = new(EC_InternalUseOnlyConstructor, NewProp_destinations, TEXT("destinations"), RF_Public|RF_Transient|RF_Native) UStructProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000020000, Z_Construct_UScriptStruct_FVector());
+				UProperty* NewProp_lastVisitedStar = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("lastVisitedStar"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(lastVisitedStar, AFleet), 0x0000000000020001, Z_Construct_UClass_AActor_NoRegister());
 				UProperty* NewProp_starDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("starDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(starDefence, AFleet), 0x0000000000020001);
 				UProperty* NewProp_totalDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalDefence, AFleet), 0x0000000000020001);
 				UProperty* NewProp_totalHealth = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalHealth"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalHealth, AFleet), 0x0000000000020001);
@@ -362,6 +363,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(NewProp_destinations, TEXT("Category"), TEXT("Fleet"));
 				MetaData->SetValue(NewProp_destinations, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+				MetaData->SetValue(NewProp_lastVisitedStar, TEXT("Category"), TEXT("Fleet"));
+				MetaData->SetValue(NewProp_lastVisitedStar, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(NewProp_starDefence, TEXT("Category"), TEXT("Fleet"));
 				MetaData->SetValue(NewProp_starDefence, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
 				MetaData->SetValue(NewProp_totalDefence, TEXT("Category"), TEXT("Fleet"));
@@ -777,6 +780,10 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_SendFleetByWaypoints());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_SendFleetTo());
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_SpringArm = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("SpringArm"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(SpringArm, AMousePawn), 0x0000000000080009, Z_Construct_UClass_USpringArmComponent_NoRegister());
+				UProperty* NewProp_Camera = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Camera"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Camera, AMousePawn), 0x0000000000080009, Z_Construct_UClass_UCameraComponent_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_AddWaypoint()); // 388038697
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_Deselect()); // 3215991058
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_SelectActor()); // 1800882220
@@ -788,6 +795,12 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("MousePawn.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("MousePawn.h"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("Category"), TEXT("MousePawn"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_SpringArm, TEXT("ModuleRelativePath"), TEXT("MousePawn.h"));
+				MetaData->SetValue(NewProp_Camera, TEXT("Category"), TEXT("MousePawn"));
+				MetaData->SetValue(NewProp_Camera, TEXT("EditInline"), TEXT("true"));
+				MetaData->SetValue(NewProp_Camera, TEXT("ModuleRelativePath"), TEXT("MousePawn.h"));
 #endif
 			}
 		}
@@ -814,6 +827,14 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassFlags |= 0x2090028C;
 
 
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_aiShipBluePrint = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("aiShipBluePrint"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(aiShipBluePrint, ASpaceGameGameMode), 0x0004000000000001, Z_Construct_UClass_AShip_NoRegister());
+				UProperty* NewProp_playerShipBluePrint = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("playerShipBluePrint"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(playerShipBluePrint, ASpaceGameGameMode), 0x0004000000000001, Z_Construct_UClass_AShip_NoRegister());
+				UProperty* NewProp_aiHomePlanet = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("aiHomePlanet"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(aiHomePlanet, ASpaceGameGameMode), 0x0000000000020001, Z_Construct_UClass_AStar_NoRegister());
+				UProperty* NewProp_playerHomePlanet = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("playerHomePlanet"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(playerHomePlanet, ASpaceGameGameMode), 0x0000000000020001, Z_Construct_UClass_AStar_NoRegister());
+				UProperty* NewProp_stars = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("stars"), RF_Public|RF_Transient|RF_Native) UArrayProperty(CPP_PROPERTY_BASE(stars, ASpaceGameGameMode), 0x0000000000020001);
+				UProperty* NewProp_stars_Inner = new(EC_InternalUseOnlyConstructor, NewProp_stars, TEXT("stars"), RF_Public|RF_Transient|RF_Native) UObjectProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000020000, Z_Construct_UClass_AStar_NoRegister());
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassConfigName = FName(TEXT("Game"));
 				OuterClass->StaticLink();
 #if WITH_METADATA
@@ -822,6 +843,17 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SpaceGameGameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("SpaceGameGameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_aiShipBluePrint, TEXT("Category"), TEXT("SpaceGameGameMode"));
+				MetaData->SetValue(NewProp_aiShipBluePrint, TEXT("ModuleRelativePath"), TEXT("SpaceGameGameMode.h"));
+				MetaData->SetValue(NewProp_playerShipBluePrint, TEXT("Category"), TEXT("SpaceGameGameMode"));
+				MetaData->SetValue(NewProp_playerShipBluePrint, TEXT("ModuleRelativePath"), TEXT("SpaceGameGameMode.h"));
+				MetaData->SetValue(NewProp_aiHomePlanet, TEXT("Category"), TEXT("SpaceGameGameMode"));
+				MetaData->SetValue(NewProp_aiHomePlanet, TEXT("ModuleRelativePath"), TEXT("SpaceGameGameMode.h"));
+				MetaData->SetValue(NewProp_playerHomePlanet, TEXT("Category"), TEXT("SpaceGameGameMode"));
+				MetaData->SetValue(NewProp_playerHomePlanet, TEXT("ModuleRelativePath"), TEXT("SpaceGameGameMode.h"));
+				MetaData->SetValue(NewProp_stars, TEXT("Category"), TEXT("SpaceGameGameMode"));
+				MetaData->SetValue(NewProp_stars, TEXT("ModuleRelativePath"), TEXT("SpaceGameGameMode.h"));
+				MetaData->SetValue(NewProp_stars, TEXT("ToolTip"), TEXT("UPROPERTY(EditAnywhere)\n       TSubclassOf<AEnemyAI> enemyAI;"));
 #endif
 			}
 		}
@@ -838,7 +870,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0xC295CE6A;
+			Guid.A = 0x211DC236;
 			Guid.B = 0x5F58F44B;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

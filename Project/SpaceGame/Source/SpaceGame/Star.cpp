@@ -2,6 +2,7 @@
 
 #include "SpaceGame.h"
 #include "Star.h"
+#include "SpaceGameGameMode.h"
 
 
 // Sets default values
@@ -59,7 +60,9 @@ void AStar::Tick( float DeltaTime )
 			FVector location = GetActorLocation();
 			FRotator rotation = GetActorRotation();
 			fleet = Cast<AFleet>(GetWorld()->SpawnActor(fleetBP, &location, &rotation));
+			fleet->GiveShipType(Cast<ASpaceGameGameMode>(GetWorld()->GetAuthGameMode())->GetShipType(ownedBy));
 			fleet->ownedBy = ownedBy;
+			fleet->SetLastVisitedStar(this);
 		}
 		else
 			fleet->AddShip();
