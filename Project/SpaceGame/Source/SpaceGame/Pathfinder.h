@@ -22,6 +22,7 @@ public:
 	virtual void Tick( float DeltaSeconds ) override;
 
 	TArray<FVector> FindShortestPath(AStar* start, AStar* target);
+	TArray<AStar*> GetSurroundingStars(AStar* middleStar);
 	
 private:
 	TArray<AStar*> stars;

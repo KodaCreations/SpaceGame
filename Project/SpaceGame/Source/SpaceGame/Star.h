@@ -28,9 +28,13 @@ public:
 		void OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 	UFUNCTION()
 		void OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
-	AFleet* GetFleet();
+	UFUNCTION(BlueprintCallable, Category = "Star")
+		AFleet* GetFleet();
 
 private:
+	float takeoverTimer;
+	float maxTakeoverTime;
+	bool takingOver;
 	// Stationed fleet
 	UPROPERTY(VisibleAnywhere)
 	AFleet *fleet;

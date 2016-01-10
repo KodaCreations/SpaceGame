@@ -22,7 +22,9 @@ AStar::AStar()
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &AStar::OnEndOverlap);
 
 	ownedBy = OwnedBy::Neutral;
-	//fleet = nullptr;
+	maxTakeoverTime = 3;
+	takeoverTimer = maxTakeoverTime;
+	takingOver = false;
 }
 
 
@@ -48,6 +50,10 @@ void AStar::Tick( float DeltaTime )
 			fleet = Cast<AFleet>(fleets.Pop());
 			ownedBy = fleet->ownedBy;
 		}
+		else
+		{
+			takeoverTimer = maxTakeoverTime;
+		}
 	}
 	else
 		fleet->IncreaseMorale(DeltaTime);
@@ -69,6 +75,17 @@ void AStar::Tick( float DeltaTime )
 
 		shipBuildTimer = prodTime;
 	}
+
+	if (takingOver)
+	{
+		takeoverTimer -= DeltaTime;
+		if (takeoverTimer < 0)
+		{
+			ownedBy = fleet->ownedBy;
+			takeoverTimer = maxTakeoverTime;
+			takingOver = false;
+		}
+	}
 }
 void AStar::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
@@ -80,8 +97,9 @@ void AStar::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, i
 			if (fleet == nullptr)
 			{
 				fleet = newFleet;
-				ownedBy = fleet->ownedBy;
 				fleet->StarDefence(starDefence);
+				if (fleet->ownedBy != ownedBy)
+					takingOver = true;
 			}
 		}
 	}
@@ -92,6 +110,7 @@ void AStar::OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int
 	{
 		fleet->StarDefence(0);
 		fleet = nullptr;
+		takingOver = false;
 	}
 }
 

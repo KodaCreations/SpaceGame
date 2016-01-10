@@ -28,6 +28,31 @@ void APathfinder::Tick( float DeltaTime )
 
 }
 
+TArray<AStar*> APathfinder::GetSurroundingStars(AStar* middleStar)
+{
+	TArray<AStar*> returnStars = TArray<AStar*>();
+	//loops through all the stars
+	for (int i = 0; i < stars.Num(); ++i)
+	{
+		//Finds what place the star is in the matrix
+		if (stars[i] == middleStar)
+		{
+			// loops through all the stars to find those that are linked
+			for (int j = 0; j < stars.Num(); ++j)
+			{
+				//checks if the there is a link
+				if (proximityMatrix[j + i * stars.Num()] > 0)
+				{
+					//Adds it to the List to be returned
+					returnStars.Add(stars[j]);
+				}
+			}
+			break;
+		}
+	}
+	return returnStars;
+}
+
 void APathfinder::GenerateProximityMatrix()
 {
 	stars = TArray<AStar*>();

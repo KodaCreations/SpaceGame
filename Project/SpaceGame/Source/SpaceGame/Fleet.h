@@ -35,8 +35,6 @@ public:
 	float StarDefence() const{ return starDefence; }
 	void StarDefence(float defence) { starDefence = defence; }
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
-		OwnedBy ownedBy;
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -58,14 +56,15 @@ public:
 	void MergeFleet(AFleet* _mergeWith);
 	bool InCombat;
 	bool mergable;
-	int GetSize();
 	AActor* GetLastVisitedStar();
 	void SetLastVisitedStar(AActor* star);
 
+	UFUNCTION(BlueprintCallable, Category = "Fleet")
+		float GetSize();
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* mesh;
-	/*UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
-		Star::OwnedBy ownedBy;*/
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
+		OwnedBy ownedBy;
 	UPROPERTY(VisibleAnywhere, Category = "Triggers")
 		UBoxComponent* Trigger;
 	UPROPERTY(EditAnywhere)

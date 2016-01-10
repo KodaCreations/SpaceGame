@@ -8,6 +8,7 @@
 #include "ObjectBase.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AFleet;
 class AActor;
 class UPrimitiveComponent;
 struct FHitResult;
@@ -17,6 +18,12 @@ struct FHitResult;
 #define SPACEGAME_Star_generated_h
 
 #define SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetFleet) \
+	{ \
+		P_FINISH; \
+		*(AFleet**)Z_Param__Result=this->GetFleet(); \
+	} \
  \
 	DECLARE_FUNCTION(execOnEndOverlap) \
 	{ \
@@ -40,6 +47,12 @@ struct FHitResult;
 
 
 #define SpaceGame_Source_SpaceGame_Star_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetFleet) \
+	{ \
+		P_FINISH; \
+		*(AFleet**)Z_Param__Result=this->GetFleet(); \
+	} \
  \
 	DECLARE_FUNCTION(execOnEndOverlap) \
 	{ \

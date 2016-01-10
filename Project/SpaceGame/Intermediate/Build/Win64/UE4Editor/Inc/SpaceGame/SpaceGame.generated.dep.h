@@ -17,17 +17,23 @@
 #ifndef SPACEGAME_Combat_generated_h
 	#include "Combat.h"
 #endif
+#ifndef SPACEGAME_EnemyAI_generated_h
+	#include "EnemyAI.h"
+#endif
 #ifndef SPACEGAME_Star_generated_h
 	#include "Star.h"
+#endif
+#ifndef SPACEGAME_Pathfinder_generated_h
+	#include "Pathfinder.h"
+#endif
+#ifndef SPACEGAME_EnemyAIController_generated_h
+	#include "EnemyAIController.h"
 #endif
 #ifndef SPACEGAME_Link_generated_h
 	#include "Link.h"
 #endif
 #ifndef SPACEGAME_MouseController_generated_h
 	#include "MouseController.h"
-#endif
-#ifndef SPACEGAME_Pathfinder_generated_h
-	#include "Pathfinder.h"
 #endif
 #ifndef SPACEGAME_MousePawn_generated_h
 	#include "MousePawn.h"

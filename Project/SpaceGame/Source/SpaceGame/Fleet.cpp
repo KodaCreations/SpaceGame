@@ -142,7 +142,7 @@ void AFleet::AddShip()
 }
 
 // Called to find out the number of ships in the floor
-int AFleet::GetSize()
+float AFleet::GetSize()
 {
 	return ships;
 }

@@ -1,100 +1,118 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup>
-		<None Include="..\..\SpaceGame.uproject" />
-		<Filter Include="Source">
-			<UniqueIdentifier>{7D553D1F-10F4-498B-B4F7-E4187EF0BB99}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Source\SpaceGame.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<None Include="..\..\Source\SpaceGameEditor.Target.cs">
-			<Filter>Source</Filter>
-		</None >
-		<Filter Include="Config">
-			<UniqueIdentifier>{337E4341-3A8A-4F07-B937-896695FD6AB7}</UniqueIdentifier>
-		</Filter>
-		<None Include="..\..\Config\DefaultEngine.ini">
-			<Filter>Config</Filter>
-		</None >
-		<Filter Include="Source\SpaceGame">
-			<UniqueIdentifier>{532B4A7B-6A8D-483A-829F-1EB22FB8E1C4}</UniqueIdentifier>
-		</Filter>
-		<ClCompile Include="..\..\Source\SpaceGame\CameraPawn.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\CameraPawn.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\Combat.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\Combat.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\Fleet.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\Fleet.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\Link.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\Link.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\MinHeap.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\MinHeap.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\MouseController.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\MouseController.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\MousePawn.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\MousePawn.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\Pathfinder.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\Pathfinder.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\Ship.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\Ship.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<None Include="..\..\Source\SpaceGame\SpaceGame.Build.cs">
-			<Filter>Source\SpaceGame</Filter>
-		</None >
-		<ClCompile Include="..\..\Source\SpaceGame\SpaceGame.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\SpaceGame.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\SpaceGameGameMode.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\SpaceGameGameMode.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-		<ClCompile Include="..\..\Source\SpaceGame\Star.cpp">
-			<Filter>Source\SpaceGame</Filter>
-		</ClCompile >
-		<ClInclude Include="..\..\Source\SpaceGame\Star.h">
-			<Filter>Source\SpaceGame</Filter>
-		</ClInclude >
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\SpaceGame.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{06D68279-8636-47DA-BCC3-490D65642C40}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SpaceGame.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SpaceGameEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{56C9BDCA-5A10-48FE-B10D-03616C9BED48}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\SpaceGame">
+      <UniqueIdentifier>{21A4AD02-6D5B-429C-A40E-E428D986D8E1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\SpaceGame\CameraPawn.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\CameraPawn.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\Combat.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\Combat.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\EnemyAI.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\EnemyAI.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\Fleet.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\Fleet.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\Link.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\Link.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\MinHeap.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\MinHeap.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\MouseController.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\MouseController.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\MousePawn.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\MousePawn.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\Pathfinder.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\Pathfinder.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\Ship.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\Ship.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\SpaceGame\SpaceGame.Build.cs">
+      <Filter>Source\SpaceGame</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\SpaceGame\SpaceGame.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\SpaceGame.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\SpaceGameGameMode.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\SpaceGameGameMode.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SpaceGame\Star.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SpaceGame\Star.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\SpaceGame\EnemyAIController.h">
+      <Filter>Source\SpaceGame</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\SpaceGame\EnemyAIController.cpp">
+      <Filter>Source\SpaceGame</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>

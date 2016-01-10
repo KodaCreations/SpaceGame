@@ -36,6 +36,12 @@ struct FHitResult;
 		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
 		P_FINISH; \
 		this->OnBeginOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+	} \
+ \
+	DECLARE_FUNCTION(execGetSize) \
+	{ \
+		P_FINISH; \
+		*(float*)Z_Param__Result=this->GetSize(); \
 	}
 
 
@@ -59,6 +65,12 @@ struct FHitResult;
 		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_SweepResult); \
 		P_FINISH; \
 		this->OnBeginOverlap(Z_Param_OtherActor,Z_Param_OtherComp,Z_Param_OtherBodyIndex,Z_Param_bFromSweep,Z_Param_Out_SweepResult); \
+	} \
+ \
+	DECLARE_FUNCTION(execGetSize) \
+	{ \
+		P_FINISH; \
+		*(float*)Z_Param__Result=this->GetSize(); \
 	}
 
 

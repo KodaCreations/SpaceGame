@@ -4,7 +4,7 @@
 
 #include "GameFramework/GameMode.h"
 #include "Star.h"
-//#include "EnemyAI.h"
+#include "EnemyAI.h"
 #include "SpaceGameGameMode.generated.h"
 
 /**
@@ -19,8 +19,8 @@ public:
 	ASpaceGameGameMode();
 	virtual void BeginPlay() override;
 
-	//UPROPERTY(EditAnywhere)
-	//	TSubclassOf<AEnemyAI> enemyAI;
+	UPROPERTY(EditAnywhere)
+		TSubclassOf<AEnemyAI> enemyAI;
 
 	UPROPERTY(VisibleAnywhere)
 		TArray<AStar*> stars;
