@@ -51,6 +51,13 @@ void ASpaceGameGameMode::CreateEnemyAI()
 {
 	//AEnemyAI* newEnemyAI = (AEnemyAI*)GetWorld()->SpawnActor(enemyAI, NULL, NULL);
 }
-
+void ASpaceGameGameMode::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	if (playerHomePlanet->ownedBy == OwnedBy::Player2)
+		playerWon = OwnedBy::Player2;
+	else if (aiHomePlanet->ownedBy == OwnedBy::Player1)
+		playerWon = OwnedBy::Player1;
+}
 
 

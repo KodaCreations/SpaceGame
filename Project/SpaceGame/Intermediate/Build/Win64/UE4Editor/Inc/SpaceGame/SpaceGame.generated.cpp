@@ -117,7 +117,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_StarColor(StarColor_Stat
 	void ASpaceGameGameMode::StaticRegisterNativesASpaceGameGameMode()
 	{
 	}
-	IMPLEMENT_CLASS(ASpaceGameGameMode, 615093214);
+	IMPLEMENT_CLASS(ASpaceGameGameMode, 1884998194);
 FName SPACEGAME_OwnerChanged = FName(TEXT("OwnerChanged"));
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
@@ -1295,6 +1295,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+				UProperty* NewProp_playerWon = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("playerWon"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(playerWon, ASpaceGameGameMode), 0x0000000000000005, Z_Construct_UEnum_SpaceGame_OwnedBy());
 				UProperty* NewProp_aiShipBluePrint = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("aiShipBluePrint"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(aiShipBluePrint, ASpaceGameGameMode), 0x0004000000000001, Z_Construct_UClass_AShip_NoRegister());
 				UProperty* NewProp_playerShipBluePrint = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("playerShipBluePrint"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(playerShipBluePrint, ASpaceGameGameMode), 0x0004000000000001, Z_Construct_UClass_AShip_NoRegister());
 				UProperty* NewProp_aiHomePlanet = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("aiHomePlanet"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(aiHomePlanet, ASpaceGameGameMode), 0x0000000000020001, Z_Construct_UClass_AStar_NoRegister());
@@ -1311,6 +1312,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SpaceGameGameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("SpaceGameGameMode.h"));
 				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+				MetaData->SetValue(NewProp_playerWon, TEXT("Category"), TEXT("Enum"));
+				MetaData->SetValue(NewProp_playerWon, TEXT("ModuleRelativePath"), TEXT("SpaceGameGameMode.h"));
 				MetaData->SetValue(NewProp_aiShipBluePrint, TEXT("Category"), TEXT("SpaceGameGameMode"));
 				MetaData->SetValue(NewProp_aiShipBluePrint, TEXT("ModuleRelativePath"), TEXT("SpaceGameGameMode.h"));
 				MetaData->SetValue(NewProp_playerShipBluePrint, TEXT("Category"), TEXT("SpaceGameGameMode"));
@@ -1339,7 +1342,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x3E2ABBA3;
+			Guid.A = 0x7B279397;
 			Guid.B = 0xB4BF1813;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;

@@ -82,8 +82,8 @@ void AStar::Tick( float DeltaTime )
 		takeoverTimer -= DeltaTime;
 		if (takeoverTimer < 0)
 		{
-			ownedBy = fleet->ownedBy;
-			OwnerChanged();
+			/*ownedBy = fleet->ownedBy;
+			OwnerChanged();*/
 			takeoverTimer = maxTakeoverTime;
 			takingOver = false;
 		}
@@ -100,6 +100,8 @@ void AStar::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, i
 			{
 				fleet = newFleet;
 				fleet->StarDefence(starDefence);
+				ownedBy = fleet->ownedBy;
+				OwnerChanged();
 				if (fleet->ownedBy != ownedBy)
 					takingOver = true;				
 			}

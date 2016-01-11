@@ -60,7 +60,7 @@ void AMousePawn::SetupPlayerInputComponent(class UInputComponent* InputComponent
 void AMousePawn::MoveX(float axisValue)
 {
 	FMath::Clamp(axisValue, -1.0f, 1.0f);
-	velocity.X = axisValue * speed;
+	velocity.Z = axisValue * speed;
 }
 
 void AMousePawn::MoveY(float axisValue)

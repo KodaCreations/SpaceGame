@@ -17,8 +17,12 @@ class SPACEGAME_API ASpaceGameGameMode : public AGameMode
 	
 public:
 	ASpaceGameGameMode();
+
+	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	// Called every frame
+	virtual void Tick(float DeltaSeconds) override;
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<AEnemyAI> enemyAI;
 
@@ -32,6 +36,8 @@ public:
 		TSubclassOf<AShip> playerShipBluePrint;
 	UPROPERTY(EditAnywhere)
 		TSubclassOf<AShip> aiShipBluePrint;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
+		OwnedBy playerWon;
 	
 
 
