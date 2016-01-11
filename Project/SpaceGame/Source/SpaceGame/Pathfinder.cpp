@@ -91,9 +91,9 @@ void APathfinder::GenerateProximityMatrix()
 // Uses the a* algorithm in order to find the shortest path between two stars.
 // AStar* start is the star where the fleet is currently stationed.
 // AStar* target is the target star.
-TArray<FVector> APathfinder::FindShortestPath(AStar* start, AStar* target)
+TArray<AActor*> APathfinder::FindShortestPath(AStar* start, AStar* target)
 {
-	TArray<FVector> path = TArray<FVector>();                        //Shortest path; to be returned.
+	TArray<AActor*> path = TArray<AActor*>();                        //Shortest path; to be returned.
 	MinHeap<float, AStar*> minHeap = MinHeap<float, AStar*>();       //Min heap which is used by the a* algorithm.
 
 	TMap<AStar*, AStar*> cameFrom = TMap<AStar*, AStar*>();          //Key-value pair, which star (value) the star (key) came from (shortest path)
@@ -164,7 +164,7 @@ TArray<FVector> APathfinder::FindShortestPath(AStar* start, AStar* target)
 	// Rearrange path from start to target and get the path node locations.
 	for (int i = temp.Num() - 1; i >= 0; --i)
 	{
-		path.Add(temp[i]->GetActorLocation());
+		path.Add(temp[i]);
 	}
 	return path;
 }

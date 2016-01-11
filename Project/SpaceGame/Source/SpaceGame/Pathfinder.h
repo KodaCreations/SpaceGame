@@ -21,7 +21,7 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-	TArray<FVector> FindShortestPath(AStar* start, AStar* target);
+	TArray<AActor*> FindShortestPath(AStar* start, AStar* target);
 	TArray<AStar*> GetSurroundingStars(AStar* middleStar);
 	
 private:

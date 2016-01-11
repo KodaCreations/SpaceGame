@@ -47,7 +47,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnBeginOverlap",(Native)&AFleet::execOnBeginOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnEndOverlap",(Native)&AFleet::execOnEndOverlap);
 	}
-	IMPLEMENT_CLASS(AFleet, 925490078);
+	IMPLEMENT_CLASS(AFleet, 1498669581);
 	void ACombat::StaticRegisterNativesACombat()
 	{
 	}
@@ -110,7 +110,6 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	ENGINE_API class UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 	ENGINE_API class UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_AActor_NoRegister();
-	COREUOBJECT_API class UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API class UClass* Z_Construct_UClass_UBoxComponent_NoRegister();
 	ENGINE_API class UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	AIMODULE_API class UClass* Z_Construct_UClass_AAIController();
@@ -399,7 +398,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_destinations = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("destinations"), RF_Public|RF_Transient|RF_Native) UArrayProperty(CPP_PROPERTY_BASE(destinations, AFleet), 0x0000000000020001);
-				UProperty* NewProp_destinations_Inner = new(EC_InternalUseOnlyConstructor, NewProp_destinations, TEXT("destinations"), RF_Public|RF_Transient|RF_Native) UStructProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000020000, Z_Construct_UScriptStruct_FVector());
+				UProperty* NewProp_destinations_Inner = new(EC_InternalUseOnlyConstructor, NewProp_destinations, TEXT("destinations"), RF_Public|RF_Transient|RF_Native) UObjectProperty(FObjectInitializer(), EC_CppProperty, 0, 0x0000000000020000, Z_Construct_UClass_AActor_NoRegister());
 				UProperty* NewProp_lastVisitedStar = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("lastVisitedStar"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(lastVisitedStar, AFleet), 0x0000000000020001, Z_Construct_UClass_AActor_NoRegister());
 				UProperty* NewProp_starDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("starDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(starDefence, AFleet), 0x0000000000020001);
 				UProperty* NewProp_totalDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("totalDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(totalDefence, AFleet), 0x0000000000020001);
@@ -1246,7 +1245,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x1CE3EA45;
+			Guid.A = 0x0CF15145;
 			Guid.B = 0xCD182163;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
