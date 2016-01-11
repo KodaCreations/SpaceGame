@@ -1,0 +1,22 @@
+﻿Added new larger level
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   Project/SpaceGame/Content/Blueprints/EnemyAI/FindBestAttack.uasset
+#	modified:   Project/SpaceGame/Content/Maps/Level1.umap
+#	modified:   Project/SpaceGame/Intermediate/Build/ActionHistory.bin
+#	modified:   Project/SpaceGame/Intermediate/Build/Win64/SpaceGameEditor/DependencyCache.bin
+#	modified:   Project/SpaceGame/Intermediate/Build/Win64/SpaceGameEditor/Development/UnrealHeaderTool.manifest
+#	modified:   Project/SpaceGame/Intermediate/Build/Win64/SpaceGameEditor/FlatCPPIncludes.bin
+#	modified:   Project/SpaceGame/Intermediate/CachedAssetRegistry.bin
+#	modified:   Project/SpaceGame/Saved/Autosaves/PackageRestoreData.json
+#	modified:   Project/SpaceGame/Saved/Config/Windows/Editor.ini
+#	modified:   Project/SpaceGame/Saved/Config/Windows/EditorPerProjectUserSettings.ini
+#	modified:   Project/SpaceGame/Saved/Config/Windows/Engine.ini
+#	modified:   Project/SpaceGame/Saved/Logs/SpaceGame.log
+#	modified:   Project/SpaceGame/Source/SpaceGame/MousePawn.cpp
+#
+
