@@ -158,3 +158,8 @@ void AMousePawn::SendFleetByWaypoints()
 		}
 	}
 }
+
+AActor* AMousePawn::GetSelectedActor()
+{
+	return selectedActor;
+}

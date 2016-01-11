@@ -50,6 +50,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "PlayerFunctions")
 	void SendFleetByWaypoints();
 
+	UFUNCTION(BlueprintCallable, Category = "PlayerFunctions")
+		AActor* GetSelectedActor();
+
 private:
 	AActor* selectedActor;
 	APathfinder* pathfinder;

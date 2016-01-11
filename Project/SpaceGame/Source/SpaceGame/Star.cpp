@@ -49,6 +49,7 @@ void AStar::Tick( float DeltaTime )
 		{
 			fleet = Cast<AFleet>(fleets.Pop());
 			ownedBy = fleet->ownedBy;
+			OwnerChanged();
 		}
 		else
 		{
@@ -82,6 +83,7 @@ void AStar::Tick( float DeltaTime )
 		if (takeoverTimer < 0)
 		{
 			ownedBy = fleet->ownedBy;
+			OwnerChanged();
 			takeoverTimer = maxTakeoverTime;
 			takingOver = false;
 		}
@@ -99,7 +101,7 @@ void AStar::OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, i
 				fleet = newFleet;
 				fleet->StarDefence(starDefence);
 				if (fleet->ownedBy != ownedBy)
-					takingOver = true;
+					takingOver = true;				
 			}
 		}
 	}

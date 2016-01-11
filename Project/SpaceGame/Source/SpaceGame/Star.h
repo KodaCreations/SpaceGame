@@ -4,6 +4,15 @@
 #include "GameFramework/Actor.h"
 #include "Star.generated.h"
 
+UENUM(BlueprintType)		//"BlueprintType" is essential to include
+enum class StarColor : uint8
+{
+	Red 	UMETA(DisplayName = "Red"),
+	Yellow 	UMETA(DisplayName = "Yellow"),
+	Blue 	UMETA(DisplayName = "Blue"),
+	Orange  UMETA(DisplayName = "Orange")
+};
+
 UCLASS()
 class SPACEGAME_API AStar : public AActor
 {
@@ -24,12 +33,18 @@ public:
 		OwnedBy ownedBy;
 	UPROPERTY(VisibleAnywhere, Category = "Triggers")
 		UBoxComponent* Trigger;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
+		StarColor color;
 	UFUNCTION()
 		void OnBeginOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 	UFUNCTION()
 		void OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 	UFUNCTION(BlueprintCallable, Category = "Star")
 		AFleet* GetFleet();
+	UFUNCTION(BlueprintImplementableEvent, category = "Events")
+		void OwnerChanged();
+
+
 
 private:
 	float takeoverTimer;

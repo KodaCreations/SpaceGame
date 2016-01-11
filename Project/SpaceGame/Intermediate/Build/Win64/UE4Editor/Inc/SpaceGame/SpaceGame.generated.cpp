@@ -56,13 +56,29 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	{
 	}
 	IMPLEMENT_CLASS(AEnemyAI, 247065752);
+static class UEnum* StarColor_StaticEnum()
+{
+	static class UEnum* Singleton = NULL;
+	if (!Singleton)
+	{
+		extern SPACEGAME_API class UEnum* Z_Construct_UEnum_SpaceGame_StarColor();
+		extern SPACEGAME_API class UPackage* Z_Construct_UPackage_SpaceGame();
+		Singleton = GetStaticEnum(Z_Construct_UEnum_SpaceGame_StarColor, Z_Construct_UPackage_SpaceGame(), TEXT("StarColor"));
+	}
+	return Singleton;
+}
+static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_StarColor(StarColor_StaticEnum, TEXT("/Script/SpaceGame"));
+	void AStar::OwnerChanged()
+	{
+		ProcessEvent(FindFunctionChecked(SPACEGAME_OwnerChanged),NULL);
+	}
 	void AStar::StaticRegisterNativesAStar()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AStar::StaticClass(),"GetFleet",(Native)&AStar::execGetFleet);
 		FNativeFunctionRegistrar::RegisterFunction(AStar::StaticClass(),"OnBeginOverlap",(Native)&AStar::execOnBeginOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AStar::StaticClass(),"OnEndOverlap",(Native)&AStar::execOnEndOverlap);
 	}
-	IMPLEMENT_CLASS(AStar, 1862801855);
+	IMPLEMENT_CLASS(AStar, 3708525266);
 	void APathfinder::StaticRegisterNativesAPathfinder()
 	{
 	}
@@ -92,15 +108,17 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"AddWaypoint",(Native)&AMousePawn::execAddWaypoint);
 		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"Deselect",(Native)&AMousePawn::execDeselect);
+		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"GetSelectedActor",(Native)&AMousePawn::execGetSelectedActor);
 		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"SelectActor",(Native)&AMousePawn::execSelectActor);
 		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"SendFleetByWaypoints",(Native)&AMousePawn::execSendFleetByWaypoints);
 		FNativeFunctionRegistrar::RegisterFunction(AMousePawn::StaticClass(),"SendFleetTo",(Native)&AMousePawn::execSendFleetTo);
 	}
-	IMPLEMENT_CLASS(AMousePawn, 2209697727);
+	IMPLEMENT_CLASS(AMousePawn, 3838439167);
 	void ASpaceGameGameMode::StaticRegisterNativesASpaceGameGameMode()
 	{
 	}
 	IMPLEMENT_CLASS(ASpaceGameGameMode, 615093214);
+FName SPACEGAME_OwnerChanged = FName(TEXT("OwnerChanged"));
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
@@ -131,9 +149,11 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	SPACEGAME_API class UClass* Z_Construct_UClass_ACombat();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AEnemyAI_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AEnemyAI();
+	SPACEGAME_API class UEnum* Z_Construct_UEnum_SpaceGame_StarColor();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AStar_GetFleet();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AStar_OnBeginOverlap();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AStar_OnEndOverlap();
+	SPACEGAME_API class UFunction* Z_Construct_UFunction_AStar_OwnerChanged();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AStar_NoRegister();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AStar();
 	SPACEGAME_API class UClass* Z_Construct_UClass_APathfinder_NoRegister();
@@ -155,6 +175,7 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	SPACEGAME_API class UClass* Z_Construct_UClass_AMouseController();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_AddWaypoint();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_Deselect();
+	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_GetSelectedActor();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_SelectActor();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_SendFleetByWaypoints();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AMousePawn_SendFleetTo();
@@ -524,6 +545,33 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_AEnemyAI(Z_Construct_UClass_AEnemyAI, TEXT("AEnemyAI"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemyAI);
+	UEnum* Z_Construct_UEnum_SpaceGame_StarColor()
+	{
+		UPackage* Outer=Z_Construct_UPackage_SpaceGame();
+		static UEnum* ReturnEnum = NULL;
+		if (!ReturnEnum)
+		{
+			ReturnEnum = new(EC_InternalUseOnlyConstructor, Outer, TEXT("StarColor"), RF_Public|RF_Transient|RF_Native) UEnum(FObjectInitializer());
+			TArray<TPair<FName, uint8>> EnumNames;
+			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("StarColor::Red")), 0));
+			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("StarColor::Yellow")), 1));
+			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("StarColor::Blue")), 2));
+			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("StarColor::Orange")), 3));
+			EnumNames.Add(TPairInitializer<FName, uint8>(FName(TEXT("StarColor::StarColor_MAX")), 4));
+			ReturnEnum->SetEnums(EnumNames, UEnum::ECppForm::EnumClass);
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnEnum->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnEnum, TEXT("Blue.DisplayName"), TEXT("Blue"));
+			MetaData->SetValue(ReturnEnum, TEXT("BlueprintType"), TEXT("true"));
+			MetaData->SetValue(ReturnEnum, TEXT("ModuleRelativePath"), TEXT("Star.h"));
+			MetaData->SetValue(ReturnEnum, TEXT("Orange.DisplayName"), TEXT("Orange"));
+			MetaData->SetValue(ReturnEnum, TEXT("Red.DisplayName"), TEXT("Red"));
+			MetaData->SetValue(ReturnEnum, TEXT("ToolTip"), TEXT("\"BlueprintType\" is essential to include"));
+			MetaData->SetValue(ReturnEnum, TEXT("Yellow.DisplayName"), TEXT("Yellow"));
+#endif
+		}
+		return ReturnEnum;
+	}
 	UFunction* Z_Construct_UFunction_AStar_GetFleet()
 	{
 		struct Star_eventGetFleet_Parms
@@ -603,6 +651,23 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_AStar_OwnerChanged()
+	{
+		UObject* Outer=Z_Construct_UClass_AStar();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("OwnerChanged"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x08020800, 65535);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Events"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Star.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AStar_NoRegister()
 	{
 		return AStar::StaticClass();
@@ -623,11 +688,13 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->LinkChild(Z_Construct_UFunction_AStar_GetFleet());
 				OuterClass->LinkChild(Z_Construct_UFunction_AStar_OnBeginOverlap());
 				OuterClass->LinkChild(Z_Construct_UFunction_AStar_OnEndOverlap());
+				OuterClass->LinkChild(Z_Construct_UFunction_AStar_OwnerChanged());
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(mesh, AStar), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 				UProperty* NewProp_starDefence = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("starDefence"), RF_Public|RF_Transient|RF_Native) UFloatProperty(CPP_PROPERTY_BASE(starDefence, AStar), 0x0000000000000001);
 				UProperty* NewProp_fleet = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("fleet"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(fleet, AStar), 0x0000000000020001, Z_Construct_UClass_AFleet_NoRegister());
+				UProperty* NewProp_color = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("color"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(color, AStar), 0x0000000000000005, Z_Construct_UEnum_SpaceGame_StarColor());
 				UProperty* NewProp_Trigger = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("Trigger"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(Trigger, AStar), 0x00000000000a0009, Z_Construct_UClass_UBoxComponent_NoRegister());
 				UProperty* NewProp_ownedBy = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("ownedBy"), RF_Public|RF_Transient|RF_Native) UByteProperty(CPP_PROPERTY_BASE(ownedBy, AStar), 0x0000000000000005, Z_Construct_UEnum_SpaceGame_OwnedBy());
 				UProperty* NewProp_fleetBP = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("fleetBP"), RF_Public|RF_Transient|RF_Native) UClassProperty(CPP_PROPERTY_BASE(fleetBP, AStar), 0x0004000000000001, Z_Construct_UClass_AFleet_NoRegister());
@@ -635,6 +702,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AStar_GetFleet()); // 2990330756
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AStar_OnBeginOverlap()); // 1173484778
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AStar_OnEndOverlap()); // 925098088
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AStar_OwnerChanged()); // 2034900646
 				OuterClass->StaticLink();
 #if WITH_METADATA
 				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
@@ -648,6 +716,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				MetaData->SetValue(NewProp_fleet, TEXT("Category"), TEXT("Star"));
 				MetaData->SetValue(NewProp_fleet, TEXT("ModuleRelativePath"), TEXT("Star.h"));
 				MetaData->SetValue(NewProp_fleet, TEXT("ToolTip"), TEXT("Stationed fleet"));
+				MetaData->SetValue(NewProp_color, TEXT("Category"), TEXT("Enum"));
+				MetaData->SetValue(NewProp_color, TEXT("ModuleRelativePath"), TEXT("Star.h"));
 				MetaData->SetValue(NewProp_Trigger, TEXT("Category"), TEXT("Triggers"));
 				MetaData->SetValue(NewProp_Trigger, TEXT("EditInline"), TEXT("true"));
 				MetaData->SetValue(NewProp_Trigger, TEXT("ModuleRelativePath"), TEXT("Star.h"));
@@ -1069,6 +1139,28 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_AMousePawn_GetSelectedActor()
+	{
+		struct MousePawn_eventGetSelectedActor_Parms
+		{
+			AActor* ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_AMousePawn();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("GetSelectedActor"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(MousePawn_eventGetSelectedActor_Parms));
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(ReturnValue, MousePawn_eventGetSelectedActor_Parms), 0x0000000000000580, Z_Construct_UClass_AActor_NoRegister());
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("PlayerFunctions"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("MousePawn.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_AMousePawn_SelectActor()
 	{
 		struct MousePawn_eventSelectActor_Parms
@@ -1149,6 +1241,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_AddWaypoint());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_Deselect());
+				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_GetSelectedActor());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_SelectActor());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_SendFleetByWaypoints());
 				OuterClass->LinkChild(Z_Construct_UFunction_AMousePawn_SendFleetTo());
@@ -1159,6 +1252,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_AddWaypoint()); // 388038697
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_Deselect()); // 3215991058
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_GetSelectedActor()); // 1119687347
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_SelectActor()); // 1800882220
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_SendFleetByWaypoints()); // 1026412613
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AMousePawn_SendFleetTo()); // 2892774303
@@ -1245,8 +1339,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x0CF15145;
-			Guid.B = 0xCD182163;
+			Guid.A = 0x3E2ABBA3;
+			Guid.B = 0xB4BF1813;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

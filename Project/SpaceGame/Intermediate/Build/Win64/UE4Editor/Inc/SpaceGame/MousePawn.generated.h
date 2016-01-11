@@ -8,14 +8,20 @@
 #include "ObjectBase.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class AStar;
 class AActor;
+class AStar;
 #ifdef SPACEGAME_MousePawn_generated_h
 #error "MousePawn.generated.h already included, missing '#pragma once' in MousePawn.h"
 #endif
 #define SPACEGAME_MousePawn_generated_h
 
 #define SpaceGame_Source_SpaceGame_MousePawn_h_11_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetSelectedActor) \
+	{ \
+		P_FINISH; \
+		*(AActor**)Z_Param__Result=this->GetSelectedActor(); \
+	} \
  \
 	DECLARE_FUNCTION(execSendFleetByWaypoints) \
 	{ \
@@ -52,6 +58,12 @@ class AActor;
 
 
 #define SpaceGame_Source_SpaceGame_MousePawn_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetSelectedActor) \
+	{ \
+		P_FINISH; \
+		*(AActor**)Z_Param__Result=this->GetSelectedActor(); \
+	} \
  \
 	DECLARE_FUNCTION(execSendFleetByWaypoints) \
 	{ \
