@@ -27,8 +27,6 @@ AFleet::AFleet()
 	Trigger->OnComponentEndOverlap.AddDynamic(this, &AFleet::OnEndOverlap);
 
 	//ownedBy = OwnedBy::Neutral;
-
-	destinations = TArray<FVector>();
 	
 }
 
@@ -41,7 +39,7 @@ void AFleet::BeginPlay()
 		UpdateFleetStats();
 		currentMorale = ship->Morale();
 	}
-	destinations = TArray<FVector>();
+	destinations = TArray<AActor*>();
 }
 
 // Called every frame
@@ -54,11 +52,11 @@ void AFleet::Tick( float DeltaTime )
 		FVector temp;
 		float speed = 500.f;
 
-		temp = destinations[0] - GetActorLocation();
+		temp = destinations[0]->GetActorLocation() - GetActorLocation();
 		temp.Normalize();
 
 		SetActorLocation(GetActorLocation() + temp * speed * DeltaTime);
-		if (AtDestination(destinations[0]))
+		if (AtDestination(destinations[0]->GetActorLocation()))
 		{
 			destinations.RemoveAt(0);
 		}
@@ -195,13 +193,13 @@ void AFleet::OnEndOverlap(AActor* OtherActor, UPrimitiveComponent* OtherComp, in
 }
 
 
-void AFleet::SetDestinations(TArray<FVector> destinations)
+void AFleet::SetDestinations(TArray<AActor*> destinations)
 {
 	AFleet::destinations = destinations;
 }
 
 
-TArray<FVector> AFleet::GetDestinations()
+TArray<AActor*> AFleet::GetDestinations()
 {
 	return destinations;
 }

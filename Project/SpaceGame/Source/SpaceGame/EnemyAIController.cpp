@@ -47,7 +47,7 @@ void AEnemyAIController::SendFleetTo(AStar* fromStar, AStar* toStar)
 {
 	if (pathfinder && fromStar && fromStar->GetFleet())
 	{
-		TArray<FVector> destinations = pathfinder->FindShortestPath(fromStar, toStar);
+		TArray<AActor*> destinations = pathfinder->FindShortestPath(fromStar, toStar);
 
 		fromStar->GetFleet()->SetDestinations(destinations);
 	}

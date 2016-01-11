@@ -97,15 +97,19 @@ void AMousePawn::SendFleetTo(AStar* clickedStar)
 	{
 		if (selectedStar && selectedStar->GetFleet())
 		{
-			TArray<FVector> destinations = pathfinder->FindShortestPath(selectedStar, clickedStar);
+			TArray<AActor*> destinations = pathfinder->FindShortestPath(selectedStar, clickedStar);
 			selectedStar->GetFleet()->SetDestinations(destinations);
 			return;
 		}
 		if (selectedFleet)
 		{
-			AStar* lastVisitedStar = Cast<AStar, AActor>(selectedFleet->GetLastVisitedStar());
-			TArray<FVector> destinations = pathfinder->FindShortestPath(lastVisitedStar, clickedStar);
-			destinations.Insert(lastVisitedStar->GetActorLocation(), 0);
+			AStar* nextStar;
+			if (selectedFleet->GetDestinations().Num() > 0)
+				nextStar = Cast<AStar, AActor>(selectedFleet->GetDestinations()[0]);
+			else
+				nextStar = Cast<AStar, AActor>(selectedFleet->GetLastVisitedStar());
+			TArray<AActor*> destinations = pathfinder->FindShortestPath(nextStar, clickedStar);
+			destinations.Insert(nextStar, 0);
 			selectedFleet->SetDestinations(destinations);
 			return;
 		}
@@ -124,7 +128,7 @@ void AMousePawn::SendFleetByWaypoints()
 
 	if (pathfinder && selectedActor)
 	{
-		TArray<FVector> destinations;
+		TArray<AActor*> destinations;
 		AStar* start = nullptr;
 		AStar* lastVisitedStar = Cast<AStar, AActor>(selectedFleet->GetLastVisitedStar());
 
@@ -149,7 +153,7 @@ void AMousePawn::SendFleetByWaypoints()
 		}
 		else if (selectedFleet && lastVisitedStar)
 		{
-			destinations.Insert(lastVisitedStar->GetActorLocation(), 0);
+			destinations.Insert(lastVisitedStar, 0);
 			selectedFleet->SetDestinations(destinations);
 		}
 	}

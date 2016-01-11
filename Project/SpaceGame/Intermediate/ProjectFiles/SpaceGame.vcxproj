@@ -259,6 +259,10 @@
 		<ClInclude Include="..\..\Source\SpaceGame\CameraPawn.h" />
 		<ClCompile Include="..\..\Source\SpaceGame\Combat.cpp" />
 		<ClInclude Include="..\..\Source\SpaceGame\Combat.h" />
+		<ClCompile Include="..\..\Source\SpaceGame\EnemyAI.cpp" />
+		<ClInclude Include="..\..\Source\SpaceGame\EnemyAI.h" />
+		<ClCompile Include="..\..\Source\SpaceGame\EnemyAIController.cpp" />
+		<ClInclude Include="..\..\Source\SpaceGame\EnemyAIController.h" />
 		<ClCompile Include="..\..\Source\SpaceGame\Fleet.cpp" />
 		<ClInclude Include="..\..\Source\SpaceGame\Fleet.h" />
 		<ClCompile Include="..\..\Source\SpaceGame\Link.cpp" />

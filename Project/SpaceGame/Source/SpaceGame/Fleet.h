@@ -51,8 +51,8 @@ public:
 
 	void TakeFleetDamage(float damage);
 	bool AtDestination(FVector _destination);
-	void SetDestinations(TArray<FVector> destinations); // Array of star pointers would be better
-	TArray<FVector> GetDestinations();
+	void SetDestinations(TArray<AActor*> destinations);
+	TArray<AActor*> GetDestinations();
 	void MergeFleet(AFleet* _mergeWith);
 	bool InCombat;
 	bool mergable;
@@ -92,5 +92,5 @@ private:
 		AActor* lastVisitedStar;
 
 	UPROPERTY(VisibleAnywhere)
-		TArray<FVector> destinations;  // Array of star pointers would be better
+		TArray<AActor*> destinations;
 };
