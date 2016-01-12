@@ -44,10 +44,11 @@ static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_OwnedBy(OwnedBy_StaticEn
 	void AFleet::StaticRegisterNativesAFleet()
 	{
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"GetSize",(Native)&AFleet::execGetSize);
+		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"IsPlayerOwner",(Native)&AFleet::execIsPlayerOwner);
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnBeginOverlap",(Native)&AFleet::execOnBeginOverlap);
 		FNativeFunctionRegistrar::RegisterFunction(AFleet::StaticClass(),"OnEndOverlap",(Native)&AFleet::execOnEndOverlap);
 	}
-	IMPLEMENT_CLASS(AFleet, 1498669581);
+	IMPLEMENT_CLASS(AFleet, 1779793415);
 	void ACombat::StaticRegisterNativesACombat()
 	{
 	}
@@ -141,6 +142,7 @@ FName SPACEGAME_OwnerChanged = FName(TEXT("OwnerChanged"));
 	SPACEGAME_API class UEnum* Z_Construct_UEnum_SpaceGame_FleetState();
 	SPACEGAME_API class UEnum* Z_Construct_UEnum_SpaceGame_OwnedBy();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AFleet_GetSize();
+	SPACEGAME_API class UFunction* Z_Construct_UFunction_AFleet_IsPlayerOwner();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AFleet_OnBeginOverlap();
 	SPACEGAME_API class UFunction* Z_Construct_UFunction_AFleet_OnEndOverlap();
 	SPACEGAME_API class UClass* Z_Construct_UClass_AFleet_NoRegister();
@@ -339,6 +341,29 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 		}
 		return ReturnFunction;
 	}
+	UFunction* Z_Construct_UFunction_AFleet_IsPlayerOwner()
+	{
+		struct Fleet_eventIsPlayerOwner_Parms
+		{
+			bool ReturnValue;
+		};
+		UObject* Outer=Z_Construct_UClass_AFleet();
+		static UFunction* ReturnFunction = NULL;
+		if (!ReturnFunction)
+		{
+			ReturnFunction = new(EC_InternalUseOnlyConstructor, Outer, TEXT("IsPlayerOwner"), RF_Public|RF_Transient|RF_Native) UFunction(FObjectInitializer(), NULL, 0x04020401, 65535, sizeof(Fleet_eventIsPlayerOwner_Parms));
+			CPP_BOOL_PROPERTY_BITMASK_STRUCT(ReturnValue, Fleet_eventIsPlayerOwner_Parms, bool);
+			UProperty* NewProp_ReturnValue = new(EC_InternalUseOnlyConstructor, ReturnFunction, TEXT("ReturnValue"), RF_Public|RF_Transient|RF_Native) UBoolProperty(FObjectInitializer(), EC_CppProperty, CPP_BOOL_PROPERTY_OFFSET(ReturnValue, Fleet_eventIsPlayerOwner_Parms), 0x0000000000000580, CPP_BOOL_PROPERTY_BITMASK(ReturnValue, Fleet_eventIsPlayerOwner_Parms), sizeof(bool), true);
+			ReturnFunction->Bind();
+			ReturnFunction->StaticLink();
+#if WITH_METADATA
+			UMetaData* MetaData = ReturnFunction->GetOutermost()->GetMetaData();
+			MetaData->SetValue(ReturnFunction, TEXT("Category"), TEXT("Fleet"));
+			MetaData->SetValue(ReturnFunction, TEXT("ModuleRelativePath"), TEXT("Fleet.h"));
+#endif
+		}
+		return ReturnFunction;
+	}
 	UFunction* Z_Construct_UFunction_AFleet_OnBeginOverlap()
 	{
 		struct Fleet_eventOnBeginOverlap_Parms
@@ -414,6 +439,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->ClassFlags |= 0x20900080;
 
 				OuterClass->LinkChild(Z_Construct_UFunction_AFleet_GetSize());
+				OuterClass->LinkChild(Z_Construct_UFunction_AFleet_IsPlayerOwner());
 				OuterClass->LinkChild(Z_Construct_UFunction_AFleet_OnBeginOverlap());
 				OuterClass->LinkChild(Z_Construct_UFunction_AFleet_OnEndOverlap());
 
@@ -433,6 +459,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 				UProperty* NewProp_mesh = new(EC_InternalUseOnlyConstructor, OuterClass, TEXT("mesh"), RF_Public|RF_Transient|RF_Native) UObjectProperty(CPP_PROPERTY_BASE(mesh, AFleet), 0x0000000000080009, Z_Construct_UClass_UStaticMeshComponent_NoRegister());
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFleet_GetSize()); // 4024963520
+				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFleet_IsPlayerOwner()); // 2808609442
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFleet_OnBeginOverlap()); // 1474114864
 				OuterClass->AddFunctionToFunctionMap(Z_Construct_UFunction_AFleet_OnEndOverlap()); // 1387912959
 				OuterClass->StaticLink();
@@ -1342,8 +1369,8 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/SpaceGame")), false, false));
 			ReturnPackage->PackageFlags |= PKG_CompiledIn | 0x00000000;
 			FGuid Guid;
-			Guid.A = 0x7B279397;
-			Guid.B = 0xB4BF1813;
+			Guid.A = 0x91E66859;
+			Guid.B = 0xFF24B632;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

@@ -145,6 +145,14 @@ float AFleet::GetSize()
 	return ships;
 }
 
+bool AFleet::IsPlayerOwner()
+{
+	if (ownedBy == OwnedBy::Player1)	
+		return true;	
+	else
+		return false;
+}
+
 // Called to tell the fleet which type of ship it has
 void AFleet::GiveShipType(AShip* shipType)
 {

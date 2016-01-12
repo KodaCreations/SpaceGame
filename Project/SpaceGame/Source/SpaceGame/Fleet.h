@@ -61,6 +61,8 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Fleet")
 		float GetSize();
+	UFUNCTION(BlueprintCallable, Category = "Fleet")
+		bool IsPlayerOwner();
 	UPROPERTY(EditAnywhere)
 		UStaticMeshComponent* mesh;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Enum)
